@@ -5,6 +5,10 @@ import About from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import Navbar from "./Components/Navbar/Navbar";
 import Products from "./pages/Products";
+import Slider from "react-slick";
+import SliderProducts from "./Components/Home/Featured items";
+
+
 
 function App() {
   return (
@@ -15,10 +19,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Aboutus" element={<About />} />
         <Route path="/Products" element={<Products />} />
+        <Route path="/path/to/another/page" element={<Products />}/>
 
         <Route path="/Contactus" element={<ContactUs />} />
       </Routes>
-   
     </div>
   );
 }

@@ -41,6 +41,7 @@ const Navbar = () => {
         >
           <div>Products</div>
         </Link>
+       
         <Link
           to="/Contactus"
           className={`navlinks ${
@@ -66,7 +67,7 @@ const Navbar = () => {
           <div>Login</div>
         </Link>
       </div>
-        <div className="navbar-toggle">
+      <div className="navbar-toggle">
         <FaBars onClick={toggleMenu} />
       </div>
     </div>

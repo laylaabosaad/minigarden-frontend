@@ -1,9 +1,32 @@
-import React from 'react'
+import axios from "axios";
+import { useState, useEffect } from "react";
 
-function Login() {
+function Cart() {
+  const [productCard, setProductCard] = useState([]);
+
+  const getProduct = async () => {
+    const find = await axios.get("http://localhost:2000/product/");
+    let response = find.data.data;
+    setProductCard(response);
+    console.log(response);
+  };
+
+  useEffect(() => {
+    getProduct();
+  }, []);
+
   return (
-    <div>Login</div>
-  )
+    <div>
+      <div>
+        <div>Helloo</div>
+        {productCard.map((item, index) => {
+          <div key={index}>
+            <p>{item}</p>
+          </div>;
+        })}
+      </div>
+    </div>
+  );
 }
 
-export default Login
+export default Cart;

@@ -1,8 +1,11 @@
-import React from 'react'
+import Carts from "../Components/cart/Cart.js"
 
 function Cart() {
   return (
-    <div>Cart</div>
+    <div>
+      <h1>HEllooooo</h1>
+      <Carts/>
+    </div>
   )
 }
 

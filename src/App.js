@@ -7,6 +7,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Products from "./pages/Products";
 import Slider from "react-slick";
 import SliderProducts from "./Components/Home/Featured items";
+import Cart from "./pages/Cart";
 
 
 
@@ -19,7 +20,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Aboutus" element={<About />} />
         <Route path="/Products" element={<Products />} />
-        <Route path="/path/to/another/page" element={<Products />}/>
+        <Route path="/path/to/another/page" element={<Products />} />
+        <Route path="/Cart" element={<Cart/>} />
 
         <Route path="/Contactus" element={<ContactUs />} />
       </Routes>

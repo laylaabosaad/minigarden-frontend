@@ -19,7 +19,7 @@ function ProductHeader() {
       <div className="product-slide">
         <h1 className="ourproduct">Our Product</h1>
         <div className="product Menu">
-          <Link to="/closedterrarium">Closed Terrarium</Link>
+          
 
         </div>
       </div>

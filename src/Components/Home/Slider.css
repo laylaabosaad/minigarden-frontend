@@ -1,14 +1,9 @@
 .whole-product {
   /* border: 2px solid green; */
   margin: 50px;
-
-  margin-top: 300px;
-  padding-left: 100px;
+  padding-left: 50px;
   background-color: rgb(236, 243, 243);
 
-  display: flex;
-  justify-content: center;
-  align-self: center;
 }
 .card {
   width: 400px;
@@ -63,6 +58,10 @@ button:hover {
   background-color: #1a1a1a;
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
+}
+
+.product-cards{
+  padding-top: 200px;
 }
 
 button:active {

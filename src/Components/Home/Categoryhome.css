@@ -1,0 +1,73 @@
+.categoryhome-home {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 100px;
+}
+
+.categoryhome-home-all {
+  background-color: rgb(236, 243, 243);
+  text-align: center;
+}
+
+.shopbyCategory {
+  font-size: 70px;
+  padding: 100px;
+}
+
+.categoryhome-home h1 {
+  text-align: center;
+}
+
+.categoryhome-Closed {
+  /* border: 2px solid black; */
+  width: 500px;
+  padding-left: 20px;
+  height: 600px;
+  background-color: rgb(175, 201, 159);
+  border-radius: 20px;
+}
+
+.categoryhome-Closedimg {
+  width: 24rem;
+  margin-left: 130px;
+  margin-top: -10px;
+}
+
+.categoryhome-Openimg {
+  /* border: 2px solid purple; */
+  margin-left: 100px;
+  width: 290px;
+}
+
+.categoryhome-Open {
+  /* border: 2px solid pink; */
+  background-color: rgb(223, 222, 212);
+  border-radius: 20px;
+}
+
+.categoryhome-Open h1 {
+  font-size: 50px;
+  text-align: left;
+  /* border: 2px solid blanchedalmond; */
+  padding-left: 20px;
+  margin-right: 190px;
+}
+
+.categoryhome-Closed h1 {
+  font-size: 50px;
+  text-align: left;
+  /* border: 2px solid blanchedalmond; */
+  margin-right: 200px;
+}
+
+.categoryhome-both {
+  /* border: 2px solid red; */
+  gap: 10px;
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}

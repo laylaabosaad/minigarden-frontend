@@ -1,7 +1,7 @@
 .about-us-header {
   background-image: url("../images/Screenshot\ from\ 2023-05-16\ 01-38-59.png");
-    height: 100vh;
-  
+  height: 100vh;
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -10,20 +10,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
 }
 
-.about-us-page{
+.about-us-page {
   background-color: rgb(236, 243, 243);
 }
 
-.about-us-header h1{
+.about-us-header h1 {
   text-align: center;
   font-size: 150px;
   color: white;
- 
 }
-.aboutimg{
+.aboutimg {
   width: 800px;
   height: 600px;
 
@@ -31,41 +29,41 @@
   padding-left: 200px;
 }
 
-.about-us-header p{
+.about-us-header p {
   color: aliceblue;
   width: 50%;
   font-size: 30px;
   text-align: center;
 }
 
-.about-us-descandimg{
+.about-us-descandimg {
   display: flex;
   flex-direction: row;
 
   padding: 200px 300px;
 }
 
-.about-us h1{
+.about-us h1 {
   font-size: 70px;
 }
 
-.about-us p{
-  
+.about-us p {
   padding-top: 20px;
-  width: 80%;
+  
   height: 50%;
-  font-size: 25px;
-
+  font-size: 30px;
+  /* border: 2px solid green; */
 }
 
+.about-imgbub {
+  /* border: 2px solid yellow; */
 
-.about-imgbub{
-  
   width: 600px;
 }
 
-
-
+.about-imgbub:hover {
+  content: url("../images/open.png");
+}
 
 /* .container {
   position: relative;

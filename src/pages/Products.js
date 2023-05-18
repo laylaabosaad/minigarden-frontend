@@ -1,8 +1,8 @@
 import React from 'react'
-import SliderProducts from '../Components/Home/Featured items'
+
 import ProductHeader from '../Components/Product/ProductHeader'
 import "../Components/Product/Product.css"
-import Laylaproduct from '../Components/Product/Laylaproduct'
+import Laylaproduct from '../Components/Product/Productsection'
 
 function Products() {
   return (
@@ -10,10 +10,7 @@ function Products() {
       <div className='product-header'>
         <ProductHeader/>
       </div>
-      {/* <div className='product-slider-page'>
-        <SliderProducts/>
-        
-      </div> */}
+     
       <div>
         <Laylaproduct/>
       </div>

@@ -1,0 +1,62 @@
+/* .home-stickyImage {
+  text-align: center;
+  top: 0;
+  background-image: url("../images/sticky.jpg");
+  height: 700px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
+.howitworksall {
+  background-image: url("../images//howitworks.jpg");
+  height: 120vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.howitworks-title {
+  color: white;
+  font-size: 100px;
+ 
+}
+
+.howitworks-stepsall {
+  /* border: 2px solid green; */
+  margin-top: 50px;
+  background-color: rgba(0, 0, 0, 0.306);
+  color: white;
+  
+  font-size: 30px;
+  text-align: center;
+  gap: 100px;
+ padding: 100px;
+ 
+
+  display: flex;
+  flex-wrap: wrap;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.howitworksicon {
+  border: 2px solid salmon;
+  border-radius: 100px;
+}
+
+.HowitWorks {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(4, 5, 5, 0.356);
+
+ height: 120vh;
+}
+
+.howitworks-steps p {
+  width: 350px;
+}

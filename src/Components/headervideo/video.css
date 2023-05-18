@@ -39,9 +39,37 @@
     z-index: 2;
 }
 
+.audio p{
+    font-size: 35px;
+    /* border: 2px solid red; */
+    width: 800px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+
+/* .green-audio::-webkit-media-controls-start-playback-button {
+    background-color: aqua;
+  color: white !important;
+}
+
+.green-audio::-webkit-media-controls-play-button {
+  background-color: black;
+} */
+
+.green-audio::-webkit-media-controls-enclosure {
+     
+     color: white !important;
+ 
+} 
+
 .audio{
-    border:2px solid green;
-    padding-top: 800px;
+  
+    width: 1600px;
+    padding-top: 200px;
+    color: white;
+    font-size: 50px;
+    padding-left: 200px;
 }
 
 

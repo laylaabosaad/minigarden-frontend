@@ -16,13 +16,7 @@ function ProductHeader() {
         </div>
         <img className="image-hand-header" src={hand} alt=""></img>
       </div>
-      <div className="product-slide">
-        <h1 className="ourproduct">Our Product</h1>
-        <div className="product Menu">
-          
-
-        </div>
-      </div>
+    
     </div>
   );
 }

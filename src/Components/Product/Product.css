@@ -21,18 +21,22 @@
   font-size: 100px;
   color: white;
   margin-top: 200px;
+  
+  padding: 100px;
   padding-bottom: 0;
 }
 
+
 .product-h1Header {
+  /* border: 2px solid purple; */
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  color: wheat;
+  color: white;
   font-size: 40px;
-  padding: 200px;
+  padding: 100px;
   padding-top: 0;
  
   padding-bottom:0 ;
@@ -42,16 +46,19 @@
 
 .product-h1Header h5 {
   padding-top: 50px;
-  margin-right: 900px;
+  margin-right: 750px;
+ margin-left: 100px;
+  /* border: 2px solid yellow; */
  
 }
 
 .image-hand-header {
   width: 700px;
-  transform: rotate(-50deg);
+  transform: rotate(-80deg);
   float: right;
   margin-right: -100px; 
   margin-top: -250px;
+  /* border: 2px solid red; */
 }
 
 
@@ -70,6 +77,9 @@
 .ourproduct{
   text-align: center;
   
+  padding:100px;
+  padding-top: 200px;
+  
   font-size: 90px;
-    border: 2px solid salmon;
+    /* border: 2px solid salmon; */
 }

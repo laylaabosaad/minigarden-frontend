@@ -6,7 +6,7 @@ import ContactUs from "./pages/ContactUs";
 import Navbar from "./Components/Navbar/Navbar";
 import Products from "./pages/Products";
 import Slider from "react-slick";
-import SliderProducts from "./Components/Home/Featured items";
+// import SliderProducts from "./Components/Home/Featured items";
 import Cart from "./pages/Cart";
 
 

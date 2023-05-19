@@ -1,46 +1,65 @@
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../Home/Slider.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-
-
-const SliderProducts = () => {
-  
- 
-
+const Productsection = () => {
   const [productCard, setProductCard] = useState([]);
-  const [categories, setCategries] = useState([]);
- 
+  const [categories, setCategories] = useState([]);
+  const [activeCategoryId, setActiveCategoryId] = useState(null);
 
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   const getProdofaSubCategory = async (id) => {
-    const find = await axios.get(
-      `http://localhost:2000/product/bycategory/${id}`
-    );
-    let response = find.data.data;
-    setProductCard(response);
-    console.log(response);
+    try {
+      const find = await axios.get(
+        `http://localhost:2000/product/bycategory/${id}`
+      );
+      const response = find.data.data;
+     
+      setProductCard(response);
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   const handleCategoryClick = (categoryId) => {
     setSelectedCategory(categoryId);
+    setActiveCategoryId(categoryId);
     getProdofaSubCategory(categoryId);
   };
+const addtoCart = async (productId, quantity, price, title) => {
+  try {
+    const data = {
+      productId: productId,
+      quantity: quantity,
+      price: price,
+      title: title,
+    };
+
+    const response = await axios.put(
+      `http://localhost:2000/cart/64607f73b9808e0837852222`,
+      data
+    );
+
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 
   useEffect(() => {
     getCategories();
   }, []);
+
   const getCategories = async () => {
     try {
       const response = await axios.get("http://localhost:2000/category");
-      setCategries(response.data.data);
+      setCategories(response.data.data);
       setSelectedCategory(response.data.data[0]._id); // Set the first category as the default selected category
-      console.log(response.data.data);
     } catch (error) {
       console.error("Error:", error);
     }
@@ -56,12 +75,13 @@ const SliderProducts = () => {
     <div>
       <nav>
         <ul>
-          {categories.map((category, index) => (
-            <div key={index} className="product-category-btn">
-              <li>
+          {categories.map((category) => (
+            <div key={category._id} className="product-category-btn">
+              <li className="li-Of-btns">
                 <button
-                  className="product-category-btn"
-                  key={category._id}
+                  className={`product-category-btn ${
+                    activeCategoryId === category._id ? "active" : ""
+                  }`}
                   onClick={() => handleCategoryClick(category._id)}
                 >
                   {category.title}
@@ -74,17 +94,10 @@ const SliderProducts = () => {
 
       <div className="product-section">
         <div className="productsection-cards">
-          {console.log(productCard)}
-          {productCard.map((item, index) => (
-            <div key={index} className="productsection">
+          {productCard.map((item) => (
+            <div key={item._id} className="productsection">
               <div className="card">
-                <div className="card-image">
-                  {item.image && item.image.url ? (
-                    <img src={item.image.url} alt={item.title} />
-                  ) : (
-                    <div>No image available</div>
-                  )}
-                </div>
+                <div className="card-image">{/* Display the image here */}</div>
                 <div className="category">
                   <p>{item.title}</p>
                 </div>
@@ -95,15 +108,22 @@ const SliderProducts = () => {
                 </div>
 
                 <div className="product-buttons">
-                  <div>
-                    <button>Add to cart</button>
-                  </div>
+                  <button
+                    className="productbtnaddanddesc"
+                    onClick={() =>
+                      addtoCart(item._id, 1, item.price, item.title)
+                    }
+                  >
+                    Add to cart
+                  </button>
+
                   <Link to="/Description">
-                    <button>Description</button>
+                    <button className="productbtnaddanddesc">
+                      Description
+                    </button>
                   </Link>
                 </div>
               </div>
-              {(index + 1) % 3 === 0 && <div></div>}
             </div>
           ))}
         </div>
@@ -112,4 +132,4 @@ const SliderProducts = () => {
   );
 };
 
-export default SliderProducts;
+export default Productsection;

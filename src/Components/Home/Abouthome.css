@@ -39,7 +39,7 @@
     margin-right: 100px;
     margin-top: -700px;
 }
-/* 
+
 button {
  position: relative;
  display: inline-block;
@@ -128,7 +128,7 @@ button:hover .circle .icon.arrow {
 
 button:hover .button-text {
  color: #fff;
-} */
+} 
 .aboutlink{
     color: rgb(76, 104, 53);
     text-decoration: none;

@@ -51,7 +51,7 @@ const SliderProducts = () => {
             </p>
           </div>
         </div>
-        <div className="product-cards testimonial py-4 px-3">
+        <div className="product-cards ">
           <Slider {...settings}>
             <div>
               <div className="featured-card-image">
@@ -87,5 +87,6 @@ const SliderProducts = () => {
     </div>
   );
 };
+
 
 export default SliderProducts;

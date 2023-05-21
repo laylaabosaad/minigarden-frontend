@@ -1,13 +1,4 @@
-/* .home-stickyImage {
-  text-align: center;
-  top: 0;
-  background-image: url("../images/sticky.jpg");
-  height: 700px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
+
 
 .howitworksall {
   background-image: url("../images//howitworks.jpg");
@@ -59,4 +50,83 @@
 
 .howitworks-steps p {
   width: 350px;
+}
+
+
+@media screen and (max-width: 1450px) {
+  .howitworksall {
+height: auto;
+padding-bottom: 50px;
+}
+
+.howitworks-title {
+font-size: 60px;
+margin-top: 30px;
+}
+
+.howitworks-stepsall {
+flex-direction: column;
+padding: 20px;
+font-size: 18px;
+gap: 30px;
+}
+
+.howitworks-steps {
+text-align: center;
+}
+
+.howitworksicon {
+width: 80px;
+height: 80px;
+margin-bottom: 10px;
+}
+
+.howitworks-steps h2 {
+font-size: 24px;
+}
+
+.howitworks-steps p {
+width: 100%;
+max-width: 500px;
+}
+}
+
+
+
+@media screen and (max-width: 850px) {
+.howitworksall {
+height: auto;
+padding-bottom: 50px;
+}
+
+.howitworks-title {
+font-size: 60px;
+margin-top: 30px;
+}
+
+.howitworks-stepsall {
+flex-direction: column;
+padding: 20px;
+font-size: 18px;
+gap: 30px;
+}
+
+.howitworks-steps {
+text-align: center;
+}
+
+.howitworksicon {
+width: 80px;
+height: 80px;
+margin-bottom: 10px;
+}
+
+.howitworks-steps h2 {
+font-size: 24px;
+}
+
+.howitworks-steps p {
+width: 100%;
+max-width: 500px;
+}
 }

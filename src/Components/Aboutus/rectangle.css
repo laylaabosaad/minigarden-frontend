@@ -40,7 +40,7 @@
   display: flex;
   flex-direction: row;
 
-  padding: 200px 300px;
+  padding: 150px 300px 70px;
 }
 
 .about-us h1 {
@@ -90,3 +90,81 @@
  
   z-index: 1;
 } */
+
+/* Values section */
+
+
+.values-box{
+  /* border: 2px solid blue; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  height: 400px;
+  text-align: center;
+  background-color: rgb(82, 121, 76);
+  margin-bottom: 300px;
+  color: white;
+   font-size: 20px;
+}
+
+.values-box p{ 
+  padding-top: 10px;
+ width: 300px;
+  /* border: 2px solid red; */
+
+}
+
+.value-images{
+  border-radius: 100px;
+  width: 100px;
+}
+
+.middle-about{
+  border-bottom: 2px solid black;
+  background-color:rgb(175, 201, 159);
+}
+
+.corevalues-about-all{
+  font-size: 30px;
+  text-align: center;
+ 
+  
+}
+
+.values-h1{
+   /* border: 2px solid salmon; */
+   padding: 50px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.values-about{
+   display: flex;
+  flex-wrap: wrap;
+  flex-direction:row;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  
+
+ 
+
+}
+
+
+
+
+

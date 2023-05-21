@@ -97,13 +97,13 @@ const addtoCart = async (productId, quantity, price, title) => {
           {productCard.map((item) => (
             <div key={item._id} className="productsection">
               <div className="card">
-                <div className="card-image">{/* Display the image here */}</div>
+                <div className="card-image-prod">{/* Display the image here */}</div>
                 <div className="category">
                   <p>{item.title}</p>
                 </div>
 
                 <div className="heading">
-                  <p>{item.description}</p>
+                  {/* <p>{item.description}</p> */}
                   <p>{item.price}</p>
                 </div>
 
@@ -116,16 +116,14 @@ const addtoCart = async (productId, quantity, price, title) => {
                   >
                     Add to cart
                   </button>
-
-                  <Link to="/Description">
-                    <button className="productbtnaddanddesc">
-                      Description
-                    </button>
-                  </Link>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+        <div className="flip-card-back">
+          <h1>Hellooo</h1>
+
         </div>
       </div>
     </div>

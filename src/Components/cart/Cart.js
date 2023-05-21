@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "../cart/Cart.css";
 
 function Cart() {
   const [productCard, setProductCard] = useState([]);
@@ -11,7 +12,7 @@ function Cart() {
         "http://localhost:2000/cart/64607f73b9808e0837852222"
       );
       const cartData = response.data.cart;
-      console.log(response.data)
+      console.log(response.data);
       if (Array.isArray(cartData)) {
         setProductCard(cartData);
       } else if (typeof cartData === "object") {
@@ -43,42 +44,54 @@ function Cart() {
   }, []);
 
   return (
-    <div>
+    <div className="titleanditems">
       <div>
-        <div>zzzzz</div>
-        {Array.isArray(productCard) ? (
-          productCard.map((item, index) => (
-            <div key={index}>
-              <p>Total Bill: {item.bill}</p>
-              {item.items.map((productItem, productIndex) => (
-                <div key={productIndex}>
-                  <p>Title: {productItem.productId.title}</p>
-                  <p>Price: {productItem.productId.price}</p>
-                  <p>Quantity: {productItem.quantity}</p>
-                  {productItem.productId && productItem.productId.image && (
-                    <img
-                      src={productItem.productId.image.url}
-                      alt={productItem.productId.title}
-                    />
-                  )}
-                  <button
-                    onClick={() =>
-                      deleteItem(item.userId, productItem.productId._id)
-                    }
-                  >
-                    Delete
-                  </button>
+        <div className="Shoppingcart-table">
+          {Array.isArray(productCard) ? (
+            productCard.map((item, index) => (
+              <div className="Shoppingcart-all" key={index}>
+                {item.items.map((productItem, productIndex) => (
+                  <div className="shoppingcart-items" key={productIndex}>
+                    {productItem.productId && productItem.productId.image && (
+                      <div className="bkrndimgcart">
+                        <img
+                          src={productItem.productId.image.url}
+                          alt={productItem.productId.title}
+                        />
+                      </div>
+                    )}
+                    <p>Title: {productItem.productId.title}</p>
+                    <div className="quantitybtnsall">
+                      <button
+                        className="btnremove"
+                        onClick={() =>
+                          deleteItem(item.userId, productItem.productId._id)
+                        }
+                      >
+                        -
+                      </button>
+                      <p> {productItem.quantity}</p>
+                      <button>+</button>
+                    </div>
+                    <p className="price-cart">Price: {productItem.productId.price}$</p>
+                  </div>
+                ))}
+                <div className="total">
+                  <h2>Total Bill:</h2>
+                  <p> {item.bill}$</p>
                 </div>
-              ))}
-            </div>
-          ))
-        ) : (
-          <p>No items in the cart.</p>
-        )}
+              </div>
+            ))
+          ) : (
+            <p>No items in the cart.</p>
+          )}
+        </div>
       </div>
       <div>
-        <button>
-          <Link to="/Checkout">Go to Checkout</Link>
+        <button className="checkoutbtn">
+          <Link className="checkoutlink" to="/Checkout">
+            Go to Checkout
+          </Link>
         </button>
       </div>
     </div>

@@ -1,0 +1,32 @@
+.orderinputs-all{
+    display: flex;
+    background-color:rgb(175, 201, 159);
+    margin: 200px 500px;
+    border-radius: 80px;
+    height: 900px;
+    color: white;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.orderinputs-all h1{
+    font-size: 50px;
+}
+
+.submit-btn{
+    color: white;
+    border: 2px solid rgb(253, 253, 252);
+    padding: 15px;
+    font-size: 30px;
+    border-radius: 20px;
+}
+
+.orderinputs-all input{
+    width: 500px;
+    height: 80px;
+    font-size: 20px;
+    border-radius: 20px;
+    border: none;
+}

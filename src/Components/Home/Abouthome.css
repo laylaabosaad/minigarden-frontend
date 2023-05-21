@@ -1,8 +1,9 @@
 .aboutus-home {
   background-color: rgb(236, 243, 243);
- 
+  /* border: 2px solid purple; */
+
   height: 1000px;
-  padding: 100px;
+  padding: 50px 200px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -13,132 +14,138 @@
 
 .aboutus-home h1 {
   background-color: rgb(236, 243, 243);
-  font-size: 80px;
+  font-size: 60px;
 }
 
 .aboutus-home p {
-
   margin-top: 50px;
-  font-size: 30px;
-  width: 700px;
+  font-size: 25px;
+  width: 600px;
 }
 
-.aboutus-homeimgb{
-      background-color: rgb(136, 170, 136);
+.aboutus-homeimgb {
+  background-color: rgb(136, 170, 136);
   padding-right: 100px;
-  
 
-  height: 750px;
-  width: 550px;
+  height: 450px;
+
+  width: 500px;
   padding-top: 50px;
-
 }
 
-.aboutus-homeimg{
-  
-    margin-right: 100px;
-    margin-top: -700px;
+.aboutus-homeimg {
+  height: 650px;
+
+  margin-right: 100px;
+  margin-top: -500px;
 }
 
 button {
- position: relative;
- display: inline-block;
- cursor: pointer;
- outline: none;
- border: 0;
- vertical-align: middle;
- text-decoration: none;
- background: transparent;
- padding: 0;
- font-size: inherit;
- font-family: inherit;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  margin-bottom: 30px;
+  font-size: inherit;
+  font-family: inherit;
 }
 
 button.learn-more {
- width: 12rem;
- height: auto;
+  width: 12rem;
+  height: auto;
 
- margin-top: 50px;
+  margin-top: 50px;
 }
 
 button.learn-more .circle {
- transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
- position: relative;
- display: block;
- margin: 0;
- width: 3rem;
- height: 3rem;
- background:rgb(76, 104, 53);
- border-radius: 1.625rem;
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: rgb(76, 104, 53);
+  border-radius: 1.625rem;
 }
 
 button.learn-more .circle .icon {
- transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
- position: absolute;
- top: 0;
- bottom: 0;
- margin: auto;
- background: #fff;
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
 }
 
 button.learn-more .circle .icon.arrow {
- transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
- left: 0.625rem;
- width: 1.125rem;
- height: 0.125rem;
- background: none;
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
 }
 
 button.learn-more .circle .icon.arrow::before {
- position: absolute;
- content: "";
- top: -0.29rem;
- right: 0.0625rem;
- width: 0.625rem;
- height: 0.625rem;
- border-top: 0.125rem solid #fff;
- border-right: 0.125rem solid #fff;
- transform: rotate(45deg);
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
 }
 
 button.learn-more .button-text {
- transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
- position: absolute;
- top: 0;
- left: 0;
- right: 0;
- bottom: 0;
- padding: 0.75rem 0;
- margin: 0 0 0 1.85rem;
- color:white;
- font-weight: 700;
- line-height: 1.6;
- text-align: center;
- text-transform: uppercase;
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: white;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 button:hover .circle {
- width: 100%;
+  width: 100%;
 }
 
 button:hover .circle .icon.arrow {
- background: #fff;
- transform: translate(1rem, 0);
+  background: #fff;
+  transform: translate(1rem, 0);
 }
 
 button:hover .button-text {
- color: #fff;
-} 
-.aboutlink{
-    color: rgb(76, 104, 53);
-    text-decoration: none;
-    
-    padding: 14px;
-
+  color: #fff;
 }
 
-.aboutlink:hover{
-    text-decoration: none;
-     color: #fff;
-   
+.aboutlink {
+  color: rgb(76, 104, 53);
+  text-decoration: none;
+  margin-bottom: 100px;
+
+  padding: 14px;
+}
+
+.aboutlink:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+@media (max-width: 750px) {
+  .aboutus-home p {
+    width: 300px;
+  }
 }

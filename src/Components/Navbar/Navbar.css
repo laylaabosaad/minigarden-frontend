@@ -18,11 +18,11 @@
 }
 
 .navlinks.active {
-  color: #84ff01;
+  color: #04aa6d;
 }
 
 .navlinks:hover {
-  color: #54a300;
+   color: #04aa6d;
 }
 
 .navbar {
@@ -99,3 +99,5 @@
   }
 
 }
+
+

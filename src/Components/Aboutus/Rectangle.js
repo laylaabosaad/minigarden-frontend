@@ -1,6 +1,7 @@
 import "./rectangle.css";
 import aboutimg from "../images/aboutimg.png";
-import imgabout from "../images/Lighthouse.png"
+import imgabout from "../images/Lighthouse.png";
+import icon from "../images/icon.png";
 
 function Rectangle() {
   return (
@@ -34,6 +35,36 @@ function Rectangle() {
         </div>
         <div className="about-us-desc-img">
           <img className="about-imgbub" src={imgabout} alt=""></img>
+        </div>
+      </div>
+
+      <div className="corevalues-about-all">
+        <h1 className="values-h1">Our Mission and Values </h1>
+        <div className="values-about">
+          <div className="values-box">
+            <img className="value-images" src={icon}></img>
+            <h1>Goal</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+              lacinia ex id est semper,
+            </p>
+          </div>
+          <div className="values-box middle-about">
+            <img className="value-images" src={icon}></img>
+            <h1>Aim</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+              lacinia ex id est semper,
+            </p>
+          </div>
+          <div className="values-box">
+            <img className="value-images" src={icon}></img>
+            <h1>Purpose</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+              lacinia ex id est semper,
+            </p>
+          </div>
         </div>
       </div>
     </div>

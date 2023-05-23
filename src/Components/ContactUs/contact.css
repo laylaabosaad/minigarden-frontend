@@ -1,35 +1,37 @@
 .Contact-header-img {
-  background-image: url("../images/Contactheader.png");
+  background-image: url("../images/hero.jpg");
 
-  height: 90vh;
+  height: 80vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .Contact-header-img h1 {
-  font-size: 200px;
-  color: white;
-  text-align: center;
+  font-size: 80px;
+  margin-left: 50px;
+ 
+  text-align: left;
   padding-top: 300px;
 }
 
-.contactus-form-background {
-  background-color: rgb(236, 243, 243);
-}
+
 
 .contactus-form {
   display: flex;
+  margin-top: 100px;
+  flex-direction: row;
+  
+
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-
-  padding-top: 200px;
+  
 }
 
 .contactimg {
-  width: 600px;
-  height: 810px;
+  width: 550px;
+  height: 795px;
   
 }
 
@@ -38,31 +40,39 @@
   flex-wrap: wrap;
   flex-direction: column;
   align-items: flex-start;
-  height: 805px;
-  padding:110px 150px;
-  background-color: rgb(175, 201, 159);
- 
-
-  gap: 40px;
+  height: 800px;
+  padding:90px 150px 90px;
+  background-color: rgb(236, 240, 236);
+  gap: 30px;
 }
 
 .contactus-form-inputs h5 {
   font-size: 40px;
 }
 
-.cont-inputs {
-  background-color: rgb(236, 243, 243);
+.message{ 
+  
+   height: 150px !important;
 
-  width: 400px;
-  height: 60px;
+}
+
+.cont-inputs {
+ 
+
+  width: 350px;
+  height: 50px;
   justify-content: space-between;
-  border-radius: 10px;
+ 
   border: none;
 }
 
 .Contact-btn{
-    border: none !important;
-    margin-top: -10px;
+    border: none;
+    width: 100px;
+    height: 30px;
+    color: white;
+    background-color:rgb(76, 104, 53);
+   
   
   
 }

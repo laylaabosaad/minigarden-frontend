@@ -40,10 +40,10 @@ const SliderProducts = () => {
       <div className="whole-product">
         <div className="featuredcard-title">
           <div>
-            <h1>Latest Release</h1>
+            <h1 className="latestrelease">Latest Release</h1>
           </div>
           <div>
-            <p>
+            <p className="prod-descr-p">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
               lacinia Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Fusce lacinia Lorem ipsum dolor sit amet, consectetur adipiscing

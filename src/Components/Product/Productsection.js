@@ -1,6 +1,7 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../Home/Slider.css";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -11,6 +12,7 @@ const Productsection = () => {
   const [activeCategoryId, setActiveCategoryId] = useState(null);
 
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const {param}= useParams()
 
   const getProdofaSubCategory = async (id) => {
     try {
@@ -30,7 +32,7 @@ const Productsection = () => {
     setActiveCategoryId(categoryId);
     getProdofaSubCategory(categoryId);
   };
-const addtoCart = async (productId, quantity, price, title) => {
+ const addtoCart = async (productId, quantity, price, title) => {
   try {
     const data = {
       productId: productId,
@@ -48,7 +50,7 @@ const addtoCart = async (productId, quantity, price, title) => {
   } catch (error) {
     console.error(error);
   }
-};
+ };
 
 
   useEffect(() => {
@@ -87,24 +89,29 @@ const addtoCart = async (productId, quantity, price, title) => {
                   {category.title}
                 </button>
               </li>
+              <h1>Helloo {param} </h1>
             </div>
           ))}
         </ul>
       </nav>
+
+      
 
       <div className="product-section">
         <div className="productsection-cards">
           {productCard.map((item) => (
             <div key={item._id} className="productsection">
               <div className="card">
-                <div className="card-image-prod">{/* Display the image here */}</div>
+                <div className="card-image-prod">
+                  {/* Display the image here */}
+                </div>
                 <div className="category">
                   <p>{item.title}</p>
                 </div>
 
                 <div className="heading">
                   {/* <p>{item.description}</p> */}
-                  <p>{item.price}</p>
+                  <p>{item.price}$</p>
                 </div>
 
                 <div className="product-buttons">
@@ -123,7 +130,6 @@ const addtoCart = async (productId, quantity, price, title) => {
         </div>
         <div className="flip-card-back">
           <h1>Hellooo</h1>
-
         </div>
       </div>
     </div>

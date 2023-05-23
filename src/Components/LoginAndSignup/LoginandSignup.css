@@ -8,6 +8,10 @@
   background-size: cover;
 }
 
+.main-container-login{
+  margin-top: 500px;
+}
+
 .loginandregister-inputs input {
   background-color: rgb(237, 241, 241);
   border: none;

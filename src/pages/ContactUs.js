@@ -6,6 +6,7 @@ function ContactUs() {
   return (
     <div>
       <ContactForm />
+    
     </div>
   )
 }

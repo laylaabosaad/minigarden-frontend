@@ -13,7 +13,7 @@ const Headervideo = () => {
     };
   return (
     <div className="landingpage">
-      <video src={video} autoPlay muted loop class="video-bg" />
+      <video src={video} autoPlay muted loop className="video-bg" />
       <div className="bg-overlay">
         <div className="audio">
           <h1>Bringing a Piece of Nature indoors</h1>

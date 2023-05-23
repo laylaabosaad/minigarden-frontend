@@ -44,38 +44,58 @@ function Cart() {
   }, []);
 
   return (
-    <div className="titleanditems">
-      <div>
+    <div className="cart-all">
+      <div className="titleanditems">
+        <h1>Cart</h1>
         <div className="Shoppingcart-table">
           {Array.isArray(productCard) ? (
             productCard.map((item, index) => (
-              <div className="Shoppingcart-all" key={index}>
-                {item.items.map((productItem, productIndex) => (
-                  <div className="shoppingcart-items" key={productIndex}>
-                    {productItem.productId && productItem.productId.image && (
-                      <div className="bkrndimgcart">
-                        <img
-                          src={productItem.productId.image.url}
-                          alt={productItem.productId.title}
-                        />
-                      </div>
-                    )}
-                    <p>Title: {productItem.productId.title}</p>
-                    <div className="quantitybtnsall">
-                      <button
-                        className="btnremove"
-                        onClick={() =>
-                          deleteItem(item.userId, productItem.productId._id)
-                        }
-                      >
-                        -
-                      </button>
-                      <p> {productItem.quantity}</p>
-                      <button>+</button>
+              <div className="cart-checkoutandtable">
+                <div className="Shoppingcart-all" key={index}>
+                  <div className="titles-cart">
+                    <div>
+                      <h2>Product</h2>
                     </div>
-                    <p className="price-cart">Price: {productItem.productId.price}$</p>
+                    <div>
+                      <h2>Quantity</h2>
+                    </div>
                   </div>
-                ))}
+                  {item.items.map((productItem, productIndex) => (
+                    <div className="shoppingcart-items" key={productIndex}>
+                      <div className="img-price-title-cart">
+                        {productItem.productId &&
+                          productItem.productId.image && (
+                            <div className="bkrndimgcart">
+                              <img
+                                src={productItem.productId.image.url}
+                                alt={productItem.productId.title}
+                              />
+                            </div>
+                          )}
+
+                        <div>
+                          <h3> {productItem.productId.title}</h3>
+                          <p className="price-cart">
+                            {productItem.productId.price}$
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="quantitybtnsall">
+                        <button
+                          className="btnremove"
+                          onClick={() =>
+                            deleteItem(item.userId, productItem.productId._id)
+                          }
+                        >
+                          -
+                        </button>
+                        <h4> {productItem.quantity}</h4>
+                        <button>+</button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
                 <div className="total">
                   <h2>Total Bill:</h2>
                   <p> {item.bill}$</p>
@@ -87,12 +107,15 @@ function Cart() {
           )}
         </div>
       </div>
-      <div>
-        <button className="checkoutbtn">
-          <Link className="checkoutlink" to="/Checkout">
-            Go to Checkout
-          </Link>
-        </button>
+      <div className="rightsection-cart">
+        <div className="btnandLinkcart">
+          <h1>One Step Away </h1>
+          <button className="checkoutbtn">
+            <Link className="checkoutlink" to="/Checkout">
+              Go to Checkout
+            </Link>
+          </button>
+        </div>
       </div>
     </div>
   );

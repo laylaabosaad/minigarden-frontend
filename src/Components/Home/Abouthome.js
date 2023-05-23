@@ -16,11 +16,11 @@ function Abouthome() {
             libero vel massa efficitur, id posuere dolor ultrices.
           </p>
 
-          <button class="learn-more">
-            <span class="circle" aria-hidden="true">
-              <span class="icon arrow"></span>
+          <button className="learn-more">
+            <span className="circle" aria-hidden="true">
+              <span className="icon arrow"></span>
             </span>
-            <span class="button-text">
+            <span className="button-text">
               <Link className="aboutlink" to="/Aboutus">Read More</Link>
             </span>
           </button>

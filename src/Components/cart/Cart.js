@@ -1,11 +1,12 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import { Link } from "react-router-dom";
 import "../cart/Cart.css";
 
 function Cart() {
+  const [refresh, setRefresh] = useReducer((x) => x + 1, 0);
   const [productCard, setProductCard] = useState([]);
-
+  console.log(refresh);
   const getProduct = async () => {
     try {
       const response = await axios.get(
@@ -29,11 +30,29 @@ function Cart() {
         `http://localhost:2000/cart/64607f73b9808e0837852222/${itemId}`
       );
       const updatedCart = response.data;
-      if (Array.isArray(updatedCart)) {
-        setProductCard(updatedCart);
-      } else if (typeof updatedCart === "object") {
-        setProductCard([updatedCart]);
-      }
+
+      setRefresh();
+      setProductCard(updatedCart);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const Increaseproduct = async (productId) => {
+    try {
+      const data = {
+        productId: productId,
+        quantity: 1,
+      };
+
+      console.log("data ", data);
+
+      const response = await axios.post(
+        `http://localhost:2000/cart/64607f73b9808e0837852222`,
+        data
+      );
+      setRefresh();
+      console.log(response.data);
     } catch (error) {
       console.error(error);
     }
@@ -41,7 +60,7 @@ function Cart() {
 
   useEffect(() => {
     getProduct();
-  }, []);
+  }, [refresh]);
 
   return (
     <div className="cart-all">
@@ -74,7 +93,10 @@ function Cart() {
                           )}
 
                         <div>
-                          <h3> {productItem.productId.title}</h3>
+                          <h3>
+                            {productItem.productId.title}
+                            {/* {productItem.productId._id} */}
+                          </h3>
                           <p className="price-cart">
                             {productItem.productId.price}$
                           </p>
@@ -91,7 +113,13 @@ function Cart() {
                           -
                         </button>
                         <h4> {productItem.quantity}</h4>
-                        <button>+</button>
+                        <button
+                          onClick={() =>
+                            Increaseproduct(productItem.productId._id)
+                          }
+                        >
+                          +
+                        </button>
                       </div>
                     </div>
                   ))}
@@ -103,7 +131,7 @@ function Cart() {
               </div>
             ))
           ) : (
-            <p>No items in the cart.</p>
+            <p>Your cart is empty. Add items to the cart</p>
           )}
         </div>
       </div>

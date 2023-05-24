@@ -2,7 +2,9 @@ import "../Home/Categoryhome.css";
 import open from "../images/open.png";
 import closed from "../images/closed.png";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 function Categoryhome() {
+  let navigate=useNavigate()
     return (
       <div className="categoryhome-home-all">
         <h1 className="shopbyCategory">Shop By Category</h1>
@@ -15,16 +17,24 @@ function Categoryhome() {
               <img className="categoryhome-Openimg" src={open}></img>
             </div>
             <div className="categoryhome-Open">
-              <Link to="/Products/solo">
+              <button
+                onClick={() =>
+                  navigate("/products", { state: { id: "solo id" } })
+                }
+              >
                 <h1>Solo Products</h1>
-              </Link>
+              </button>
               <img className="categoryhome-Openimg" src={open}></img>
             </div>
           </div>
           <div className="categoryhome-Closed">
-            <Link to="/Products/closed">
+            <button
+              onClick={() =>
+                navigate("/products", { state: { id: "closed id" } })
+              }
+            >
               <h1>Closed Terrarium</h1>
-            </Link>
+            </button>
 
             <img className="categoryhome-Closedimg" src={closed}></img>
           </div>

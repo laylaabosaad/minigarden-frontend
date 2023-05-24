@@ -2,10 +2,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Slider.css";
-
-import image1 from "../images/slider.png";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 const SliderProducts = () => {
+  const [filtercat, setFilterCat] = useState([]);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -35,6 +37,24 @@ const SliderProducts = () => {
     ],
   };
 
+  const getProdAll = async () => {
+    try {
+      const find = await axios.get(`http://localhost:2000/product`);
+      const response = find.data.data;
+      console.log(find.data.data);
+      // Sort the products by the earliest time they were added
+      response.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+
+      setFilterCat(response.slice(-5)); // Slice the last 5 products
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  useEffect(() => {
+    getProdAll();
+  }, []);
+
   return (
     <div>
       <div className="whole-product">
@@ -47,46 +67,28 @@ const SliderProducts = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
               lacinia Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Fusce lacinia Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Fusce lacinia{" "}
+              elit. Fusce lacinia
             </p>
           </div>
         </div>
-        <div className="product-cards ">
+        <div className="product-cards">
           <Slider {...settings}>
-            <div>
-              <div className="featured-card-image">
-                <img src={image1} alt=""></img>
+          
+            {/* Pass the settings object to the Slider component */}
+            {filtercat.map((item, index) => (
+              <div key={index}>
+                <div className="featured-card-image">
+                  <img src={item.image.url} alt="" />
+                
+                  {console.log(item.image.url)}
+                </div>
               </div>
-
-              <div />
-            </div>
-            <div>
-              <div className="featured-card-image">
-                <img src={image1} alt=""></img>
-              </div>
-
-              <div />
-            </div>
-            <div>
-              <div className="featured-card-image">
-                <img src={image1} alt=""></img>
-              </div>
-
-              <div />
-            </div>
-            <div>
-              <div className="featured-card-image">
-                <img src={image1} alt=""></img>
-              </div>
-
-              <div />
-            </div>
+            ))}
           </Slider>
         </div>
       </div>
     </div>
   );
 };
-
 
 export default SliderProducts;

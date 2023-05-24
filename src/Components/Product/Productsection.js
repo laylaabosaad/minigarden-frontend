@@ -3,24 +3,32 @@ import "slick-carousel/slick/slick-theme.css";
 import "../Home/Slider.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect} from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Productsection = () => {
+  let location = useLocation()
+  let catid
+  if (location.state) {
+   catid=location.state.id
+ }
+  
+ 
   const [productCard, setProductCard] = useState([]);
   const [categories, setCategories] = useState([]);
   const [activeCategoryId, setActiveCategoryId] = useState(null);
 
   const [selectedCategory, setSelectedCategory] = useState(null);
-  const {param}= useParams()
+  const { categoryId } = useParams();
+  console.log("selected",selectedCategory)
 
-  const getProdofaSubCategory = async (id) => {
+  const getProdofaSubCategory = async (categoryId) => {
     try {
       const find = await axios.get(
-        `http://localhost:2000/product/bycategory/${id}`
+        `http://localhost:2000/product/bycategory/${categoryId}`
       );
       const response = find.data.data;
-     
+
       setProductCard(response);
     } catch (error) {
       console.error("Error:", error);
@@ -89,7 +97,7 @@ const Productsection = () => {
                   {category.title}
                 </button>
               </li>
-              <h1>Helloo {param} </h1>
+            
             </div>
           ))}
         </ul>
@@ -127,9 +135,6 @@ const Productsection = () => {
               </div>
             </div>
           ))}
-        </div>
-        <div className="flip-card-back">
-          <h1>Hellooo</h1>
         </div>
       </div>
     </div>

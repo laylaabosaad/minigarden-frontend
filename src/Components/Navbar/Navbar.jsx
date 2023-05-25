@@ -1,15 +1,21 @@
-import {useState} from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import "./Navbar.css";
 
-const Navbar = () => {
+// Or I can put const Navbar=({loggedin, setLoggedin}) as named
+const Navbar = (props) => {
   const location = useLocation();
-    const [showMenu, setShowMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
-    const toggleMenu = () => {
-      setShowMenu(!showMenu);
-    };
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
+  const handleLogout = () => {
+    window.localStorage.clear();
+    props.setLoggedin(false);
+  };
 
   return (
     <div className="navbar">
@@ -41,7 +47,7 @@ const Navbar = () => {
         >
           <div>Products</div>
         </Link>
-       
+
         <Link
           to="/Contactus"
           className={`navlinks ${
@@ -58,14 +64,18 @@ const Navbar = () => {
         >
           <div>Cart</div>
         </Link>
-        <Link
-          to="/Login"
-          className={`navlinks ${
-            location.pathname === "/Login" ? "active" : ""
-          }`}
-        >
-          <div>Login</div>
-        </Link>
+        {props.loggedin == false ? (
+          <Link
+            to="/Login"
+            className={`navlinks ${
+              location.pathname === "/Login" ? "active" : ""
+            }`}
+          >
+            <div>Login</div>
+          </Link>
+        ) : (
+          <div onClick={handleLogout}>Logout</div>
+        )}
       </div>
       <div className="navbar-toggle">
         <FaBars onClick={toggleMenu} />

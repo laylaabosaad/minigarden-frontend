@@ -9,6 +9,7 @@ function ProductAdmin() {
   const [category, setCategory] = useState("");
   const [subcategory, setSubcategory] = useState("");
   const [stock, setStock] = useState("");
+   const [editIndex, setEditIndex] = useState(null);
   const [productimage, setproductimage] = useState([]);
   const [image, setImage] = useState("");
   const [product, setProduct] = useState([]);
@@ -64,6 +65,14 @@ function ProductAdmin() {
       imagesArray.push(file);
     }
     setImages(imagesArray);
+  };
+
+  const deleteprod = async (_id) => {
+    const removeprod = await axios.delete(
+      `http://localhost:2000/product/${_id}`
+    );
+
+    console.log("check", _id);
   };
 
   return (
@@ -149,6 +158,13 @@ function ProductAdmin() {
                 <p>{prod.price}</p>
                 <img src={prod.image.url}></img>
               </div>
+
+              <button
+                className="admin-testi-buttons"
+                onClick={() => deleteprod(prod._id)}
+              >
+                Delete
+              </button>
             </div>
           ))}
         </div>

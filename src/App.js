@@ -12,20 +12,34 @@ import Login from "./pages/Login";
 import SignupComponent from "./Components/LoginAndSignup/SignupComponent";
 import Orders from "./Components/Orders/Orders";
 import ProductAdmin from "./Components/Dashboard/ProductAdmin";
+import { useEffect, useState } from "react";
+import Singleproduct from "./Components/Product/Singleproduct";
 
 function App() {
+  const [loggedin, setLoggedin] = useState(false);
+
+  const isLogged = () => {
+    let logged = localStorage.getItem("token");
+    if (logged) setLoggedin(true);
+    else setLoggedin(false);
+  };
+  useEffect(() => {
+    isLogged();
+  }, []);
+
   return (
     <div className="App">
-      <Navbar />
+      <Navbar loggedin={loggedin} setLoggedin={setLoggedin} />
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Aboutus" element={<About />} />
         <Route path="/Products" element={<Products />} />
         <Route path="/admin/Products" element={<ProductAdmin />} />
-        <Route path="/Products/:categoryId" element={<Products />} />
+        <Route path="/singleproduct/:productId" element={<Singleproduct/>} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/Login" element={<Login />} />
+
         <Route path="/Signup" element={<SignupComponent />} />
         <Route path="/Checkout" element={<Orders />} />
         <Route path="/Contactus" element={<ContactUs />} />

@@ -24,6 +24,17 @@ function Cart() {
     }
   };
 
+  const handlecheckout = () => {
+    const token= localStorage.getItem("token")
+    if (!token) {
+    window.location.href = "/Login";
+      return;
+    } else {
+       
+       window.location.href = "/Checkout";
+    }
+  }
+
   const deleteItem = async (userId, itemId) => {
     try {
       const response = await axios.delete(
@@ -67,7 +78,7 @@ function Cart() {
       <div className="titleanditems">
         <h1>Cart</h1>
         <div className="Shoppingcart-table">
-          {Array.isArray(productCard) ? (
+          {productCard.length>0 ? (
             productCard.map((item, index) => (
               <div className="cart-checkoutandtable">
                 <div className="Shoppingcart-all" key={index}>
@@ -92,7 +103,7 @@ function Cart() {
                             </div>
                           )}
 
-                        <div>
+                         <div>
                           <h3>
                             {productItem.productId.title}
                             {/* {productItem.productId._id} */}
@@ -139,9 +150,10 @@ function Cart() {
         <div className="btnandLinkcart">
           <h1>One Step Away </h1>
           <button className="checkoutbtn">
-            <Link className="checkoutlink" to="/Checkout">
+
+            <div className="checkoutlink" onClick={handlecheckout}>
               Go to Checkout
-            </Link>
+            </div>
           </button>
         </div>
       </div>

@@ -3,24 +3,23 @@ import "slick-carousel/slick/slick-theme.css";
 import "../Home/Slider.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Productsection = () => {
-  let location = useLocation()
-  let catid
+  let location = useLocation();
+  let catid;
   if (location.state) {
-   catid=location.state.id
- }
-  
- 
+    catid = location.state.id;
+  }
+
   const [productCard, setProductCard] = useState([]);
   const [categories, setCategories] = useState([]);
   const [activeCategoryId, setActiveCategoryId] = useState(null);
 
   const [selectedCategory, setSelectedCategory] = useState(null);
   const { categoryId } = useParams();
-  console.log("selected",selectedCategory)
+  console.log("selected", selectedCategory);
 
   const getProdofaSubCategory = async (categoryId) => {
     try {
@@ -40,26 +39,25 @@ const Productsection = () => {
     setActiveCategoryId(categoryId);
     getProdofaSubCategory(categoryId);
   };
- const addtoCart = async (productId, quantity, price, title) => {
-  try {
-    const data = {
-      productId: productId,
-      quantity: quantity,
-      price: price,
-      title: title,
-    };
+  const addtoCart = async (productId, quantity, price, title) => {
+    try {
+      const data = {
+        productId: productId,
+        quantity: quantity,
+        price: price,
+        title: title,
+      };
 
-    const response = await axios.put(
-      `http://localhost:2000/cart/64607f73b9808e0837852222`,
-      data
-    );
+      const response = await axios.put(
+        `http://localhost:2000/cart/64607f73b9808e0837852222`,
+        data
+      );
 
-    console.log(response.data);
-  } catch (error) {
-    console.error(error);
-  }
- };
-
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   useEffect(() => {
     getCategories();
@@ -97,13 +95,10 @@ const Productsection = () => {
                   {category.title}
                 </button>
               </li>
-            
             </div>
           ))}
         </ul>
       </nav>
-
-      
 
       <div className="product-section">
         <div className="productsection-cards">
@@ -131,6 +126,9 @@ const Productsection = () => {
                   >
                     Add to cart
                   </button>
+                  <Link to={`/singleproduct/${item._id}`}>
+                    <button>Description</button>
+                  </Link>
                 </div>
               </div>
             </div>

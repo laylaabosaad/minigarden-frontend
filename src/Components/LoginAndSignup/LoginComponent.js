@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import "../LoginAndSignup/LoginandSignup.css";
-import React from "react";
 import { useState } from "react";
 import swal from "sweetalert";
 import "../LoginAndSignup/LoginandSignup.css";

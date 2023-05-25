@@ -42,7 +42,7 @@ function Orders() {
     }
   };
 
-
+console.log('orders',orders)
   useEffect(() => {
     getOrders();
   }, []);
@@ -93,7 +93,7 @@ function Orders() {
 
       <div className="orders-all">
         <div>
-          {orders.map((item, index) => (
+          {orders && orders.map((item, index) => (
             <div key={index}>
               <div>{item.bill}</div>
               <div>{item.address}</div>
@@ -103,8 +103,8 @@ function Orders() {
               <div>
                 {item.items.map((el, idx) => (
                   <div key={idx}>
-                    <h1>{el.productId.quantity}</h1>
-                    <h1>{el.productId.price}</h1>
+                    <h1>{el.productId?.quantity}</h1>
+                    <h1>{el.productId?.price}</h1>
                     {/* {console.log(el.quantity)} */}
                   </div>
                 ))}

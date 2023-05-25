@@ -1,30 +1,124 @@
 import { Link } from "react-router-dom";
 import "../LoginAndSignup/LoginandSignup.css";
+import { useState } from "react";
+import swal from "sweetalert";
 
 function SignupComponent() {
+
+    const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+   const [fullname, setFullname] = useState("");
+
+
+
+
+
+    const handleSignup = async (event) => {
+      event.preventDefault();
+      try {
+        const response = await fetch("http://localhost:2000/users/signup", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            password,
+            fullname
+          }),
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+           window.location.href = "/";
+          swal({
+            title: "signup was successful",
+            icon: "success",
+          }).then(() => {
+            window.localStorage.setItem("token", data.token);
+            if (data.role === "admin") {
+              window.location.href = "/Products";
+            } else if (data.role === "user") {
+              window.location.href = "/";
+
+            } else {
+            }
+          });
+        } else {
+          swal({
+            title: "Signup Failed",
+            text: data.error,
+            icon: "error",
+          });
+          {console.log(data.error)}
+        }
+      } catch (error) {
+        console.error(error);
+         swal({
+           title: error.data.error,
+           text: error.data.error,
+           icon: "error",
+         });
+      }
+    };
+  
+   const handleEmailChange = (event) => {
+     setEmail(event.target.value);
+   };
+
+   const handlePasswordChange = (event) => {
+     setPassword(event.target.value);
+   };
+   const handlefullnameChange = (event) => {
+     setFullname(event.target.value);
+   };
+
   return (
     <div className="loginandregisterall">
       <div className="loginandregister">
         <div className="loginandregister-all">
-          <div className="loginandregisterbackgrnd">
-            <h1>Sign Up</h1>
-            <div className="loginandregister-inputs">
-              <input placeholder="Name" type="text" required></input>
+          <form onSubmit={handleSignup}>
+            <div className="loginandregisterbackgrnd">
+              <h1>Login</h1>
+
+              <div className="loginandregister-inputs">
+                <input
+                  placeholder="Email"
+                  type="text"
+                  required
+                  value={email}
+                  onChange={handleEmailChange}
+                ></input>
+              </div>
+              <div className="loginandregister-inputs">
+                <input
+                  placeholder="Fullname"
+                  type="text"
+                  required
+                  value={fullname}
+                  onChange={handlefullnameChange}
+                ></input>
+              </div>
+              <div className="loginandregister-inputs">
+                <input
+                  value={password}
+                  placeholder="Password"
+                  type="password"
+                  required
+                  onChange={handlePasswordChange}
+                ></input>
+              </div>
+              <p>
+                Don't have an account?
+                <Link className="link-signandLog" to="/Signup">
+                  Signup
+                </Link>
+              </p>
+              <button type="Submit" className="login-register-btn">
+               Signup
+              </button>
             </div>
-            <div className="loginandregister-inputs">
-              <input placeholder="Email" type="text" required></input>
-            </div>
-            <div className="loginandregister-inputs">
-              <input placeholder="Password" type="text" required></input>
-            </div>
-            <p>
-              Already have an account?{" "}
-              <Link className="link-signandLog" to="/Login">
-                Login
-              </Link>
-            </p>
-            <button className="login-register-btn">Sign Up</button>
-          </div>
+          </form>
         </div>
       </div>
     </div>

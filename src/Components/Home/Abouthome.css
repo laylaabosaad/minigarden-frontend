@@ -2,7 +2,8 @@
   background-color: rgb(236, 243, 243);
   /* border: 2px solid purple; */
  
-  padding: 100px 200px;
+  padding: 100px 300px;
+  padding-bottom: 100px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;

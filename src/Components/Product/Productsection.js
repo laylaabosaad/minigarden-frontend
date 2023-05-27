@@ -100,12 +100,12 @@ const Productsection = () => {
     <div>
       <nav>
         <ul>
-          <button
+          {/* <button
             className="product-category-btn"
             onClick={() => getProducts()}
           >
             All
-          </button>
+          </button> */}
           {categories.map((category) => (
             <div key={category._id} className="product-category-btn">
               <li className="li-Of-btns">
@@ -129,7 +129,15 @@ const Productsection = () => {
             <div key={item._id} className="productsection">
               <div className="card">
                 <div className="card-image-prod">
-                  {/* Display the image here */}
+                  <div className="image-fit">
+                    <Link to={`/singleproduct/${item._id}`}>
+                      <img
+                        src={item.image.url}
+                        className="product-img"
+                        alt=""
+                      />
+                    </Link>
+                  </div>
                 </div>
                 <div className="category">
                   <p>{item.title}</p>
@@ -149,9 +157,6 @@ const Productsection = () => {
                   >
                     Add to cart
                   </button>
-                  <Link to={`/singleproduct/${item._id}`}>
-                    <button>Description</button>
-                  </Link>
                 </div>
               </div>
             </div>

@@ -1,32 +1,88 @@
-.orderinputs-all{
-    display: flex;
-    background-color:rgb(175, 201, 159);
-    margin: 200px 500px;
-    border-radius: 80px;
-    height: 900px;
-    color: white;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-
-}
-.orderinputs-all h1{
-    font-size: 50px;
+.orderinputs-all {
+  display: flex;
+  /* border: 2px solid black; */
+  background-color: rgb(251, 252, 252);
+  width: fit-content;
+  padding: 50px;
+  margin-top: 200px;
+  color: black;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: left;
 }
 
-.submit-btn{
-    color: white;
-    border: 2px solid rgb(253, 253, 252);
-    padding: 15px;
+.orderinputs-all h1 {
+  font-size: 50px;
+}
+
+.submit-btn {
+  color: white;
+  font-size: 20px;
+  border: none;
+  text-align: center;
+  width: 100px;
+  height: 50px;
+  background-color: rgb(82, 121, 76);
+}
+
+label {
+  color: black;
+}
+
+.orderinputs-all input {
+  width: 500px;
+  background-color:white;
+  height: 50px;
+  border: none;
+  font-size: 20px;
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.notecheckout input{
+  width: 500px;
+  height: 200px;
+}
+
+.tofit{
+  /* border: 2px solid rebeccapurple; */
+  width: 600px;
+  height: 70vh;
+}
+
+.submit-btn:hover{
+  background-color: rgb(102, 157, 102);
+}
+
+@media screen and (max-width: 450px) {
+  .orderinputs-all {
+    width: 100%;
+    padding: 10px;
+    margin-top: 100px;
+  }
+
+  .orderinputs-all h1 {
     font-size: 30px;
-    border-radius: 20px;
-}
+    text-align: center;
+  }
 
-.orderinputs-all input{
-    width: 500px;
-    height: 80px;
-    font-size: 20px;
-    border-radius: 20px;
-    border: none;
+  .submit-btn {
+    width: 80px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .orderinputs-all input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .notecheckout input{
+    height: 100px;
+  }
+
+  .tofit{
+    width: 100%;
+    height: auto;
+  }
 }

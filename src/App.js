@@ -32,7 +32,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Navbar loggedin={loggedin} setLoggedin={setLoggedin} /> */}
+      <Navbar loggedin={loggedin} setLoggedin={setLoggedin} />
 
       <Routes>
         <Route path="/" element={<Home />} />

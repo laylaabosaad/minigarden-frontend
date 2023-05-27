@@ -22,7 +22,7 @@ function Home() {
       <Categoryhome />
 
       <HowItWorks />
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   );
 }

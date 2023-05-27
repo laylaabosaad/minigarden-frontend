@@ -2,7 +2,18 @@
   width: 150px;
   background-color: rgb(230, 240, 238);
   height: 150px;
+ 
 }
+
+.btnandLinkcart{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
 
 .shoppingcart-items {
   display: flex;
@@ -10,7 +21,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  width: 75%;
+  width: 100%;
 
   border-bottom: 1px solid rgb(230, 240, 238);
 }
@@ -19,9 +30,7 @@
   text-align: left;
   width: 100%;
   font-size: 50px;
- 
-  margin-right: 90px;
-  
+  /* border: 2px solid pink; */
   padding-bottom: 90px;
 }
 
@@ -31,7 +40,8 @@
   flex-direction: row;
   justify-content: space-around;
   border-bottom: 1px solid rgb(230, 240, 238);
-  width: 75%;
+  width: 100%;
+  /* border: 2px solid sienna; */
   gap: 550px;
   padding-bottom: 20px;
   /* margin-left: 100px; */
@@ -62,7 +72,7 @@
 }
 
 .quantitybtnsall button {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 18px;
   background-color: rgb(76, 104, 53);
   color: white;
@@ -71,15 +81,22 @@
 }
 
 .cart-all {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
- 
+
+    gap: 50px;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 200px;
+    /* border: 2px solid gray; */
+
 }
 
 .Shoppingcart-all {
   display: flex;
-  width: 1000px;
+  width: 100%;
+  /* border: 2px solid black; */
 
   flex-direction: column;
 
@@ -87,7 +104,7 @@
 }
 
 .total {
-  text-align: left !important;
+  text-align: right !important;
 
   
 }
@@ -99,7 +116,7 @@
   gap: 150px;
 }
 
-.titleanditems {
+/* .titleanditems {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -107,9 +124,9 @@
   justify-content: center;
   align-items: center;
 
-  /* border: 2px solid yellow; */
-  margin: 200px;
-}
+  border: 2px solid rgb(0, 98, 255);
+ 
+} */
 
 .checkoutbtn {
   margin-top: 50px;
@@ -154,12 +171,23 @@
   text-align: center;
   background-color: rgb(230, 240, 238);
   border-radius: 5px;
-  position: fixed;
-  margin-top: 200px;
-  margin-left: -100px;
-  height: 30vh;
+  margin-top: 20px;
+ 
+ 
 }
 
 .rightsection-cart {
   align-self: flex-start;
+}
+@media only screen and (max-width: 750px) {
+  .titleanditems {
+    width: 100%;
+    margin: 50px;
+  }
+  
+  .titles-cart {
+    gap: 150px;
+  }
+
+  
 }

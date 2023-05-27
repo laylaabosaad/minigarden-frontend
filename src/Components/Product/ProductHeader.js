@@ -16,7 +16,6 @@ function ProductHeader() {
         </div>
         <img className="image-hand-header" src={hand} alt=""></img>
       </div>
-    
     </div>
   );
 }

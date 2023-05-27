@@ -2,15 +2,16 @@
 
 .howitworksall {
   background-image: url("../images//howitworks.jpg");
-  height: 120vh;
+ 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+
 }
 .howitworks-title {
   color: white;
-  font-size: 100px;
+  font-size: 80px;
  
 }
 
@@ -20,9 +21,9 @@
   background-color: rgba(0, 0, 0, 0.306);
   color: white;
   
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
-  gap: 100px;
+  gap: 150px;
  padding: 100px;
  
 
@@ -34,7 +35,7 @@
 }
 
 .howitworksicon {
-  border: 2px solid salmon;
+  /* border: 2px solid salmon; */
   border-radius: 100px;
 }
 
@@ -49,7 +50,8 @@
 }
 
 .howitworks-steps p {
-  width: 350px;
+  width: 300px;
+  /* border: 2px solid black; */
 }
 
 

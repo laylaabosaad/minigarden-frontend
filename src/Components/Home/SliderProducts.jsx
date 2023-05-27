@@ -28,7 +28,16 @@ const SliderProducts = () => {
         },
       },
       {
-        breakpoint: 576,
+        breakpoint: 852,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 676,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -66,20 +75,18 @@ const SliderProducts = () => {
             <p className="prod-descr-p">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
               lacinia Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Fusce lacinia Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Fusce lacinia
+             
             </p>
           </div>
         </div>
         <div className="product-cards">
           <Slider {...settings}>
-          
             {/* Pass the settings object to the Slider component */}
             {filtercat.map((item, index) => (
               <div key={index}>
                 <div className="featured-card-image">
-                  <img src={item.image.url} alt="" />
-                
+                  <img className="image-featured" src={item.image.url} alt="" />
+
                   {console.log(item.image.url)}
                 </div>
               </div>

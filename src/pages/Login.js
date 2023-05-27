@@ -1,5 +1,6 @@
 import React from 'react'
 import LoginComponent from '../Components/LoginAndSignup/LoginComponent'
+import Footer from '../Components/Footer/Footer'
 
 function Login() {
   return (
@@ -7,7 +8,8 @@ function Login() {
       <div>
         <LoginComponent/>
 
-    </div>
+      </div>
+      <Footer/>
 
     </div>
   )

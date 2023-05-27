@@ -14,6 +14,9 @@ import Orders from "./Components/Orders/Orders";
 import ProductAdmin from "./Components/Dashboard/ProductAdmin";
 import { useEffect, useState } from "react";
 import Singleproduct from "./Components/Product/Singleproduct";
+import Productsection from "./Components/Product/Productsection";
+import Ordersadmin from "./Components/Dashboard/Ordersadmin";
+import UserContact from "./Components/Dashboard/UserContact";
 
 function App() {
   const [loggedin, setLoggedin] = useState(false);
@@ -29,16 +32,19 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar loggedin={loggedin} setLoggedin={setLoggedin} />
+      {/* <Navbar loggedin={loggedin} setLoggedin={setLoggedin} /> */}
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Aboutus" element={<About />} />
         <Route path="/Products" element={<Products />} />
+        {/* <Route path="/Products/:categoryId" element={<Productsection />} /> */}
         <Route path="/admin/Products" element={<ProductAdmin />} />
-        <Route path="/singleproduct/:productId" element={<Singleproduct/>} />
+        <Route path="/singleproduct/:productId" element={<Singleproduct />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/Login" element={<Login />} />
+        <Route path="/admin/Orders" element={<Ordersadmin />} />
+        <Route path="/admin/contactus" element={<UserContact />} />
 
         <Route path="/Signup" element={<SignupComponent />} />
         <Route path="/Checkout" element={<Orders />} />

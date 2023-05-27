@@ -18,13 +18,13 @@ const Productsection = () => {
   const [activeCategoryId, setActiveCategoryId] = useState(null);
 
   const [selectedCategory, setSelectedCategory] = useState(null);
-  const { categoryId } = useParams();
+  const {categoryID} = useParams();
   console.log("selected", selectedCategory);
 
-  const getProdofaSubCategory = async (categoryId) => {
+  const getProdofaSubCategory = async (_id) => {
     try {
       const find = await axios.get(
-        `http://localhost:2000/product/bycategory/${categoryId}`
+        `http://localhost:2000/product/bycategory/${_id}`
       );
       const response = find.data.data;
 
@@ -73,6 +73,23 @@ const Productsection = () => {
     }
   };
 
+    const getProducts = async () => {
+      try {
+        const response = await axios.get("http://localhost:2000/product");
+        const res= response.data.data
+        setProductCard(res)
+        console.log(response.data)
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
+
+
+
+
+
+
+
   useEffect(() => {
     if (selectedCategory) {
       getProdofaSubCategory(selectedCategory);
@@ -83,6 +100,12 @@ const Productsection = () => {
     <div>
       <nav>
         <ul>
+          <button
+            className="product-category-btn"
+            onClick={() => getProducts()}
+          >
+            All
+          </button>
           {categories.map((category) => (
             <div key={category._id} className="product-category-btn">
               <li className="li-Of-btns">

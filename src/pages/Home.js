@@ -4,6 +4,7 @@ import Abouthome from '../Components/Home/Abouthome'
 import Categoryhome from '../Components/Home/Categoryhome'
 import HowItWorks from '../Components/Home/HowItWorks'
 import SliderProducts from "../Components/Home/SliderProducts";
+import Footer from '../Components/Footer/Footer'
 
 
 
@@ -15,12 +16,13 @@ function Home() {
       <div className="product-slider-page">
         <SliderProducts />
       </div>
-      {/* <div className="howitworksall">
+      <div>
         <div className="home-stickyImage"></div>
-      </div> */}
+      </div>
       <Categoryhome />
 
       <HowItWorks />
+      {/* <Footer/> */}
     </div>
   );
 }

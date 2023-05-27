@@ -1,9 +1,8 @@
 .aboutus-home {
   background-color: rgb(236, 243, 243);
   /* border: 2px solid purple; */
-
-  height: 1000px;
-  padding: 50px 200px;
+ 
+  padding: 100px 200px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -144,8 +143,48 @@ button:hover .button-text {
   color: #fff;
 }
 
+@media (max-width:1550px) {
+  .aboutus-homeimg {
+  height: 400px;
+
+  margin-right: 50px;
+  margin-top: -500px;
+
+}
+
+.aboutus-homeimgb {
+  background-color: rgb(136, 170, 136);
+  padding-right: 100px;
+
+  height: 350px;
+
+  width: 300px;
+  
+}
+  
+}
+
 @media (max-width: 750px) {
+  .aboutus-home h1 {
+    background-color: rgb(236, 243, 243);
+    font-size: 50px;
+  }
+
   .aboutus-home p {
-    width: 300px;
+    margin-top: 10px;
+    font-size: 25px;
+    width: 100%;
+  }
+  .aboutus-home-descandbtn {
+    display: flex;
+    justify-content: left;
+    align-items:flex-start;
+    flex-direction: column;
+   
+    margin-top: 50px;
+  }
+
+  .aboutus-home {
+    padding: 10px 10px;
   }
 }

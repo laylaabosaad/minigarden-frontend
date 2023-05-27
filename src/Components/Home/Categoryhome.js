@@ -14,7 +14,7 @@ function Categoryhome() {
               <Link to="/Products/open">
                 <h1>Open Terrarium</h1>
               </Link>
-              <img className="categoryhome-Openimg" src={open}></img>
+              {/* <img className="categoryhome-Openimg" src={open}></img> */}
             </div>
             <div className="categoryhome-Open">
               <button
@@ -24,7 +24,7 @@ function Categoryhome() {
               >
                 <h1>Solo Products</h1>
               </button>
-              <img className="categoryhome-Openimg" src={open}></img>
+              {/* <img className="categoryhome-Openimg" src={open}></img> */}
             </div>
           </div>
           <div className="categoryhome-Closed">
@@ -36,7 +36,7 @@ function Categoryhome() {
               <h1>Closed Terrarium</h1>
             </button>
 
-            <img className="categoryhome-Closedimg" src={closed}></img>
+            {/* <img className="categoryhome-Closedimg" src={closed}></img>  */}
           </div>
         </div>
       </div>

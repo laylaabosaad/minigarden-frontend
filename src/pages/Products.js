@@ -3,6 +3,7 @@ import React from 'react'
 import ProductHeader from '../Components/Product/ProductHeader'
 import "../Components/Product/Product.css"
 import Productsection from "../Components/Product/Productsection";
+import Footer from '../Components/Footer/Footer';
 
 function Products() {
   return (
@@ -18,6 +19,7 @@ function Products() {
         </div>
         <Productsection />
       </div>
+      <Footer/>
     </div>
   );
 }

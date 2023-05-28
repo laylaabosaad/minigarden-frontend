@@ -95,7 +95,7 @@ function Cart() {
                       <div className="img-price-title-cart">
                         {productItem.productId &&
                           productItem.productId.image && (
-                            <div className="bkrndimgcart">
+                            <div className="imgmini-cart">
                               <img
                                 src={productItem.productId.image.url}
                                 alt={productItem.productId.title}

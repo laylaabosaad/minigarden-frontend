@@ -1,0 +1,42 @@
+.image-description-single {
+  display: flex;
+  /* border: 2px solid black; */
+  margin-top: 150px;
+
+  flex-direction: row;
+
+  justify-content: left;
+  align-items: center;
+  background-color:rgb(236, 240, 236);
+  height: 80vh;
+}
+
+.single-info {
+  font-size: 25px;
+  /* border: 2px solid rebeccapurple; */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 100px;
+ 
+ 
+  gap: 50px;
+}
+
+.bkrndimgcart img {
+  /* border: 2px solid red; */
+  height: 79.5vh;
+ width: 700px;
+}
+
+.btns-single{
+    /* border: 2px solid yellow; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction:row;
+    margin-top: 100px;
+    gap: 100px;
+}
+

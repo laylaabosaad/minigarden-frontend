@@ -1,9 +1,10 @@
-import React from "react";
+
 import "../Footer/Footer.css";
 import img from "../images/icon.png";
 
 import { FaPhone } from "react-icons/fa";
 import { FaRegEnvelopeOpen } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="footer-container">
@@ -26,7 +27,7 @@ const Footer = () => {
         </div>
         <div className="footer-title1">
           <h1>Menu</h1>
-          <div>Home</div>
+          <div><Link></Link></div>
           <div>About Us</div>
           <div>Contact Us</div>
           <div>Products</div>

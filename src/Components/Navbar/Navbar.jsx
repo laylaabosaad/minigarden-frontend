@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaShoppingCart } from "react-icons/fa";
+import {FiLogIn, FiLogOut} from "react-icons/fi";
 import "./Navbar.css";
 
-// Or I can put const Navbar=({loggedin, setLoggedin}) as named
 const Navbar = (props) => {
   const location = useLocation();
   const [showMenu, setShowMenu] = useState(false);
@@ -56,26 +56,35 @@ const Navbar = (props) => {
         >
           <div>Contact Us</div>
         </Link>
-        <Link
-          to="/Cart"
-          className={`navlinks ${
-            location.pathname === "/Cart" ? "active" : ""
-          }`}
-        >
-          <div>Cart</div>
-        </Link>
-        {props.loggedin == false ? (
+        <div className="logandcart-nav">
           <Link
-            to="/Login"
+            to="/Cart"
             className={`navlinks ${
-              location.pathname === "/Login" ? "active" : ""
+              location.pathname === "/Cart" ? "active" : ""
             }`}
           >
-            <div>Login</div>
+            <div>
+              <FaShoppingCart />
+            </div>
           </Link>
-        ) : (
-          <div onClick={handleLogout}>Logout</div>
-        )}
+
+          {props.loggedin === false ? (
+            <Link
+              to="/Login"
+              className={`navlinks ${
+                location.pathname === "/Login" ? "active" : ""
+              }`}
+            >
+              <div>
+                <FiLogIn />
+              </div>
+            </Link>
+          ) : (
+            <div onClick={handleLogout}>
+              <FiLogOut />
+            </div>
+          )}
+        </div>
       </div>
       <div className="navbar-toggle">
         <FaBars onClick={toggleMenu} />

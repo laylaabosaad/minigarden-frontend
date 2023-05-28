@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import "./singleprod.css"
+import { Link } from "react-router-dom";
+import "./singleprod.css";
 import axios from "axios";
 
 function Singleproduct() {
@@ -22,16 +23,37 @@ function Singleproduct() {
     <div className="product-section">
       <div className="productsection-cards">
         {singleProd && (
-          <div>
-            <p>{singleProd.title}</p>
-            <p>{singleProd.description}</p>
-            <p>{singleProd.stock}</p>
-            <p>{singleProd.price}</p>
+          <div className="image-description-single">
             {singleProd && singleProd.image && (
               <div className="bkrndimgcart">
                 <img src={singleProd.image.url} alt="" />
               </div>
             )}
+            <div className="single-info">
+              <p>
+                <strong>Product Name: </strong> {singleProd.title}
+              </p>
+              <p>
+                <strong>Description: </strong>
+                {singleProd.description}
+              </p>
+
+              <p>
+                <strong> Price: </strong>
+                {singleProd.price}$
+              </p>
+              <div className="btns-single">
+                <div className="product-buttons">
+                  <Link to="/Products">
+                  
+                    <button className="submit-btn">Go Back</button>
+                  </Link>
+                </div>
+                <div className="product-buttons">
+                  <button className="submit-btn">Add to cart</button>
+                </div>
+              </div>
+            </div>
           </div>
         )}
       </div>

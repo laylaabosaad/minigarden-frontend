@@ -183,11 +183,11 @@
   width: fit-content;
 }
 .values-box {
-  /* border: 2px solid rgb(255, 72, 0); */
-  margin-bottom: 0;
- 
+    /* border: 2px solid rgb(255, 72, 0); */
+    margin-bottom: 0;
+    width: 100%;
+   
 }
-
 .values-about {
   display: flex;
   /* border: 2px solid yellow; */
@@ -290,6 +290,9 @@
   .about-us-header h1 {
     font-size: 80px;
     margin-top: -50px;
+  }
+  .values-h1{
+    font-size: 40px;
   }
   .about-us-header p {
     font-size: 30px;

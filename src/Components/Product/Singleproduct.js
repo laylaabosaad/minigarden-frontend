@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
+import "./singleprod.css"
 import axios from "axios";
 
 function Singleproduct() {

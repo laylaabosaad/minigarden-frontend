@@ -1,0 +1,43 @@
+.all-usercontact-admin {
+  display: flex;
+  background-color: rgb(236, 240, 236);
+  justify-content: left;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 100px 50px 100px 50px;
+  flex-direction: column;
+}
+
+.usercontact-admin {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: left;
+  padding: 100px;
+  gap: 20px;
+}
+
+@media screen and (max-width: 450px) {
+  .all-usercontact-admin {
+    padding: 80px;
+  }
+
+  .usercontact-admin {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 50px 20px;
+  }
+
+  .roworders {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  button.submit-btn {
+    margin-top: 20px;
+  }
+}

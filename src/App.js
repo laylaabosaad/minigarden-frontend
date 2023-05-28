@@ -17,6 +17,7 @@ import Singleproduct from "./Components/Product/Singleproduct";
 import Productsection from "./Components/Product/Productsection";
 import Ordersadmin from "./Components/Dashboard/Ordersadmin";
 import UserContact from "./Components/Dashboard/UserContact";
+import Error404 from "./Components/404page/Error404";
 
 function App() {
   const [loggedin, setLoggedin] = useState(false);
@@ -49,6 +50,7 @@ function App() {
         <Route path="/Signup" element={<SignupComponent />} />
         <Route path="/Checkout" element={<Orders />} />
         <Route path="/Contactus" element={<ContactUs />} />
+        <Route path="/404" element={<Error404/>} />
       </Routes>
     </div>
   );

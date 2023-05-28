@@ -19,7 +19,7 @@
 
 .admin-product img {
   width: 100px;
-  background-color: aquamarine;
+  background-color:rgb(230, 240, 238);
 }
 
 .admin-product {
@@ -35,7 +35,7 @@
 }
 
 .whole-admin-product {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;

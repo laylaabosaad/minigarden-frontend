@@ -1,0 +1,24 @@
+.page404-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 30vh 30vw;
+    background: linear-gradient(90deg, rgb(236, 240, 236), rgb(202, 227, 239),rgb(175, 201, 159), #ede6e6);
+    background-size: 400% 400%;
+   
+  }
+  
+  .page404-title {
+    font-size: 50px;
+    color:rgb(82, 121, 76);
+    
+  }
+  
+  .page404-description {
+    font-size: 1.5rem;
+    padding-bottom: 50px;
+   
+  }
+  

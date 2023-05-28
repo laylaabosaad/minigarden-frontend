@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import "../Dashboard/contactadmin.css"
 
 function UserContact() {
   const [userContact, setUserContact] = useState([]);
@@ -23,15 +24,39 @@ function UserContact() {
       <div className="backgrnd">
         <h1 className="prodtitle-admin">Messages</h1>
       </div>
-      <div className="all-usercontact-admin">
+      <div className="usercontact-admin">
         {userContact.map((msg, index) => (
-          <div key={index}>
-           
-            <p>{msg.fullname}</p>
-            <p>{msg.message}</p>
-            <p>{msg.phonenumber}</p>
-            <p>{msg.email}</p>
-            <button onClick={() => deletemessage(msg._id)}>Delete</button>
+          <div className="all-usercontact-admin" key={index}>
+            <div className="roworders">
+              <label>
+                <strong> Name:</strong>
+              </label>
+              <p>{msg.fullname}</p>
+            </div>
+            <div className="roworders">
+              <label>
+                <strong> Phone Number:</strong>
+              </label>
+              <p>{msg.phonenumber}</p>
+            </div>
+            <div className="roworders">
+              <label>
+                <strong> Email:</strong>
+              </label>
+              <p>{msg.email}</p>
+            </div>
+            <div className="roworders">
+              <label>
+                <strong>Message:</strong>
+              </label>
+              <p>{msg.message}</p>
+            </div>
+            <button
+              className="submit-btn"
+              onClick={() => deletemessage(msg._id)}
+            >
+              Delete
+            </button>
             {console.log(msg._id)}
           </div>
         ))}

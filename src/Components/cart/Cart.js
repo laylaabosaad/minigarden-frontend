@@ -78,7 +78,7 @@ function Cart() {
       <div className="titleanditems">
         <h1>Cart</h1>
         <div className="Shoppingcart-table">
-          {productCard.length>0 ? (
+          {productCard.length > 0 ? (
             productCard.map((item, index) => (
               <div className="cart-checkoutandtable">
                 <div className="Shoppingcart-all" key={index}>
@@ -103,7 +103,7 @@ function Cart() {
                             </div>
                           )}
 
-                         <div>
+                        <div>
                           <h3>
                             {productItem.productId.title}
                             {/* {productItem.productId._id} */}
@@ -125,6 +125,7 @@ function Cart() {
                         </button>
                         <h4> {productItem.quantity}</h4>
                         <button
+                          className="btnremove"
                           onClick={() =>
                             Increaseproduct(productItem.productId._id)
                           }
@@ -150,7 +151,6 @@ function Cart() {
         <div className="btnandLinkcart">
           <h1>One Step Away </h1>
           <button className="checkoutbtn">
-
             <div className="checkoutlink" onClick={handlecheckout}>
               Go to Checkout
             </div>

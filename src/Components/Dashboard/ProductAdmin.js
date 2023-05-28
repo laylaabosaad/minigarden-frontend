@@ -74,10 +74,6 @@ function ProductAdmin() {
     console.log("check", _id);
   };
 
-  
-
-
-
   const handleEditProduct = async () => {
     const data = {
       title: editProduct.title,
@@ -110,34 +106,43 @@ function ProductAdmin() {
 
   return (
     <div>
-      <div>
+      <div className="backgrnd">
+        <h1 className="prodtitle-admin">Products</h1>
+      </div>
+
+      <div className="whole-admin-product">
         <form onSubmit={handleSubmit}>
+          
           <div className="inputsall-admin">
+            <label>Product name:</label>
             <input
+              className="input-admin"
               type="text"
               value={title}
-              placeholder="title"
               required
               onChange={(e) => setTitle(e.target.value)}
             ></input>
+            <label>Stock</label>
             <input
+              className="input-admin"
               type="text"
               value={stock}
-              placeholder="stock"
               required
               onChange={(e) => setStock(e.target.value)}
             ></input>
+            <label>Description</label>
             <input
+              className="input-admin"
               type="text"
               value={description}
-              placeholder="description"
               required
               onChange={(e) => setDescription(e.target.value)}
             ></input>
+            <label>Price</label>
             <input
+              className="input-admin"
               type="number"
               value={price}
-              placeholder="number"
               required
               onChange={(e) => setPrice(e.target.value)}
             ></input>
@@ -172,162 +177,168 @@ function ProductAdmin() {
                 onChange={(e) => setSubcategory(e.target.value)}
               >
                 <option>Select Subategory</option>
-                <option value="64634e12b6db9bd04a4e167d">
-                  Sacred Geometry
-                </option>
+                <option value="64634e12b6db9bd04a4e167d">Sacred</option>
                 <option value="64634ddeb6db9bd04a4e167b">Regular</option>
               </select>
             </label>
-            <button className="add-btn" type="submit" value="Submit">
+            <button className="submit-btn" type="submit" value="Submit">
               Add
             </button>
           </div>
         </form>
-        {editProductId ? (
-          <div>
-            <h2>Edit Product Details</h2>
-            <form onSubmit={handleEditProduct}>
-              <div className="inputsall-admin">
-                <input
-                  type="text"
-                  value={editProduct.title}
-                  placeholder="title"
-                  required
-                  onChange={(e) =>
-                    setEditProduct({
-                      ...editProduct,
-                      title: e.target.value,
-                    })
-                  }
-                ></input>
-                <input
-                  type="text"
-                  value={editProduct.stock}
-                  placeholder="stock"
-                  required
-                  onChange={(e) =>
-                    setEditProduct({
-                      ...editProduct,
-                      stock: e.target.value,
-                    })
-                  }
-                ></input>
-                <input
-                  type="text"
-                  value={editProduct.description}
-                  placeholder="description"
-                  required
-                  onChange={(e) =>
-                    setEditProduct({
-                      ...editProduct,
-                      description: e.target.value,
-                    })
-                  }
-                ></input>
-                <input
-                  type="number"
-                  value={editProduct.price}
-                  placeholder="number"
-                  required
-                  onChange={(e) =>
-                    setEditProduct({
-                      ...editProduct,
-                      price: e.target.value,
-                    })
-                  }
-                ></input>
-                <label>Choose Images:</label>
-                <input
-                  type="file"
-                  name="file"
-                  onChange={handleImagesChange}
-                  multiple
-                />
-
-                <label htmlFor="category">
-                  Category:
-                  <select
-                    name="category"
-                    id="category"
-                    value={editProduct.category}
-                    onChange={(e) =>
-                      setEditProduct({
-                        ...editProduct,
-                        category: e.target.value,
-                      })
-                    }
-                  >
-                    <option>Select Category</option>
-                    <option value="64634d90b6db9bd04a4e1674">
-                      Closed Terrarium
-                    </option>
-                    <option value="64634d99b6db9bd04a4e1676">
-                      Open Terrarium
-                    </option>
-                    <option value="64634da6b6db9bd04a4e1678">
-                      Solo Product
-                    </option>
-                  </select>
-                </label>
-                <label htmlFor="subcategory">
-                  Subategory:
-                  <select
-                    name="subcategory"
-                    id="subcategory"
-                    value={editProduct.subcategory}
-                    onChange={(e) =>
-                      setEditProduct({
-                        ...editProduct,
-                        subcategory: e.target.value,
-                      })
-                    }
-                  >
-                    <option>Select Subategory</option>
-                    <option value="64634e12b6db9bd04a4e167d">
-                      Sacred Geometry
-                    </option>
-                    <option value="64634ddeb6db9bd04a4e167b">Regular</option>
-                  </select>
-                </label>
-                <button className="add-btn" type="submit" value="Submit">
-                  Save
-                </button>
-                <button
-                  className="add-btn"
-                  type="button"
-                  onClick={handleCancelEdit}
-                >
-                  Cancel
-                </button>
-              </div>
-            </form>
-          </div>
-        ) : (
-          <div>
-            {product.map((prod, index) => (
-              <div key={index}>
+        <div>
+          {editProductId ? (
+            <div>
+              <h2>Edit Product Details</h2>
+              <form className="editform-admin" onSubmit={handleEditProduct}>
                 <div>
-                  <p>{prod.title}</p>
-                  <p>{prod.price}</p>
-                  <img src={prod.image.url}></img>
-                </div>
+                  <input
+                    type="text"
+                    value={editProduct.title}
+                    placeholder="title"
+                    required
+                    onChange={(e) =>
+                      setEditProduct({
+                        ...editProduct,
+                        title: e.target.value,
+                      })
+                    }
+                  ></input>
+                  <input
+                    type="text"
+                    value={editProduct.stock}
+                    placeholder="stock"
+                    required
+                    onChange={(e) =>
+                      setEditProduct({
+                        ...editProduct,
+                        stock: e.target.value,
+                      })
+                    }
+                  ></input>
+                  <input
+                    type="text"
+                    value={editProduct.description}
+                    placeholder="description"
+                    required
+                    onChange={(e) =>
+                      setEditProduct({
+                        ...editProduct,
+                        description: e.target.value,
+                      })
+                    }
+                  ></input>
+                  <input
+                    type="number"
+                    value={editProduct.price}
+                    placeholder="number"
+                    required
+                    onChange={(e) =>
+                      setEditProduct({
+                        ...editProduct,
+                        price: e.target.value,
+                      })
+                    }
+                  ></input>
+                  <label>Choose Images:</label>
+                  <input
+                    type="file"
+                    name="file"
+                    onChange={handleImagesChange}
+                    multiple
+                  />
 
-                <button
-                  className="admin-testi-buttons"
-                  onClick={() => deleteprod(prod._id)}
-                >
-                  Delete
-                </button>
-                <button
-                  className="admin-testi-buttons"
-                  onClick={() => handleEditButtonClick(prod)}
-                >
-                  Edit
-                </button>
-              </div>
-            ))}
-          </div>
-        )}
+                  <label htmlFor="category">
+                    Category:
+                    <select
+                      name="category"
+                      id="category"
+                      value={editProduct.category}
+                      onChange={(e) =>
+                        setEditProduct({
+                          ...editProduct,
+                          category: e.target.value,
+                        })
+                      }
+                    >
+                      <option>Select Category</option>
+                      <option value="64634d90b6db9bd04a4e1674">
+                        Closed Terrarium
+                      </option>
+                      <option value="64634d99b6db9bd04a4e1676">
+                        Open Terrarium
+                      </option>
+                      <option value="64634da6b6db9bd04a4e1678">
+                        Solo Product
+                      </option>
+                    </select>
+                  </label>
+                  <label htmlFor="subcategory">
+                    Subategory:
+                    <select
+                      name="subcategory"
+                      id="subcategory"
+                      value={editProduct.subcategory}
+                      onChange={(e) =>
+                        setEditProduct({
+                          ...editProduct,
+                          subcategory: e.target.value,
+                        })
+                      }
+                    >
+                      <option>Select Subategory</option>
+                      <option value="64634e12b6db9bd04a4e167d">
+                        Sacred Geometry
+                      </option>
+                      <option value="64634ddeb6db9bd04a4e167b">Regular</option>
+                    </select>
+                  </label>
+                  <div className="btn-admin savecancle">
+                    <button className="submit-btn" type="submit" value="Submit">
+                      Save
+                    </button>
+                    <button
+                      className="submit-btn"
+                      type="button"
+                      onClick={handleCancelEdit}
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          ) : (
+            <div className="product-admin-view">
+              {product.map((prod, index) => (
+                <div className="editanddeletewithinputs" key={index}>
+                  <div className="admin-product">
+                    <img src={prod.image.url}></img>
+                    <p> {prod.title}</p>
+                    <p> {prod.price} $</p>
+                    <p> {prod.category.title}</p>
+                    <p>{prod.subcategory.title}</p>
+                    {/* {console.log(prod.category.title)} */}
+                  </div>
+                  <div className="btn-admin">
+                    <button
+                      className="submit-btn"
+                      onClick={() => deleteprod(prod._id)}
+                    >
+                      Delete
+                    </button>
+                    <button
+                      className="submit-btn"
+                      onClick={() => handleEditButtonClick(prod)}
+                    >
+                      Edit
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

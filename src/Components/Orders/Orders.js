@@ -65,7 +65,7 @@ console.log('orders',orders)
             <label>Phone Number</label>
             <div>
               <input
-                type="number"
+                type="tel"
                 value={phonenumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
               ></input>

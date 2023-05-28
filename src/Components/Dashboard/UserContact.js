@@ -20,20 +20,19 @@ function UserContact() {
 
   return (
     <div>
+      <div className="backgrnd">
+        <h1 className="prodtitle-admin">Messages</h1>
+      </div>
       <div className="all-usercontact-admin">
         {userContact.map((msg, index) => (
           <div key={index}>
-            <h1>Hellooo</h1>
-            <h1>Hellooo</h1>
-            <h1>Hellooo</h1>
-            <h1>Hellooo</h1>
-            <h1>Hellooo</h1>
+           
             <p>{msg.fullname}</p>
             <p>{msg.message}</p>
             <p>{msg.phonenumber}</p>
             <p>{msg.email}</p>
-                <button onClick={() => deletemessage(msg._id)}>Delete</button>
-                {console.log(msg._id)}
+            <button onClick={() => deletemessage(msg._id)}>Delete</button>
+            {console.log(msg._id)}
           </div>
         ))}
       </div>

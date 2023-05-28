@@ -1,0 +1,92 @@
+.orders-all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.backgrnd {
+  display: flex;
+  background-color: rgb(76, 104, 53);
+  height: 80vh;
+  width: 100%;
+  padding: 50px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-size: 40px;
+  justify-content: center;
+}
+
+.adminorders {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 30px;
+}
+
+.order-admincards {
+  background-color: rgb(236, 240, 236);
+  width: 90%;
+  padding: 20px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.roworders {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  font-size: 16px;
+  gap: 10px;
+}
+
+.products-ordersadmin {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.billorder-admin {
+  border-top: 1px solid black;
+  text-align: right;
+  padding-top: 10px;
+}
+
+.btnremove {
+  margin-top: 10px;
+  align-self: flex-end;
+}
+
+
+@media (min-width: 1000px) {
+  .adminorders {
+    justify-content: space-between;
+  }
+
+  .order-admincards {
+    width: 400px;
+    font-size: 20px;
+  }
+
+  .roworders {
+    font-size: 20px;
+  }
+
+  .products-ordersadmin {
+    font-size: 20px;
+  }
+
+  .billorder-admin {
+    padding-top: 20px;
+  }
+
+  .btnremove {
+    margin-top: 20px;
+  }
+}

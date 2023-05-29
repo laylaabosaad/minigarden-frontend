@@ -79,7 +79,7 @@ function SignupComponent() {
         <div className="loginandregister-all">
           <form onSubmit={handleSignup}>
             <div className="loginandregisterbackgrnd">
-              <h1>Login</h1>
+              <h1>Signup</h1>
 
               <div className="loginandregister-inputs">
                 <input
@@ -109,13 +109,13 @@ function SignupComponent() {
                 ></input>
               </div>
               <p>
-                Don't have an account?
-                <Link className="link-signandLog" to="/Signup">
-                  Signup
+                Already have an account?
+                <Link className="link-signandLog" to="/login">
+                  Login
                 </Link>
               </p>
               <button type="Submit" className="login-register-btn">
-               Signup
+              Signup
               </button>
             </div>
           </form>

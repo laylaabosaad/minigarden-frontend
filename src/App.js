@@ -18,10 +18,12 @@ import Productsection from "./Components/Product/Productsection";
 import Ordersadmin from "./Components/Dashboard/Ordersadmin";
 import UserContact from "./Components/Dashboard/UserContact";
 import Error404 from "./Components/404page/Error404";
-
-
+import secureLocalStorage from "react-secure-storage";
 function App() {
   const [loggedin, setLoggedin] = useState(false);
+
+  const role = secureLocalStorage.getItem("role");
+  const isAdmin = role === "admin";
 
   const isLogged = () => {
     let logged = localStorage.getItem("token");
@@ -35,24 +37,38 @@ function App() {
   return (
     <div className="App">
       <Navbar loggedin={loggedin} setLoggedin={setLoggedin} />
-    
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Aboutus" element={<About />} />
         <Route path="/Products" element={<Products />} />
         {/* <Route path="/Products/:categoryId" element={<Productsection />} /> */}
-        <Route path="/admin/Products" element={<ProductAdmin />} />
+
         <Route path="/singleproduct/:productId" element={<Singleproduct />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/Login" element={<Login />} />
-        <Route path="/admin/Orders" element={<Ordersadmin />} />
-        <Route path="/admin/contactus" element={<UserContact />} />
 
+        <Route exact path="/admin/contactus" element={<UserContact />} />
+
+        <Route
+          exact
+          path="/admin/Products"
+          element={loggedin === true && isAdmin ? <ProductAdmin /> : <Login />}
+        />
+
+        <Route
+          exact
+          path="/admin/Orders"
+          element={loggedin === true && isAdmin ? <Ordersadmin /> : <Login />}
+        />
+
+        {/* {loggedin && role === "admin" && (
+          <Route path="/admin/Orders" element={<Ordersadmin />} />
+        )} */}
         <Route path="/Signup" element={<SignupComponent />} />
         <Route path="/Checkout" element={<Orders />} />
         <Route path="/Contactus" element={<ContactUs />} />
-        <Route path="/404" element={<Error404/>} />
+        <Route path="*" element={<Error404 />} />
       </Routes>
     </div>
   );

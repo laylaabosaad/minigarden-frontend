@@ -26,7 +26,9 @@ function Singleproduct() {
           <div className="image-description-single">
             {singleProd && singleProd.image && (
               <div className="bkrndimgcart">
-                <img src={singleProd.image.url} alt="" />
+                <div className="lay">
+                  <img src={singleProd.image.url} alt="" />
+                </div>
               </div>
             )}
             <div className="single-info">
@@ -45,7 +47,6 @@ function Singleproduct() {
               <div className="btns-single">
                 <div className="product-buttons">
                   <Link to="/Products">
-                  
                     <button className="submit-btn">Go Back</button>
                   </Link>
                 </div>

@@ -13,6 +13,8 @@ const Productsection = () => {
     catid = location.state.id;
   }
 
+  let userId = localStorage.getItem("userId");
+
   const [productCard, setProductCard] = useState([]);
   const [categories, setCategories] = useState([]);
   const [activeCategoryId, setActiveCategoryId] = useState(null);
@@ -49,7 +51,7 @@ const Productsection = () => {
       };
 
       const response = await axios.put(
-        `http://localhost:2000/cart/64607f73b9808e0837852222`,
+        `http://localhost:2000/cart/${userId}`,
         data
       );
 

@@ -1,6 +1,7 @@
 import "../Home/Categoryhome.css";
-import open from "../images/open.png";
+import open from "../images/open main.png";
 import closed from "../images/closed.png";
+import sol from "../images/sol.png"
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 function Categoryhome() {
@@ -24,7 +25,7 @@ function Categoryhome() {
               >
                 <h1>Solo Products</h1>
               </button>
-              {/* <img className="categoryhome-Openimg" src={open}></img> */}
+              {/* <img className="categoryhome-Openimg" src={sol}></img> */}
             </div>
           </div>
           <div className="categoryhome-Closed">

@@ -8,10 +8,11 @@ function Orders() {
   const [fullname, setFullName] = useState("")
   const [phonenumber, setPhoneNumber] = useState("");
   const [notes, setNotes] = useState("");
+  let userId = localStorage.getItem("userId");
 
   const getOrders = async (id) => {
     const find = await axios.get(
-      `http://localhost:2000/orders/clientorder/64607f73b9808e0837852222`
+      `http://localhost:2000/orders/clientorder/${userId}`
     );
     const response = find.data.data;
     console.log(response);
@@ -29,7 +30,7 @@ function Orders() {
       };
 
       const response = await axios.post(
-        `http://localhost:2000/orders/64607f73b9808e0837852222`,
+        `http://localhost:2000/orders/${userId}`,
         data
        
       );

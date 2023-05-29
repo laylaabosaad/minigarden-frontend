@@ -3,6 +3,7 @@ import "../LoginAndSignup/LoginandSignup.css";
 import { useState } from "react";
 import swal from "sweetalert";
 import "../LoginAndSignup/LoginandSignup.css";
+import secureLocalStorage from "react-secure-storage";
 
 function LoginComponent() {
   const [email, setEmail] = useState("");
@@ -31,19 +32,27 @@ function LoginComponent() {
       });
 
       const data = await response.json();
+     
+      secureLocalStorage.setItem("role", data.role);
+      localStorage.setItem("userId", data.user)
+      window.localStorage.setItem("token", data.token);
       if (response.ok) {
         swal({
           title: "Login successful",
           icon: "success",
         }).then(() => {
-          window.localStorage.setItem("token", data.token);
+          
+          
           if (data.role === "admin") {
             window.location.href = "/Products";
           } else if (data.role === "user") {
             window.location.href = "/";
           } else {
           }
-        });
+         
+        })  
+           
+          ;
       } else {
         swal({
           title: "Login failed",

@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 import "../cart/Cart.css";
 
 function Cart() {
+  let userId = localStorage.getItem("userId")
+  
   const [refresh, setRefresh] = useReducer((x) => x + 1, 0);
   const [productCard, setProductCard] = useState([]);
   console.log(refresh);
   const getProduct = async () => {
     try {
-      const response = await axios.get(
-        "http://localhost:2000/cart/64607f73b9808e0837852222"
-      );
+      const response = await axios.get(`http://localhost:2000/cart/${userId}`);
       const cartData = response.data.cart;
       console.log(response.data);
       if (Array.isArray(cartData)) {
@@ -35,10 +35,10 @@ function Cart() {
     }
   }
 
-  const deleteItem = async (userId, itemId) => {
+  const deleteItem = async (itemId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:2000/cart/64607f73b9808e0837852222/${itemId}`
+        `http://localhost:2000/cart/${userId}/${itemId}`
       );
       const updatedCart = response.data;
 
@@ -59,7 +59,7 @@ function Cart() {
       console.log("data ", data);
 
       const response = await axios.post(
-        `http://localhost:2000/cart/64607f73b9808e0837852222`,
+        `http://localhost:2000/cart/${userId}`,
         data
       );
       setRefresh();
@@ -98,18 +98,19 @@ function Cart() {
                             <div className="imgmini-cart">
                               <img
                                 src={productItem.productId.image.url}
-                                alt={productItem.productId.title}
+                                alt={productItem.productId?.title}
                               />
                             </div>
                           )}
 
                         <div>
                           <h3>
-                            {productItem.productId.title}
+                            {productItem.productId?.title}
                             {/* {productItem.productId._id} */}
                           </h3>
                           <p className="price-cart">
-                            {productItem.productId.price}$
+                            {/* ? is  */}
+                            {productItem.productId?.price}$
                           </p>
                         </div>
                       </div>
@@ -118,16 +119,17 @@ function Cart() {
                         <button
                           className="btnremove"
                           onClick={() =>
-                            deleteItem(item.userId, productItem.productId._id)
+                            deleteItem(productItem?.productId._id)
                           }
                         >
-                          -
+                          {console.log("deleteeee", item.userId)}-
                         </button>
-                        <h4> {productItem.quantity}</h4>
+                        <h4> {productItem?.quantity}</h4>
                         <button
                           className="btnremove"
                           onClick={() =>
-                            Increaseproduct(productItem.productId._id)
+                            // ? is to prevent the map is not a function since incase i have deleted the product and its in the cart it checks if its present
+                            Increaseproduct(productItem.productId?._id)
                           }
                         >
                           +

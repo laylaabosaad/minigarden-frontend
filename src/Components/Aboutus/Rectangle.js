@@ -19,9 +19,9 @@ function Rectangle() {
           sit amet, consectetur adipiscing elit.
         </p>
       </div>
-      <div>
+      {/* <div>
         <img className="aboutimg" src={aboutimg} alt=""></img>
-      </div>
+      </div> */}
       <div className="about-us-descandimg">
         <div className="about-us">
           <h1>Find The Perfect Addition To Your Room</h1>

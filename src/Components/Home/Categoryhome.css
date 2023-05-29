@@ -17,26 +17,49 @@
   padding: 50px;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+  
+}
+
 .categoryhome-home h1 {
   text-align: center;
 }
 
 .categoryhome-Closed {
   height: 650px;
-  background-color: rgb(46, 78, 42);
+  width: 400px;
+  background-color:rgb(233, 237, 233);
+  
 }
 
 .categoryhome-Closedimg {
-  width: 350px;
-  margin: 100px 50px;
-
-  height: 550px;
+  /* margin-top: 80px; */
+ /* border: 2px solid red; */
+ height: 620px;
 }
 
 .categoryhome-Openimg {
   /* border: 2px solid purple; */
   margin-left: 100px;
+  width: 250px;
+}
+
+.categoryhome-Soloimg{
   width: 200px;
+  /* border: 2px solid rebeccapurple; */
+   margin-left: 100px;
+  height: 300px;
+}
+
+.categoryhome-Open:hover {
+  background-color:rgb(202, 227, 239);
+  cursor: pointer;
+}
+.categoryhome-Closed:hover {
+  background-color: rgb(202, 227, 239);
+  cursor: pointer;
 }
 
 .categoryhome-Open {
@@ -47,16 +70,16 @@
 }
 
 .categoryhome-Open h1 {
-  font-size: 25px;
+  font-size: 30px;
   text-align: left;
   /* border: 2px solid blanchedalmond; */
   padding-left: 20px;
   margin-right: 190px;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
 }
 
 .categoryhome-Closed h1 {
-  font-size: 25px;
+  font-size: 40px;
   text-align: left;
   /* border: 2px solid blanchedalmond; */
   margin-right: 200px;
@@ -71,7 +94,7 @@
   flex-direction: column;
 }
 
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 800px) {
   .shopbyCategory {
     font-size: 40px;
     padding: 50px 0 50px 0;
@@ -94,4 +117,4 @@
   align-items: center;
   flex-direction: column;
 }
-}
+} */

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Headervideo from '../Components/headervideo/video'
 import Abouthome from '../Components/Home/Abouthome'
 import Categoryhome from '../Components/Home/Categoryhome'
@@ -12,17 +12,18 @@ function Home() {
   return (
     <div>
       <Headervideo />
-      <Abouthome />
       <div className="product-slider-page">
         <SliderProducts />
       </div>
+      <Abouthome />
+
       <div>
         <div className="home-stickyImage"></div>
       </div>
       <Categoryhome />
 
       <HowItWorks />
-      <Footer/>
+      <Footer />
     </div>
   );
 }

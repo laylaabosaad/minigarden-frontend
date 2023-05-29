@@ -12,32 +12,40 @@ function Categoryhome() {
         <div className="categoryhome-home">
           <div className="categoryhome-both">
             <div className="categoryhome-Open">
-              <Link to="/Products/open">
+              <Link to="/Products">
                 <h1>Open Terrarium</h1>
+
+                <img className="categoryhome-Openimg" src={open}></img>
               </Link>
-              {/* <img className="categoryhome-Openimg" src={open}></img> */}
             </div>
             <div className="categoryhome-Open">
-              <button
+              {/* <button
                 onClick={() =>
                   navigate("/products", { state: { id: "solo id" } })
                 }
               >
                 <h1>Solo Products</h1>
-              </button>
-              {/* <img className="categoryhome-Openimg" src={sol}></img> */}
+              </button> */}
+              <Link to="/Products">
+                <h1>Solo Products</h1>
+
+                <img className="categoryhome-Soloimg" src={sol}></img>
+              </Link>
             </div>
           </div>
           <div className="categoryhome-Closed">
-            <button
+            {/* <button
               onClick={() =>
                 navigate("/products", { state: { id: "closed id" } })
               }
             >
               <h1>Closed Terrarium</h1>
-            </button>
+            </button> */}
+            <Link to="/Products">
+              <h1>Solo Products</h1>
 
-            {/* <img className="categoryhome-Closedimg" src={closed}></img>  */}
+              <img className="categoryhome-Closedimg" src={closed}></img>
+            </Link>
           </div>
         </div>
       </div>

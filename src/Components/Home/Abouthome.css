@@ -1,43 +1,41 @@
 .aboutus-home {
-  background-color: rgb(236, 243, 243);
-  /* border: 2px solid purple; */
- 
-  padding: 200px;
+   background: linear-gradient(rgba(7, 7, 7, 0.665), rgba(33, 29, 29, 0.712)),url("../images/green.jpg");
+   
+  height: 80vh;
+  padding: 250px;
+  color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 50px;
+  justify-content: center;
+background-attachment: fixed;
+ 
+ 
+
 }
 
 .aboutus-home h1 {
-  background-color: rgb(236, 243, 243);
+ 
   font-size: 60px;
 }
 
 .aboutus-home p {
-  margin-top: 50px;
+  margin-top: 30px;
   font-size: 25px;
   width: 600px;
 }
 
-.aboutus-homeimgb {
-  background-color: rgb(136, 170, 136);
-  padding-right: 100px;
-
-  height: 450px;
-
-  width: 500px;
-  padding-top: 50px;
+.aboutus-homeimgback{
+  /* border: 2px solid red; */
+  width: fit-content;
 }
 
-.aboutus-homeimg {
-  height: 650px;
 
-  margin-right: 100px;
-  margin-top: -500px;
-}
+
 
 button {
   position: relative;
@@ -49,7 +47,8 @@ button {
   text-decoration: none;
   background: transparent;
   padding: 0;
-  margin-bottom: 30px;
+  height: 20px;
+  /* margin-bottom: 30px; */
   font-size: inherit;
   font-family: inherit;
 }
@@ -58,7 +57,8 @@ button.learn-more {
   width: 12rem;
   height: auto;
 
-  margin-top: 50px;
+  margin-top: 10px;
+  margin-bottom: 10.px !important;
 }
 
 button.learn-more .circle {
@@ -133,7 +133,7 @@ button:hover .button-text {
 .aboutlink {
   color: rgb(76, 104, 53);
   text-decoration: none;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 
   padding: 14px;
 }
@@ -143,36 +143,41 @@ button:hover .button-text {
   color: #fff;
 }
 
+  .aboutus-homeimg {
+ 
+  width: 400px;
+
+
+}
+
 @media (max-width:1550px) {
   .aboutus-homeimg {
   height: 400px;
-
-  margin-right: 50px;
-  margin-top: -500px;
-
-}
-
-.aboutus-homeimgb {
-  background-color: rgb(136, 170, 136);
-  padding-right: 100px;
-
-  height: 350px;
-
   width: 300px;
-  
+
+
 }
+
+.aboutus-home{
+  /* border: 2px solid red; */
+  height: 100vh;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
   
 }
 
 @media (max-width: 750px) {
   .aboutus-home h1 {
-    background-color: rgb(236, 243, 243);
+   
     font-size: 50px;
   }
 
   .aboutus-home p {
-    margin-top: 10px;
-    font-size: 25px;
+    font-size: 20px;
     width: 100%;
   }
   .aboutus-home-descandbtn {
@@ -180,11 +185,20 @@ button:hover .button-text {
     justify-content: left;
     align-items:flex-start;
     flex-direction: column;
-   
-    margin-top: 50px;
   }
 
   .aboutus-home {
-    padding: 10px 10px;
+    height: 100vh ;
+  
+   
   }
+    .aboutus-homeimg {
+      height: 300px;
+      width: 200px;
+  
+  margin-top: 0;
+
+
+}
+
 }

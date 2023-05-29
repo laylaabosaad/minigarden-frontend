@@ -26,7 +26,7 @@ function Abouthome() {
           </button>
         </div>
         <div className="aboutus-homeimgback">
-          <div className="aboutus-homeimgb"></div>
+         
           <img className="aboutus-homeimg" src={about} alt=""></img>
         </div>
       </div>

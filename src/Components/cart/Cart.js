@@ -3,7 +3,7 @@ import { useState, useEffect, useReducer } from "react";
 
 import "../cart/Cart.css";
 
-import terr from "../images/terr.png";
+import { Link } from "react-router-dom";
 import "../Orders/Orders.css";
 import swal from "sweetalert";
 
@@ -34,11 +34,9 @@ function Cart() {
   };
 
   const showDisabled = () => {
-    if (productCard.length == 0)
-      setDisabled(true);
-    else
-      setDisabled(false)
-  }
+    if (productCard.length == 0) setDisabled(true);
+    else setDisabled(false);
+  };
 
   const deleteItem = async (itemId) => {
     try {
@@ -51,8 +49,7 @@ function Cart() {
 
       if (response.data.items.length == 0) {
         setProductCard([]);
-      }
-      else {
+      } else {
         setProductCard(product_fake);
         getProduct();
       }
@@ -72,14 +69,13 @@ function Cart() {
         data
       );
 
-       let product_fake = productCard;
-       product_fake[0].items = response.data.items;
-
+      let product_fake = productCard;
+      product_fake[0].items = response.data.items;
 
       setProductCard(product_fake);
       getProduct();
 
-      console.log("increase ",response.data);
+      console.log("increase ", response.data);
     } catch (error) {
       console.error(error);
     }
@@ -92,7 +88,7 @@ function Cart() {
 
   useEffect(() => {
     showDisabled();
-    }, [productCard]);
+  }, [productCard]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -137,7 +133,8 @@ function Cart() {
       <div className="titleanditems">
         <h1>Cart</h1>
         <div className="Shoppingcart-table">
-          { productCard.length > 0 ? productCard.map((item, index) => (
+          {productCard.length > 0 ? (
+            productCard.map((item, index) => (
               <div className="cart-checkoutandtable">
                 <div className="Shoppingcart-all" key={index}>
                   <div className="titles-cart">
@@ -199,7 +196,15 @@ function Cart() {
                   <p> {item.bill}$</p>
                 </div>
               </div>
-            )): <p>Your cart is empty </p>}
+            ))
+          ) : (
+            <div className="emptycart">
+              <h3>Your cart is empty. Add some products to your cart</h3>
+              <Link to="/Products">
+                <button className="submit-btn">Products</button>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
       <div className="input-fields-orders">
@@ -247,7 +252,7 @@ function Cart() {
                 </button>
               ) : (
                 <button type="submit" className="submit-btn">
-                  Submit 
+                  Submit
                 </button>
               )}
             </div>

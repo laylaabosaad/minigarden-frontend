@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import "../Dashboard/Productadmin.css";
+import swal from "sweetalert";
 
 function ProductAdmin() {
   const [title, setTitle] = useState("");
@@ -40,17 +41,40 @@ function ProductAdmin() {
         formData.append("image", images[i]);
       }
       console.log("formData ", formData);
-      const response = await axios.post(
-        "http://localhost:2000/product/add",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
-      getProduct();
-      console.log(response.data);
+
+      if (!formData) {
+        swal({
+          title: "Please Fill all the fields",
+          text: "For a better service fill the fields",
+          icon: "error",
+          button: "ok",
+        });
+      } else {
+        swal({
+          title: "Product addition was successful",
+          icon: "success",
+          button: "ok",
+        });
+
+        const response = await axios.post(
+          "http://localhost:2000/product/add",
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
+        getProduct();
+        setCategory("")
+        setTitle("")
+        setDescription("")
+        setPrice("")
+        setSubcategory("")
+        setStock("")
+        setImages("")
+        console.log(response.data);
+      }
     } catch (error) {
       console.error(error);
     }

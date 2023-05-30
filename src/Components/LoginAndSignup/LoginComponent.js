@@ -69,6 +69,7 @@ function LoginComponent() {
               <h1>Login</h1>
 
               <div className="loginandregister-inputs">
+                <label>Email</label>
                 <input
                   placeholder="Email"
                   type="text"
@@ -78,10 +79,11 @@ function LoginComponent() {
                 ></input>
               </div>
               <div className="loginandregister-inputs">
+                <label>Password</label>
                 <input
                   value={password}
                   placeholder="Password"
-                  type="text"
+                  type="password"
                   required
                   onChange={handlePasswordChange}
                 ></input>

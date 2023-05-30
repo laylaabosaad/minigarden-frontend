@@ -10,6 +10,12 @@
   /* border: 2px solid black; */
 }
 
+
+label:after {
+    content:" *";
+    color: red;
+  }
+
 .contact-contantfit {
   /* border: 2px solid red; */
   width: 80%;
@@ -39,18 +45,15 @@
 }
 
 .image-contactus img {
-  
- width: 500px;
- height: 710px;
- 
- margin-top: 100px;
+  width: 550px;
+  height: 720px;
 
- 
+  margin-top: 100px;
 }
 
 .contact- {
   padding-left: 50px;
-  padding-top: 100px;
+  padding-top: 50px;
 }
 .contact- h5 {
   font-size: 40px;
@@ -67,7 +70,6 @@
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 100px;
- 
 
   /* border: 2px solid rgb(0, 106, 255); */
 }
@@ -77,11 +79,9 @@
   width: 100px;
 }
 
-
-
-
 .contact-header {
-   background: linear-gradient(rgba(7, 7, 7, 0.548), rgba(33, 29, 29, 0.712)),url("../images/backter.jpg");
+  background: linear-gradient(rgba(7, 7, 7, 0.548), rgba(33, 29, 29, 0.712)),
+    url("../images/backter.jpg");
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -91,7 +91,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
- 
 }
 
 .contact-header h1 {
@@ -99,36 +98,35 @@
   color: white;
   margin-top: 10px;
   padding-bottom: 20px;
-  
 }
 
-
 .contact-header h5 {
- 
-  
   color: white;
   font-size: 30px;
 }
 
+.message{
+ height: 100px !important;
+}
+
+
+
+
 @media only screen and (max-width: 980px) {
-
   .contact-header h1 {
-  font-size: 50px;
-  color: white;
-  margin-top: 10px;
-  padding-bottom: 20px;
-}
+    font-size: 50px;
+    color: white;
+    margin-top: 10px;
+    padding-bottom: 20px;
+  }
 
-.contact-header{
-  padding: 0;
-}
+  .contact-header {
+    padding: 0;
+  }
 
-
-.contact-header h5 {
-  
-  color: white;
-  font-size: 20px;
-  text-align: center;
-}
-
+  .contact-header h5 {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+  }
 }

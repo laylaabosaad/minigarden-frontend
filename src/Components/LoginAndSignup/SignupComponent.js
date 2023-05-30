@@ -139,15 +139,6 @@ function SignupComponent() {
 
               <div className="loginandregister-inputs">
                 <input
-                  placeholder="Email"
-                  type="text"
-                  required
-                  value={email}
-                  onChange={handleEmailChange}
-                ></input>
-              </div>
-              <div className="loginandregister-inputs">
-                <input
                   placeholder="Fullname"
                   type="text"
                   required
@@ -155,6 +146,17 @@ function SignupComponent() {
                   onChange={handlefullnameChange}
                 ></input>
               </div>
+
+              <div className="loginandregister-inputs">
+                <input
+                  placeholder="Email"
+                  type="text"
+                  required
+                  value={email}
+                  onChange={handleEmailChange}
+                ></input>
+              </div>
+
               <div className="loginandregister-inputs">
                 <input
                   value={password}
@@ -171,7 +173,7 @@ function SignupComponent() {
                 </Link>
               </p>
               <button type="Submit" className="login-register-btn">
-              Signup
+                Signup
               </button>
             </div>
           </form>

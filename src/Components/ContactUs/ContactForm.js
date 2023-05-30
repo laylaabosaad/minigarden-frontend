@@ -1,6 +1,6 @@
 import axios from "axios";
 import "../ContactUs/contact.css";
-import contactimg from "../images/pexels-cottonbro-studio-4507746.jpg";
+import contactimg from "../images/terr.png";
 import { useEffect, useState, useR } from "react";
 import swal from "sweetalert";
 
@@ -18,22 +18,29 @@ function ContactForm() {
       phonenumber: phonenumber,
       message: message,
     };
+    if (!fullname || !email || !phonenumber || !message) {
+      swal({
+        title: "Please Fill all the fields",
+        text: "For a better service fill the fields",
+        icon: "error",
+        button: "ok",
+      });
+    } else {
+      swal({
+        title: "Thank you for contacting us!",
+        text: "Our team will get back to you soon",
+        icon: "success",
+        button: "ok",
+      });
 
-    swal({
-      title: "Thank you for contacting us!",
-      text: "Our team will get back to you soon",
-      icon: "success",
-      button: "ok",
-    });
+      const send = await axios.post("http://localhost:2000/contactus/", data);
+      const res = send.data.data;
+    }
 
-    const send = await axios.post("http://localhost:2000/contactus/", data);
-    const res = send.data.data;
-
-    console.log(send.data);
     setmessage("");
     setEmail("");
-    setFullName("")
-    setPhoneNumber("")
+    setFullName("");
+    setPhoneNumber("");
   };
 
   return (

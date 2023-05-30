@@ -12,13 +12,21 @@
   margin-top: 500px;
 }
 
+.loginandregister-inputs{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+ gap: 10px;
+  flex-direction: column;
+}
+
 .loginandregister-inputs input {
   background-color: rgb(237, 241, 241);
   border: none;
   /* border: 2px solid green; */
   margin-bottom: 40px;
   width: 300px;
-  height: 60px;
+  height: 50px;
   
 }
 

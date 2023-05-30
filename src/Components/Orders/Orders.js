@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import terr from "../images/terr.png"
 import "../Orders/Orders.css";
+import swal from "sweetalert";
 
 function Orders() {
   const [orders, setOrders] = useState([]);
@@ -9,6 +11,7 @@ function Orders() {
   const [phonenumber, setPhoneNumber] = useState("");
   const [notes, setNotes] = useState("");
   let userId = localStorage.getItem("userId");
+
 
   const getOrders = async (id) => {
     const find = await axios.get(
@@ -29,14 +32,34 @@ function Orders() {
         notes: notes,
       };
 
-      const response = await axios.post(
-        `http://localhost:2000/orders/${userId}`,
-        data
-       
-      );
-    
-      console.log(response.data);
+      if (!userId) {
+          swal({
+            title: "Login to make an order",
+            text: "You need to login!",
+            icon: "warning",
+            button: "Login",
+          }).then(() => {
+            window.location.href = "/login";
+          });
 
+        
+      } else {
+        swal({
+          title: "Your order was sent",
+          text: "You need to login!",
+          icon: "success",
+          button: "ok",
+        }).then(() => {
+          window.location.href = "/";
+        });
+           const response = await axios.post(
+             `http://localhost:2000/orders/${userId}`,
+             data
+           );
+
+           console.log(response.data);
+        
+      }
       
     } catch (error) {
       console.error(error);
@@ -50,6 +73,10 @@ console.log('orders',orders)
 
   return (
     <div className="input-fields-orders">
+      <div className="imgcont">
+        <img src={terr} alt=""></img>
+      </div>
+
       <form onSubmit={handleSubmit}>
         <div className="orderinputs-all">
           <div className="tofit">

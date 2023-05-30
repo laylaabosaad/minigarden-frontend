@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "../Home/Slider.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import swal from "sweetalert";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -20,7 +21,7 @@ const Productsection = () => {
   const [activeCategoryId, setActiveCategoryId] = useState(null);
 
   const [selectedCategory, setSelectedCategory] = useState(null);
-  const {categoryID} = useParams();
+  const { categoryID } = useParams();
   console.log("selected", selectedCategory);
 
   const getProdofaSubCategory = async (_id) => {
@@ -41,6 +42,7 @@ const Productsection = () => {
     setActiveCategoryId(categoryId);
     getProdofaSubCategory(categoryId);
   };
+
   const addtoCart = async (productId, quantity, price, title) => {
     try {
       const data = {
@@ -49,13 +51,27 @@ const Productsection = () => {
         price: price,
         title: title,
       };
-
-      const response = await axios.put(
-        `http://localhost:2000/cart/${userId}`,
-        data
-      );
-
-      console.log(response.data);
+      if (!userId) {
+        swal({
+          title: "Login to add to cart",
+          text: "You need to login!",
+          icon: "warning",
+          button: "Login",
+        }).then(() => {
+          window.location.href = "/login";
+        });
+      } else {
+        const response = await axios.put(
+          `http://localhost:2000/cart/${userId}`,
+          data
+        );
+        swal({
+          title: "Item added to cart",
+          text: "Item Added Successfully",
+          icon: "success",
+          button: "Continue Shopping",
+        });
+      }
     } catch (error) {
       console.error(error);
     }
@@ -64,6 +80,29 @@ const Productsection = () => {
   useEffect(() => {
     getCategories();
   }, []);
+  // const addtoCart = async (productId, quantity, price, title) => {
+  //   try {
+  //     const data = {
+  //       productId: productId,
+  //       quantity: quantity,
+  //       price: price,
+  //       title: title,
+  //     };
+
+  //     const response = await axios.put(
+  //       `http://localhost:2000/cart/${userId}`,
+  //       data
+  //     );
+
+  //     console.log(response.data);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   getCategories();
+  // }, []);
 
   const getCategories = async () => {
     try {
@@ -75,22 +114,16 @@ const Productsection = () => {
     }
   };
 
-    const getProducts = async () => {
-      try {
-        const response = await axios.get("http://localhost:2000/product");
-        const res= response.data.data
-        setProductCard(res)
-        console.log(response.data)
-      } catch (error) {
-        console.error("Error:", error);
-      }
-    };
-
-
-
-
-
-
+  const getProducts = async () => {
+    try {
+      const response = await axios.get("http://localhost:2000/product");
+      const res = response.data.data;
+      setProductCard(res);
+      console.log(response.data);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
 
   useEffect(() => {
     if (selectedCategory) {

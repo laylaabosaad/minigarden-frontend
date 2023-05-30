@@ -1,5 +1,5 @@
 .imgmini-cart img {
-  width: 150px;
+
   background-color: rgb(230, 240, 238);
   height: 150px;
  
@@ -20,7 +20,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  
   width: 100%;
 
   border-bottom: 1px solid rgb(230, 240, 238);
@@ -85,11 +85,12 @@
 .cart-all {
 
     gap: 50px;
-    align-items: center;
+    align-items: flex-start;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
+    padding: 20px;
     padding-bottom: 200px;
     margin-top: 200px;
     /* border: 2px solid gray; */

@@ -2,65 +2,121 @@ import { Link } from "react-router-dom";
 import "../LoginAndSignup/LoginandSignup.css";
 import { useState } from "react";
 import swal from "sweetalert";
+import secureLocalStorage from "react-secure-storage";
 
 function SignupComponent() {
 
     const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-   const [fullname, setFullname] = useState("");
+  const [fullname, setFullname] = useState("");
 
 
 
+  const handleSignup = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await fetch("http://localhost:2000/users/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+     
+          fullname
+        }),
+      });
 
+      const data = await response.json();
 
-    const handleSignup = async (event) => {
-      event.preventDefault();
-      try {
-        const response = await fetch("http://localhost:2000/users/signup", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email,
-            password,
-            fullname
-          }),
+      secureLocalStorage.setItem("role", data.role);
+      localStorage.setItem("userId", data.user);
+      window.localStorage.setItem("token", data.token);
+      if (response.ok) {
+        swal({
+          title: "signup successful",
+          icon: "success",
+        }).then(() => {
+         
+            window.location.href = "/Products";
+         
         });
-
-        const data = await response.json();
-        if (response.ok) {
-           window.location.href = "/";
-          swal({
-            title: "signup was successful",
-            icon: "success",
-          }).then(() => {
-            window.localStorage.setItem("token", data.token);
-            if (data.role === "admin") {
-              window.location.href = "/Products";
-            } else if (data.role === "user") {
-              window.location.href = "/";
-
-            } else {
-            }
-          });
-        } else {
-          swal({
-            title: "Signup Failed",
-            text: data.error,
-            icon: "error",
-          });
-          {console.log(data.error)}
-        }
-      } catch (error) {
-        console.error(error);
-         swal({
-           title: error.data.error,
-           text: error.data.error,
-           icon: "error",
-         });
+      } else {
+        swal({
+          title: "signup failed",
+          text: "User email already exists",
+        
+          icon: "error",
+        }); {  console.log(data.message);}
       }
-    };
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // const handleSignup = async (event) => {
+    //   event.preventDefault();
+    //   try {
+    //     const response = await fetch("http://localhost:2000/users/signup", {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify({
+    //         email,
+    //         password,
+    //         fullname
+    //       }),
+    //     });
+
+    //     const data = await response.json();
+    //     if (response.ok) {
+    //        window.location.href = "/";
+    //       swal({
+    //         title: "signup was successful",
+    //         icon: "success",
+    //       }).then(() => {
+    //         window.localStorage.setItem("token", data.token);
+    //         if (data.role === "admin") {
+    //           window.location.href = "/Products";
+    //         } else if (data.role === "user") {
+    //           window.location.href = "/";
+
+    //         } else {
+    //         }
+    //       });
+    //     } else {
+    //       swal({
+    //         title: "Signup Failed",
+    //         text: data.error,
+    //         icon: "error",
+    //       });
+    //       {console.log(data.error)}
+    //     }
+    //   } catch (error) {
+    //     console.error(error);
+    //      swal({
+    //        title: error.data.error,
+    //        text: error.data.error,
+    //        icon: "error",
+    //      });
+    //   }
+    // };
   
    const handleEmailChange = (event) => {
      setEmail(event.target.value);

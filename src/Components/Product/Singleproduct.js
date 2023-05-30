@@ -45,14 +45,16 @@ function Singleproduct() {
                 {singleProd.price}$
               </p>
               <div className="btns-single">
-                <div className="product-buttons">
-                  <Link to="/Products">
-                    <button className="submit-btn">Go Back</button>
-                  </Link>
-                </div>
-                <div className="product-buttons">
-                  <button className="submit-btn">Add to cart</button>
-                </div>
+                
+                  <div className="product-buttons">
+                    <Link to="/Products">
+                      <button className="submit-btn">Go Back</button>
+                    </Link>
+                  </div>
+                  <div className="product-buttons">
+                    <button className="submit-btn">Add to cart</button>
+                  </div>
+               
               </div>
             </div>
           </div>

@@ -32,27 +32,22 @@ function LoginComponent() {
       });
 
       const data = await response.json();
-     
+
       secureLocalStorage.setItem("role", data.role);
-      localStorage.setItem("userId", data.user)
+      localStorage.setItem("userId", data.user);
       window.localStorage.setItem("token", data.token);
       if (response.ok) {
         swal({
           title: "Login successful",
           icon: "success",
         }).then(() => {
-          
-          
           if (data.role === "admin") {
-            window.location.href = "/Products";
+            window.location.href = "/admin/products";
           } else if (data.role === "user") {
             window.location.href = "/";
           } else {
           }
-         
-        })  
-           
-          ;
+        });
       } else {
         swal({
           title: "Login failed",

@@ -39,7 +39,7 @@ function ProductAdmin() {
       for (let i = 0; i < images.length; i++) {
         formData.append("image", images[i]);
       }
-
+      console.log("formData ", formData);
       const response = await axios.post(
         "http://localhost:2000/product/add",
         formData,
@@ -112,7 +112,6 @@ function ProductAdmin() {
 
       <div className="whole-admin-product">
         <form onSubmit={handleSubmit}>
-          
           <div className="inputsall-admin">
             <label>Product name:</label>
             <input

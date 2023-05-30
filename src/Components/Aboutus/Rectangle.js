@@ -1,7 +1,9 @@
 import "./rectangle.css";
 import aboutimg from "../images/aboutimg.png";
 import imgabout from "../images/Lighthouse.png";
-import icon from "../images/icon.png";
+import take from "../images/take.png";
+import care from "../images/care.png";
+import choose from "../images/choose.png";
 
 function Rectangle() {
   return (
@@ -14,9 +16,7 @@ function Rectangle() {
       <div className="about-us-header">
         <h1>About Us</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. elementum
-          lgjkhbjhcbxjh sjcajs jkcakjbcsaskj shckjh euismod, Lorem ipsum dolor
-          sit amet, consectetur adipiscing elit.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
         </p>
       </div>
       {/* <div>
@@ -42,7 +42,7 @@ function Rectangle() {
         <h1 className="values-h1">Our Mission and Values </h1>
         <div className="values-about">
           <div className="values-box">
-            <img className="value-images" src={icon}></img>
+            <img className="value-images" src={take}></img>
             <h1>Goal</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
@@ -50,7 +50,7 @@ function Rectangle() {
             </p>
           </div>
           <div className="values-box middle-about">
-            <img className="value-images" src={icon}></img>
+            <img className="value-images" src={care}></img>
             <h1>Aim</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
@@ -58,7 +58,7 @@ function Rectangle() {
             </p>
           </div>
           <div className="values-box">
-            <img className="value-images" src={icon}></img>
+            <img className="value-images" src={choose}></img>
             <h1>Purpose</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce

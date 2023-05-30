@@ -17,7 +17,8 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  padding: 100px;
+  padding: 100px 200px;
+  
 
   width: fit-content;
 
@@ -27,23 +28,45 @@
 .bkrndimgcart {
   /* border: 2px solid red; */
  height: 100%;
-  background-color: aquamarine;
+  background-color: rgb(202, 227, 239);
   width: 50%;
 }
 
 .bkrndimgcart img {
-  border: 2px solid rgb(31, 15, 15);
-  margin-top: 50px;
+  /* border: 2px solid rgb(31, 15, 15); */
+  margin-top: 80px;
+  width: 100%;
 }
 
 .btns-single {
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   flex-direction: row;
 
-  gap: 100px;
+  gap: 50px;
 }
 
+@media screen and (max-width: 1555px){
+  .bkrndimgcart {
+  /* border: 2px solid red; */
+ height: 100%;
+  background-color: rgb(202, 227, 239);
+  width: 50%;
+}
+
+.bkrndimgcart img{
+  width: 100%;
+  margin-top: 100px;
+  
+  border: 2px solid rebeccapurple;
+
+}
+
+.single-info {
+  padding: 10px;
+}
+
+}

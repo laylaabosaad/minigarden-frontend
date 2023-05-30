@@ -1,38 +1,43 @@
 import axios from "axios";
-import React, { useState, useEffect, useReducer } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect, useReducer } from "react";
+
 import "../cart/Cart.css";
 
+import terr from "../images/terr.png";
+import "../Orders/Orders.css";
+import swal from "sweetalert";
+
 function Cart() {
-  let userId = localStorage.getItem("userId")
-  
-  const [refresh, setRefresh] = useReducer((x) => x + 1, 0);
+  const [address, setAddress] = useState("");
+  const [fullname, setFullName] = useState("");
+  const [phonenumber, setPhoneNumber] = useState("");
+  const [notes, setNotes] = useState("");
+  const [disabled, setDisabled] = useState(false);
   const [productCard, setProductCard] = useState([]);
-  console.log(refresh);
+
+  let userId = localStorage.getItem("userId");
+
   const getProduct = async () => {
     try {
       const response = await axios.get(`http://localhost:2000/cart/${userId}`);
       const cartData = response.data.cart;
-      console.log(response.data);
       if (Array.isArray(cartData)) {
         setProductCard(cartData);
       } else if (typeof cartData === "object") {
         setProductCard([cartData]);
       }
+
+      console.log("useEffect ", productCard);
     } catch (error) {
       console.error(error);
     }
   };
 
-  const handlecheckout = () => {
-    const token= localStorage.getItem("token")
-    if (!token) {
-    window.location.href = "/Login";
-      return;
-    } else {
-       
-       window.location.href = "/Checkout";
-    }
+  const showDisabled = () => {
+    if (productCard.length == 0)
+      setDisabled(true);
+    else
+      setDisabled(false)
   }
 
   const deleteItem = async (itemId) => {
@@ -40,10 +45,17 @@ function Cart() {
       const response = await axios.delete(
         `http://localhost:2000/cart/${userId}/${itemId}`
       );
-      const updatedCart = response.data;
 
-      setRefresh();
-      setProductCard(updatedCart);
+      let product_fake = productCard;
+      product_fake[0].items = response.data.items;
+
+      if (response.data.items.length == 0) {
+        setProductCard([]);
+      }
+      else {
+        setProductCard(product_fake);
+        getProduct();
+      }
     } catch (error) {
       console.error(error);
     }
@@ -55,15 +67,19 @@ function Cart() {
         productId: productId,
         quantity: 1,
       };
-
-      console.log("data ", data);
-
       const response = await axios.post(
         `http://localhost:2000/cart/${userId}`,
         data
       );
-      setRefresh();
-      console.log(response.data);
+
+       let product_fake = productCard;
+       product_fake[0].items = response.data.items;
+
+
+      setProductCard(product_fake);
+      getProduct();
+
+      console.log("increase ",response.data);
     } catch (error) {
       console.error(error);
     }
@@ -71,15 +87,57 @@ function Cart() {
 
   useEffect(() => {
     getProduct();
-  }, [refresh]);
+    showDisabled();
+  }, []);
+
+  useEffect(() => {
+    showDisabled();
+    }, [productCard]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const data = {
+        address: address,
+        fullname: fullname,
+        phonenumber: phonenumber,
+        notes: notes,
+      };
+
+      if (!userId) {
+        swal({
+          title: "Login to make an order",
+          text: "You need to login!",
+          icon: "warning",
+          button: "Login",
+        }).then(() => {
+          window.location.href = "/login";
+        });
+      } else {
+        swal({
+          title: "Your order was sent",
+          text: "You need to login!",
+          icon: "success",
+          button: "ok",
+        }).then(() => {
+          window.location.href = "/";
+        });
+        const response = await axios.post(
+          `http://localhost:2000/orders/${userId}`,
+          data
+        );
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <div className="cart-all">
       <div className="titleanditems">
         <h1>Cart</h1>
         <div className="Shoppingcart-table">
-          {productCard.length > 0 ? (
-            productCard.map((item, index) => (
+          { productCard.length > 0 ? productCard.map((item, index) => (
               <div className="cart-checkoutandtable">
                 <div className="Shoppingcart-all" key={index}>
                   <div className="titles-cart">
@@ -118,11 +176,9 @@ function Cart() {
                       <div className="quantitybtnsall">
                         <button
                           className="btnremove"
-                          onClick={() =>
-                            deleteItem(productItem?.productId._id)
-                          }
+                          onClick={() => deleteItem(productItem?.productId._id)}
                         >
-                          {console.log("deleteeee", item.userId)}-
+                          -
                         </button>
                         <h4> {productItem?.quantity}</h4>
                         <button
@@ -143,21 +199,60 @@ function Cart() {
                   <p> {item.bill}$</p>
                 </div>
               </div>
-            ))
-          ) : (
-            <p>Your cart is empty. Add items to the cart</p>
-          )}
+            )): <p>Your cart is empty </p>}
         </div>
       </div>
-      <div className="rightsection-cart">
-        <div className="btnandLinkcart">
-          <h1>One Step Away </h1>
-          <button className="checkoutbtn">
-            <div className="checkoutlink" onClick={handlecheckout}>
-              Go to Checkout
+      <div className="input-fields-orders">
+        <form onSubmit={handleSubmit}>
+          <div className="orderinputs-all">
+            <div className="tofit">
+              <h1>Checkout</h1>
+              <label>Full Name</label>
+              <div>
+                <input
+                  type="text"
+                  required
+                  value={fullname}
+                  onChange={(e) => setFullName(e.target.value)}
+                ></input>
+              </div>
+              <label>Phone Number</label>
+              <div>
+                <input
+                  type="tel"
+                  value={phonenumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
+                ></input>
+              </div>
+              <label>Address</label>
+              <div>
+                <input
+                  type="text"
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
+                ></input>
+              </div>
+              <label>Additional Information</label>
+              <div className="notecheckout">
+                <input
+                  type="text"
+                  value={notes}
+                  onChange={(e) => setNotes(e.target.value)}
+                ></input>
+              </div>
+              {disabled ? (
+                <button type="submit" disabled>
+                  {/* Submits {productCard.length} */}
+                  Submit
+                </button>
+              ) : (
+                <button type="submit" className="submit-btn">
+                  Submit 
+                </button>
+              )}
             </div>
-          </button>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
   );

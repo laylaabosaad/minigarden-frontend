@@ -17,7 +17,8 @@ const Navbar = (props) => {
   const handleLogout = () => {
     window.localStorage.clear();
     props.setLoggedin(false);
-    secureLocalStorage.removeItem()
+    window.location.href = "/";
+    secureLocalStorage.removeItem();
   };
   console.log("role", role);
 
@@ -87,12 +88,12 @@ const Navbar = (props) => {
 
           {isAdmin && (
             <Link
-              to="/admin/contactus"
+              to="/admin/Products"
               className={`navlinks ${
-                location.pathname === "/admin/contactus" ? "active" : ""
+                location.pathname === "/admin/Products" ? "active" : ""
               }`}
             >
-              <div>Admin Messages</div>
+              <div>Products</div>
             </Link>
           )}
 
@@ -103,18 +104,18 @@ const Navbar = (props) => {
                 location.pathname === "/admin/Order" ? "active" : ""
               }`}
             >
-              <div>Admin Orders</div>
+              <div>Orders</div>
             </Link>
           )}
 
           {isAdmin && (
             <Link
-              to="/admin/Products"
+              to="/admin/contactus"
               className={`navlinks ${
-                location.pathname === "/admin/Products" ? "active" : ""
+                location.pathname === "/admin/contactus" ? "active" : ""
               }`}
             >
-              <div>Admin Products</div>
+              <div>Messages</div>
             </Link>
           )}
 

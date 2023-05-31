@@ -6,7 +6,7 @@ function Ordersadmin() {
   const [refresh, setRefresh] = useReducer((x) => x + 1, 0);
 
   const getOrders = async () => {
-    const find = await axios.get("http://localhost:2000/orders", {});
+    const find = await axios.get("https://mini-garden.onrender.com/orders", {});
     const res = find.data.data;
     setOrders(res);
     // console.log(res)
@@ -15,7 +15,7 @@ function Ordersadmin() {
   const deleteOrder = async (orderId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:2000/orders/${orderId}`
+        `https://mini-garden.onrender.com/orders/${orderId}`
       );
       const remove = response.data;
 

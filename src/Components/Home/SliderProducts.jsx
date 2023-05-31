@@ -48,7 +48,7 @@ const SliderProducts = () => {
 
   const getProdAll = async () => {
     try {
-      const find = await axios.get(`http://localhost:2000/product`);
+      const find = await axios.get(`https://mini-garden.onrender.com/product`);
       const response = find.data.data;
       console.log(find.data.data);
       // Sort the products by the earliest time they were added

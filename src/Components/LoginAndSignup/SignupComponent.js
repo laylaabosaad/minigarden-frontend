@@ -5,7 +5,6 @@ import swal from "sweetalert";
 import secureLocalStorage from "react-secure-storage";
 import Footer from "../Footer/Footer";
 
-
 function SignupComponent() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -14,18 +13,21 @@ function SignupComponent() {
   const handleSignup = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch("http://localhost:2000/users/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          password,
+      const response = await fetch(
+        "https://mini-garden.onrender.com/users/signup",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            password,
 
-          fullname,
-        }),
-      });
+            fullname,
+          }),
+        }
+      );
 
       const data = await response.json();
 
@@ -46,7 +48,6 @@ function SignupComponent() {
 
           icon: "error",
         });
-       
       }
     } catch (error) {
       console.error(error);
@@ -56,7 +57,7 @@ function SignupComponent() {
   // const handleSignup = async (event) => {
   //   event.preventDefault();
   //   try {
-  //     const response = await fetch("http://localhost:2000/users/signup", {
+  //     const response = await fetch("https://mini-garden.onrender.com/users/signup", {
   //       method: "POST",
   //       headers: {
   //         "Content-Type": "application/json",
@@ -124,7 +125,6 @@ function SignupComponent() {
               <div className="loginandregister-inputs signup">
                 <label>Full Name</label>
                 <input
-               
                   type="text"
                   required
                   value={fullname}
@@ -135,7 +135,6 @@ function SignupComponent() {
               <div className="loginandregister-inputs">
                 <label>Email</label>
                 <input
-                 
                   type="text"
                   required
                   value={email}
@@ -147,7 +146,6 @@ function SignupComponent() {
                 <label>Password</label>
                 <input
                   value={password}
-                 
                   type="password"
                   required
                   onChange={handlePasswordChange}

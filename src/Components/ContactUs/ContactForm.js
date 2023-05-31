@@ -1,7 +1,7 @@
 import axios from "axios";
 import "../ContactUs/contact.css";
 import contactimg from "../images/terr.png";
-import { useEffect, useState, useR } from "react";
+import { useState } from "react";
 import swal from "sweetalert";
 
 function ContactForm() {
@@ -33,7 +33,10 @@ function ContactForm() {
         button: "ok",
       });
 
-      const send = await axios.post("http://localhost:2000/contactus/", data);
+      const send = await axios.post(
+        "https://mini-garden.onrender.com/contactus/",
+        data
+      );
       const res = send.data.data;
     }
 

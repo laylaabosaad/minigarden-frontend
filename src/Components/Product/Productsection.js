@@ -27,7 +27,7 @@ const Productsection = () => {
   const getProdofaSubCategory = async (_id) => {
     try {
       const find = await axios.get(
-        `http://localhost:2000/product/bycategory/${_id}`
+        `https://mini-garden.onrender.com/product/bycategory/${_id}`
       );
       const response = find.data.data;
 
@@ -62,7 +62,7 @@ const Productsection = () => {
         });
       } else {
         const response = await axios.put(
-          `http://localhost:2000/cart/${userId}`,
+          `https://mini-garden.onrender.com/cart/${userId}`,
           data
         );
         swal({
@@ -90,7 +90,7 @@ const Productsection = () => {
   //     };
 
   //     const response = await axios.put(
-  //       `http://localhost:2000/cart/${userId}`,
+  //       `https://mini-garden.onrender.com/cart/${userId}`,
   //       data
   //     );
 
@@ -106,7 +106,9 @@ const Productsection = () => {
 
   const getCategories = async () => {
     try {
-      const response = await axios.get("http://localhost:2000/category");
+      const response = await axios.get(
+        "https://mini-garden.onrender.com/category"
+      );
       setCategories(response.data.data);
       setSelectedCategory(response.data.data[0]._id); // Set the first category as the default selected category
     } catch (error) {
@@ -116,7 +118,9 @@ const Productsection = () => {
 
   const getProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:2000/product");
+      const response = await axios.get(
+        "https://mini-garden.onrender.com/product"
+      );
       const res = response.data.data;
       setProductCard(res);
       console.log(response.data);

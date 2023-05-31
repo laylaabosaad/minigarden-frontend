@@ -17,7 +17,7 @@ function ProductAdmin() {
   const [editProduct, setEditProduct] = useState({});
 
   const getProduct = async () => {
-    const res = await axios.get("http://localhost:2000/product");
+    const res = await axios.get("https://mini-garden.onrender.com/product");
     const getpro = res.data.data;
     setProduct(getpro);
     // console.log(getpro);
@@ -57,7 +57,7 @@ function ProductAdmin() {
         });
 
         const response = await axios.post(
-          "http://localhost:2000/product/add",
+          "https://mini-garden.onrender.com/product/add",
           formData,
           {
             headers: {
@@ -66,13 +66,13 @@ function ProductAdmin() {
           }
         );
         getProduct();
-        setCategory("")
-        setTitle("")
-        setDescription("")
-        setPrice("")
-        setSubcategory("")
-        setStock("")
-        setImages("")
+        setCategory("");
+        setTitle("");
+        setDescription("");
+        setPrice("");
+        setSubcategory("");
+        setStock("");
+        setImages("");
         console.log(response.data);
       }
     } catch (error) {
@@ -92,7 +92,7 @@ function ProductAdmin() {
 
   const deleteprod = async (_id) => {
     const removeprod = await axios.delete(
-      `http://localhost:2000/product/${_id}`
+      `https://mini-garden.onrender.com/product/${_id}`
     );
     getProduct();
     console.log("check", _id);
@@ -109,7 +109,7 @@ function ProductAdmin() {
       description: editProduct.description,
     };
     const change = await axios.put(
-      `http://localhost:2000/product/${editProductId}`,
+      `https://mini-garden.onrender.com/product/${editProductId}`,
       data
     );
     getProduct(change);

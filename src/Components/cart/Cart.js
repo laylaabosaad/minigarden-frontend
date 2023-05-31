@@ -19,7 +19,9 @@ function Cart() {
 
   const getProduct = async () => {
     try {
-      const response = await axios.get(`http://localhost:2000/cart/${userId}`);
+      const response = await axios.get(
+        `https://mini-garden.onrender.com/cart/${userId}`
+      );
       const cartData = response.data.cart;
       if (Array.isArray(cartData)) {
         setProductCard(cartData);
@@ -41,7 +43,7 @@ function Cart() {
   const deleteItem = async (itemId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:2000/cart/${userId}/${itemId}`
+        `https://mini-garden.onrender.com/cart/${userId}/${itemId}`
       );
 
       let product_fake = productCard;
@@ -65,7 +67,7 @@ function Cart() {
         quantity: 1,
       };
       const response = await axios.post(
-        `http://localhost:2000/cart/${userId}`,
+        `https://mini-garden.onrender.com/cart/${userId}`,
         data
       );
 
@@ -119,7 +121,7 @@ function Cart() {
           window.location.href = "/";
         });
         const response = await axios.post(
-          `http://localhost:2000/orders/${userId}`,
+          `https://mini-garden.onrender.com/orders/${userId}`,
           data
         );
       }

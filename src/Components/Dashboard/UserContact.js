@@ -5,13 +5,18 @@ import "../Dashboard/contactadmin.css"
 function UserContact() {
   const [userContact, setUserContact] = useState([]);
   const getmessages = async () => {
-    const find = await axios.get("http://localhost:2000/contactus/", {});
+    const find = await axios.get(
+      "https://mini-garden.onrender.com/contactus/",
+      {}
+    );
     const res = find.data.data;
     setUserContact(find.data.data);
   };
 
   const deletemessage = async (_id) => {
-    const remove = await axios.delete(`http://localhost:2000/contactus/${_id}`);
+    const remove = await axios.delete(
+      `https://mini-garden.onrender.com/contactus/${_id}`
+    );
     getmessages();
   };
 

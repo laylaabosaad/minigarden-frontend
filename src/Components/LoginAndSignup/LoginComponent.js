@@ -20,16 +20,19 @@ function LoginComponent() {
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch("http://localhost:2000/users/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          password,
-        }),
-      });
+      const response = await fetch(
+        "https://mini-garden.onrender.com/users/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            password,
+          }),
+        }
+      );
 
       const data = await response.json();
 

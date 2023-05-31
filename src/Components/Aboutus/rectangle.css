@@ -81,6 +81,7 @@
   width: 500px;
 }
 
+
 /* .container {
   position: relative;
   width: 100%;
@@ -365,6 +366,19 @@
   /* border: 2px solid green; */
   width: fit-content;
   font-size: 40px;
+}
+
+.about-imgbub{
+  width: 300px;
+  height: 350px;
+
+}
+
+.about-imgbub:hover {
+  
+  content: url("../images/open.png");
+  height: 350px;
+  width: 300px;
 }
 
 }

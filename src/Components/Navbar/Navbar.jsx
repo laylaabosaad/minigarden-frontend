@@ -14,6 +14,10 @@ const Navbar = (props) => {
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
+   const scrollToTop = () => {
+     window.scrollTo(0, 0);
+     setShowMenu(false)
+   };
 
   const handleLogout = () => {
     window.localStorage.clear();
@@ -26,14 +30,15 @@ const Navbar = (props) => {
   return (
     <div className="navbar">
       <div>
-        <Link to="/" className="navbar-logo">
-          <img src={img}  ></img>
+        <Link to="/" onClick={scrollToTop} className="navbar-logo">
+          <img src={img}></img>
         </Link>
       </div>
       <div className={`navbar-links ${showMenu ? "active" : ""}`}>
         {!isAdmin && (
           <Link
             to="/"
+            onClick={scrollToTop}
             className={`navlinks ${location.pathname === "/" ? "active" : ""}`}
           >
             <div>Home</div>
@@ -43,6 +48,7 @@ const Navbar = (props) => {
         {!isAdmin && (
           <Link
             to="/Aboutus"
+            onClick={scrollToTop}
             className={`navlinks ${
               location.pathname === "/Aboutus" ? "active" : ""
             }`}
@@ -54,6 +60,7 @@ const Navbar = (props) => {
         {!isAdmin && (
           <Link
             to="/Products"
+            onClick={scrollToTop}
             className={`navlinks ${
               location.pathname === "/Products" ? "active" : ""
             }`}
@@ -64,6 +71,7 @@ const Navbar = (props) => {
 
         {!isAdmin && (
           <Link
+            onClick={scrollToTop}
             to="/Contactus"
             className={`navlinks ${
               location.pathname === "/Contactus" ? "active" : ""
@@ -76,6 +84,7 @@ const Navbar = (props) => {
         <div className="logandcart-nav">
           {!isAdmin && (
             <Link
+              onClick={scrollToTop}
               to="/Cart"
               className={`navlinks ${
                 location.pathname === "/Cart" ? "active" : ""
@@ -90,6 +99,7 @@ const Navbar = (props) => {
           {isAdmin && (
             <Link
               to="/admin/Products"
+              onClick={scrollToTop}
               className={`navlinks ${
                 location.pathname === "/admin/Products" ? "active" : ""
               }`}
@@ -101,6 +111,7 @@ const Navbar = (props) => {
           {isAdmin && (
             <Link
               to="/admin/Orders"
+              onClick={scrollToTop}
               className={`navlinks ${
                 location.pathname === "/admin/Order" ? "active" : ""
               }`}
@@ -112,6 +123,7 @@ const Navbar = (props) => {
           {isAdmin && (
             <Link
               to="/admin/contactus"
+              onClick={scrollToTop}
               className={`navlinks ${
                 location.pathname === "/admin/contactus" ? "active" : ""
               }`}
@@ -123,6 +135,7 @@ const Navbar = (props) => {
           {props.loggedin === false ? (
             <Link
               to="/Login"
+              onClick={scrollToTop}
               className={`navlinks ${
                 location.pathname === "/Login" ? "active" : ""
               }`}

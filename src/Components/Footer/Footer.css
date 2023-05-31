@@ -2,6 +2,19 @@
 width: 250px;
 }
 
+.links-fot{
+    color: white;
+
+}
+
+.anchormail{
+    color: white;
+}
+
+.anchormail:hover{
+  color: #8fe2c3;
+}
+
 .footer-container {
 background-color: rgb(76, 104, 53);
 padding: 50px 10%;

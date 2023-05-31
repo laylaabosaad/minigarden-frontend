@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaShoppingCart } from "react-icons/fa";
 import { FiLogIn, FiLogOut } from "react-icons/fi";
 import "./Navbar.css";
+import img from "../images/lo.png";
 import secureLocalStorage from "react-secure-storage";
 
 const Navbar = (props) => {
@@ -26,7 +27,7 @@ const Navbar = (props) => {
     <div className="navbar">
       <div>
         <Link to="/" className="navbar-logo">
-          <div>Logo</div>
+          <img src={img}  ></img>
         </Link>
       </div>
       <div className={`navbar-links ${showMenu ? "active" : ""}`}>

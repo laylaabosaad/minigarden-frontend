@@ -8,15 +8,15 @@
   background-size: cover;
 }
 
-.main-container-login{
+.main-container-login {
   margin-top: 500px;
 }
 
-.loginandregister-inputs{
+.loginandregister-inputs {
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
- gap: 10px;
+  gap: 10px;
   flex-direction: column;
 }
 
@@ -27,24 +27,18 @@
   margin-bottom: 40px;
   width: 300px;
   height: 50px;
-  
 }
 
-.loginandregister-all {
-  display: flex;
-  padding: 200px;
-  color: white;
-
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
 
 .loginandregisterbackgrnd {
-  background-color: rgba(89, 89, 89, 0.646);
  
-  padding: 100px 150px;
+  background: rgba(113, 110, 110, 0.55);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.6px);
+  -webkit-backdrop-filter: blur(9.6px);
+
+  padding: 100px;
   display: flex;
 
   flex-wrap: wrap;
@@ -70,7 +64,7 @@
   width: 100px;
   height: 50px;
   border: none;
- 
+
   font-size: 20px;
   color: white;
   background-color: rgb(82, 121, 76);
@@ -80,8 +74,141 @@
   color: white;
 }
 
-.link-signandLog:hover{
+.link-signandLog:hover {
+  cursor: pointer;
+  color: green;
+}
+
+.loginandregister {
+  /* border: 2px solid green; */
+  width: 100%;
+  height: 100vh;
+  background-image: url("../images//loginimage.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.main-container-login {
+  margin-top: 500px;
+}
+
+.loginandregister-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.loginandregister-inputs input {
+  background-color: rgb(237, 241, 241);
+  border: none;
+  /* border: 2px solid green; */
+  margin-bottom: 40px;
+  width: 300px;
+  height: 50px;
+}
+
+.loginandregister-inputs label{
+  color: white;
+
+}
+
+
+
+
+.loginandregister-all {
+  display: flex;
+  padding: 200px;
+  color: white;
+
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loginandregisterbackgrnd {
+  /* From https://css.glass */
+  background: rgba(113, 110, 110, 0.55);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.6px);
+  -webkit-backdrop-filter: blur(9.6px);
+
+  padding: 50px 100px;
+  padding-bottom: 50px;
+  display: flex;
+
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loginandregisterbackgrnd p {
+  font-size: 16px;
+  text-align: center;
+  padding-bottom: 10px;
+  /* border: 2px solid green; */
+}
+
+.loginandregisterbackgrnd h1 {
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.login-register-btn {
+  width: 100px;
+  height: 50px;
+  border: none;
+
+  font-size: 20px;
+  color: white;
+  background-color: rgb(82, 121, 76);
+}
+
+.link-signandLog {
+  color: white;
+}
+
+.link-signandLog:hover {
+  cursor: pointer;
+  color: green;
+}
+
+
+
+@media only screen and (max-width: 950px) {
+  .loginandregister-all {
+    padding: 150px 10px;
+  }
+
+  .loginandregisterbackgrnd {
+    padding: 20px;
     
-   cursor: pointer;
-   color: green;
+  }
+
+  .loginandregisterbackgrnd h1 {
+    font-size: 30px;
+    margin-top: 20px;
+  }
+
+  .login-register-btn {
+    width: 80px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .loginandregister-inputs input {
+    width: 300px;
+  }
+
+  .glassy{
+    padding: 20px 30px;
+  }
+
+
 }

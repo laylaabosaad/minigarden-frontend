@@ -3,14 +3,13 @@ import "../LoginAndSignup/LoginandSignup.css";
 import { useState } from "react";
 import swal from "sweetalert";
 import secureLocalStorage from "react-secure-storage";
+import Footer from "../Footer/Footer";
+
 
 function SignupComponent() {
-
-    const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fullname, setFullname] = useState("");
-
-
 
   const handleSignup = async (event) => {
     event.preventDefault();
@@ -23,8 +22,8 @@ function SignupComponent() {
         body: JSON.stringify({
           email,
           password,
-     
-          fullname
+
+          fullname,
         }),
       });
 
@@ -38,108 +37,94 @@ function SignupComponent() {
           title: "signup successful",
           icon: "success",
         }).then(() => {
-         
-            window.location.href = "/Products";
-         
+          window.location.href = "/Products";
         });
       } else {
         swal({
           title: "signup failed",
           text: "User email already exists",
-        
+
           icon: "error",
-        }); {  console.log(data.message);}
+        });
+       
       }
     } catch (error) {
       console.error(error);
     }
   };
-  
 
+  // const handleSignup = async (event) => {
+  //   event.preventDefault();
+  //   try {
+  //     const response = await fetch("http://localhost:2000/users/signup", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         email,
+  //         password,
+  //         fullname
+  //       }),
+  //     });
 
+  //     const data = await response.json();
+  //     if (response.ok) {
+  //        window.location.href = "/";
+  //       swal({
+  //         title: "signup was successful",
+  //         icon: "success",
+  //       }).then(() => {
+  //         window.localStorage.setItem("token", data.token);
+  //         if (data.role === "admin") {
+  //           window.location.href = "/Products";
+  //         } else if (data.role === "user") {
+  //           window.location.href = "/";
 
+  //         } else {
+  //         }
+  //       });
+  //     } else {
+  //       swal({
+  //         title: "Signup Failed",
+  //         text: data.error,
+  //         icon: "error",
+  //       });
+  //       {console.log(data.error)}
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //      swal({
+  //        title: error.data.error,
+  //        text: error.data.error,
+  //        icon: "error",
+  //      });
+  //   }
+  // };
 
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
 
-
-
-
-
-
-
-
-
-
-    // const handleSignup = async (event) => {
-    //   event.preventDefault();
-    //   try {
-    //     const response = await fetch("http://localhost:2000/users/signup", {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify({
-    //         email,
-    //         password,
-    //         fullname
-    //       }),
-    //     });
-
-    //     const data = await response.json();
-    //     if (response.ok) {
-    //        window.location.href = "/";
-    //       swal({
-    //         title: "signup was successful",
-    //         icon: "success",
-    //       }).then(() => {
-    //         window.localStorage.setItem("token", data.token);
-    //         if (data.role === "admin") {
-    //           window.location.href = "/Products";
-    //         } else if (data.role === "user") {
-    //           window.location.href = "/";
-
-    //         } else {
-    //         }
-    //       });
-    //     } else {
-    //       swal({
-    //         title: "Signup Failed",
-    //         text: data.error,
-    //         icon: "error",
-    //       });
-    //       {console.log(data.error)}
-    //     }
-    //   } catch (error) {
-    //     console.error(error);
-    //      swal({
-    //        title: error.data.error,
-    //        text: error.data.error,
-    //        icon: "error",
-    //      });
-    //   }
-    // };
-  
-   const handleEmailChange = (event) => {
-     setEmail(event.target.value);
-   };
-
-   const handlePasswordChange = (event) => {
-     setPassword(event.target.value);
-   };
-   const handlefullnameChange = (event) => {
-     setFullname(event.target.value);
-   };
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+  const handlefullnameChange = (event) => {
+    setFullname(event.target.value);
+  };
 
   return (
     <div className="loginandregisterall">
       <div className="loginandregister">
         <div className="loginandregister-all">
           <form onSubmit={handleSignup}>
-            <div className="loginandregisterbackgrnd">
+            <div className="loginandregisterbackgrnd glassy">
               <h1>Signup</h1>
 
-              <div className="loginandregister-inputs">
+              <div className="loginandregister-inputs signup">
+                <label>Full Name</label>
                 <input
-                  placeholder="Fullname"
+               
                   type="text"
                   required
                   value={fullname}
@@ -148,8 +133,9 @@ function SignupComponent() {
               </div>
 
               <div className="loginandregister-inputs">
+                <label>Email</label>
                 <input
-                  placeholder="Email"
+                 
                   type="text"
                   required
                   value={email}
@@ -158,9 +144,10 @@ function SignupComponent() {
               </div>
 
               <div className="loginandregister-inputs">
+                <label>Password</label>
                 <input
                   value={password}
-                  placeholder="Password"
+                 
                   type="password"
                   required
                   onChange={handlePasswordChange}
@@ -179,6 +166,7 @@ function SignupComponent() {
           </form>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

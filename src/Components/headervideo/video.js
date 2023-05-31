@@ -32,7 +32,7 @@ const Headervideo = () => {
           <div className="audio-player">
             <MdHeadset
               size={100}
-              color={isPlaying ? "salmon" : "white"}
+              color={isPlaying ? "rgb(65, 102, 60)" : "white"}
               onClick={togglePlay}
             />
             <audio className="audio-style" src={audio} ref={audioRef} />

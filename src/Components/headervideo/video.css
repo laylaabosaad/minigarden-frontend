@@ -131,16 +131,13 @@
 @media screen and (max-width: 400px) {
   .audio {
     width: 90%;
-    padding-top: 40px;
+    margin-top: 70px;
     font-size: 25px;
     padding-left: 25px;
+    
   }
 
-  audio{
-    margin-top: -20px;
-    width: 80%;
-    /* border: 2px solid green; */
-  }
+
 
 
   .audio p {

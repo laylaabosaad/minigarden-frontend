@@ -300,4 +300,15 @@ ul {
     text-align: center;
     padding: 0;
   }
+
+  ul{
+    gap: 20px;
+  }
+
+  .productsection{
+   
+    padding-right: 50px;
+    margin-top: 20px;
+
+  }
 }

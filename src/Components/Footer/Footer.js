@@ -1,6 +1,6 @@
 
 import "../Footer/Footer.css";
-import img from "../images/icon.png";
+import img from "../images/lo.png";
 
 import { FaPhone } from "react-icons/fa";
 import { FaRegEnvelopeOpen } from "react-icons/fa";

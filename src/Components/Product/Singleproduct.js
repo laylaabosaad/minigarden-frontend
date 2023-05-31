@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import "./singleprod.css";
+import Footer from "../Footer/Footer.js"
 import axios from "axios";
 
 function Singleproduct() {
@@ -60,6 +61,7 @@ function Singleproduct() {
           </div>
         )}
       </div>
+      <Footer/>
     </div>
   );
 }

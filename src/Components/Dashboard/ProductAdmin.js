@@ -13,8 +13,7 @@ function ProductAdmin() {
   const [images, setImages] = useState([]);
 
   const [product, setProduct] = useState([]);
-  const [editProductId, setEditProductId] = useState(null);
-  const [editProduct, setEditProduct] = useState({});
+
 
   const getProduct = async () => {
     const res = await axios.get("https://mini-garden.onrender.com/product");
@@ -98,35 +97,7 @@ function ProductAdmin() {
     console.log("check", _id);
   };
 
-  const handleEditProduct = async () => {
-    const data = {
-      title: editProduct.title,
-      price: editProduct.price,
-      image: editProduct.image,
-      stock: editProduct.stock,
-      category: editProduct.category,
-      subcategory: editProduct.subcategory,
-      description: editProduct.description,
-    };
-    const change = await axios.put(
-      `https://mini-garden.onrender.com/product/${editProductId}`,
-      data
-    );
-    getProduct(change);
-    console.log(data);
-    setEditProductId(null);
-    setEditProduct({});
-  };
-
-  const handleCancelEdit = () => {
-    setEditProductId(null);
-    setEditProduct({});
-  };
-
-  const handleEditButtonClick = (prod) => {
-    setEditProductId(prod._id);
-    setEditProduct(prod);
-  };
+ 
 
   return (
     <div>
@@ -210,128 +181,7 @@ function ProductAdmin() {
           </div>
         </form>
         <div>
-          {editProductId ? (
-            <div>
-              <h2>Edit Product Details</h2>
-              <form className="editform-admin" onSubmit={handleEditProduct}>
-                <div>
-                  <input
-                    type="text"
-                    value={editProduct.title}
-                    placeholder="title"
-                    required
-                    onChange={(e) =>
-                      setEditProduct({
-                        ...editProduct,
-                        title: e.target.value,
-                      })
-                    }
-                  ></input>
-                  <input
-                    type="text"
-                    value={editProduct.stock}
-                    placeholder="stock"
-                    required
-                    onChange={(e) =>
-                      setEditProduct({
-                        ...editProduct,
-                        stock: e.target.value,
-                      })
-                    }
-                  ></input>
-                  <input
-                    type="text"
-                    value={editProduct.description}
-                    placeholder="description"
-                    required
-                    onChange={(e) =>
-                      setEditProduct({
-                        ...editProduct,
-                        description: e.target.value,
-                      })
-                    }
-                  ></input>
-                  <input
-                    type="number"
-                    value={editProduct.price}
-                    placeholder="number"
-                    required
-                    onChange={(e) =>
-                      setEditProduct({
-                        ...editProduct,
-                        price: e.target.value,
-                      })
-                    }
-                  ></input>
-                  <label>Choose Images:</label>
-                  <input
-                    type="file"
-                    name="file"
-                    onChange={handleImagesChange}
-                    multiple
-                  />
-
-                  <label htmlFor="category">
-                    Category:
-                    <select
-                      name="category"
-                      id="category"
-                      value={editProduct.category}
-                      onChange={(e) =>
-                        setEditProduct({
-                          ...editProduct,
-                          category: e.target.value,
-                        })
-                      }
-                    >
-                      <option>Select Category</option>
-                      <option value="64634d90b6db9bd04a4e1674">
-                        Closed Terrarium
-                      </option>
-                      <option value="64634d99b6db9bd04a4e1676">
-                        Open Terrarium
-                      </option>
-                      <option value="64634da6b6db9bd04a4e1678">
-                        Solo Product
-                      </option>
-                    </select>
-                  </label>
-                  <label htmlFor="subcategory">
-                    Subategory:
-                    <select
-                      name="subcategory"
-                      id="subcategory"
-                      value={editProduct.subcategory}
-                      onChange={(e) =>
-                        setEditProduct({
-                          ...editProduct,
-                          subcategory: e.target.value,
-                        })
-                      }
-                    >
-                      <option>Select Subategory</option>
-                      <option value="64634e12b6db9bd04a4e167d">
-                        Sacred Geometry
-                      </option>
-                      <option value="64634ddeb6db9bd04a4e167b">Regular</option>
-                    </select>
-                  </label>
-                  <div className="btn-admin savecancle">
-                    <button className="submit-btn" type="submit" value="Submit">
-                      Save
-                    </button>
-                    <button
-                      className="submit-btn"
-                      type="button"
-                      onClick={handleCancelEdit}
-                    >
-                      Cancel
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          ) : (
+           
             <div className="product-admin-view">
               {product.map((prod, index) => (
                 <div className="editanddeletewithinputs" key={index}>
@@ -350,17 +200,12 @@ function ProductAdmin() {
                     >
                       Delete
                     </button>
-                    <button
-                      className="submit-btn"
-                      onClick={() => handleEditButtonClick(prod)}
-                    >
-                      Edit
-                    </button>
+                  
                   </div>
                 </div>
               ))}
             </div>
-          )}
+          
         </div>
       </div>
     </div>

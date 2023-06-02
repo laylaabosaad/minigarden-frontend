@@ -81,6 +81,8 @@
 .quantitybtnsall {
   display: flex;
   flex-wrap: wrap;
+  height: 0;
+  margin-top: 50px;
   
   justify-content: center;
   align-items: center;
@@ -88,12 +90,21 @@
   gap: 10px;
 }
 
+.quantity-cart{
+  margin-top: 20px;
+}
+
+
+
+
+
 .quantitybtnsall button {
   /* border: 1px solid black; */
   width: 18px;
   background-color: rgb(76, 104, 53);
   color: white;
   border: none;
+  margin-top: 20px;
   border-radius: 20px;
 }
 

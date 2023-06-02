@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect, useReducer } from "react";
+import { useState, useEffect} from "react";
 
 import "../cart/Cart.css";
 
@@ -36,7 +36,7 @@ function Cart() {
   };
 
   const showDisabled = () => {
-    if (productCard.length == 0) setDisabled(true);
+    if (productCard.length === 0) setDisabled(true);
     else setDisabled(false);
   };
 
@@ -49,7 +49,7 @@ function Cart() {
       let product_fake = productCard;
       product_fake[0].items = response.data.items;
 
-      if (response.data.items.length == 0) {
+      if (response.data.items.length === 0) {
         setProductCard([]);
       } else {
         setProductCard(product_fake);
@@ -179,7 +179,7 @@ function Cart() {
                         >
                           -
                         </button>
-                        <h4> {productItem?.quantity}</h4>
+                        <h4 className="quantity-cart"> {productItem?.quantity}</h4>
                         <button
                           className="btnremove"
                           onClick={() =>

@@ -1,7 +1,6 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../Home/Slider.css";
-import { useParams } from "react-router-dom";
 import axios from "axios";
 import swal from "sweetalert";
 import { useState, useEffect } from "react";
@@ -9,10 +8,10 @@ import { Link, useLocation } from "react-router-dom";
 
 const Productsection = () => {
   let location = useLocation();
-  let catid;
+ 
   let static_category;
   if (location.state) {
-    catid = location.state.id;
+   
     static_category = location.state.static_category
   }
 
@@ -61,7 +60,7 @@ const Productsection = () => {
           window.location.href = "/login";
         });
       } else {
-        const response = await axios.put(
+        await axios.put(
           `https://mini-garden.onrender.com/cart/${userId}`,
           data
         );
@@ -79,9 +78,9 @@ const Productsection = () => {
 
   useEffect(() => {
     getCategories();
-    // handleCategoryClick(activeCategoryId);
+   
 
-    console.log("selectedCategory ", selectedCategory);
+    
   }, []);
 
   const getCategories = async () => {

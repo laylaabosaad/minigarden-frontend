@@ -1,5 +1,5 @@
 import "../Home/howItWorks.css";
-import heart from "../images/icon.png"
+
 import take from "../images/take.png"
 import care from "../images/care.png"
 import choose from "../images/choose.png"

@@ -1,5 +1,5 @@
 import "./rectangle.css";
-import aboutimg from "../images/aboutimg.png";
+
 import imgabout from "../images/Lighthouse.png";
 import take from "../images/take.png";
 import care from "../images/care.png";

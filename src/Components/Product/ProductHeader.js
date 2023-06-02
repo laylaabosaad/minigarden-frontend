@@ -1,6 +1,4 @@
 import "./Product.css";
-import hand from "../images/hand.png";
-import { Link } from "react-router-dom";
 
 function ProductHeader() {
   return (

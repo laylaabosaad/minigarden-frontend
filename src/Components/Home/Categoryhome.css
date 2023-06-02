@@ -54,11 +54,11 @@ a {
 }
 
 .categoryhome-Open:hover {
-  background-color:rgb(202, 227, 239);
+  background-color:rgb(61, 112, 61);
   cursor: pointer;
 }
 .categoryhome-Closed:hover {
-  background-color: rgb(202, 227, 239);
+  background-color:rgb(61, 112, 61);
   cursor: pointer;
 }
 

@@ -10,8 +10,10 @@ import { Link, useLocation } from "react-router-dom";
 const Productsection = () => {
   let location = useLocation();
   let catid;
+  let static_category;
   if (location.state) {
     catid = location.state.id;
+    static_category = location.state.static_category
   }
 
   let userId = localStorage.getItem("userId");
@@ -20,9 +22,7 @@ const Productsection = () => {
   const [categories, setCategories] = useState([]);
   const [activeCategoryId, setActiveCategoryId] = useState(null);
 
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const { categoryID } = useParams();
-  console.log("selected", selectedCategory);
+  const [selectedCategory, setSelectedCategory] = useState(static_category);
 
   const getProdofaSubCategory = async (_id) => {
     try {
@@ -79,30 +79,10 @@ const Productsection = () => {
 
   useEffect(() => {
     getCategories();
+    // handleCategoryClick(activeCategoryId);
+
+    console.log("selectedCategory ", selectedCategory);
   }, []);
-  // const addtoCart = async (productId, quantity, price, title) => {
-  //   try {
-  //     const data = {
-  //       productId: productId,
-  //       quantity: quantity,
-  //       price: price,
-  //       title: title,
-  //     };
-
-  //     const response = await axios.put(
-  //       `https://mini-garden.onrender.com/cart/${userId}`,
-  //       data
-  //     );
-
-  //     console.log(response.data);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   getCategories();
-  // }, []);
 
   const getCategories = async () => {
     try {
@@ -110,20 +90,8 @@ const Productsection = () => {
         "https://mini-garden.onrender.com/category"
       );
       setCategories(response.data.data);
-      setSelectedCategory(response.data.data[0]._id); // Set the first category as the default selected category
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
-
-  const getProducts = async () => {
-    try {
-      const response = await axios.get(
-        "https://mini-garden.onrender.com/product"
-      );
-      const res = response.data.data;
-      setProductCard(res);
-      console.log(response.data);
+      if(selectedCategory == null)
+        setSelectedCategory(response.data.data[0]._id); // Set the first category as the default selected category
     } catch (error) {
       console.error("Error:", error);
     }
@@ -137,20 +105,15 @@ const Productsection = () => {
 
   return (
     <div>
+      {console.log("static_category ", static_category)}
       <nav>
         <ul>
-          {/* <button
-            className="product-category-btn"
-            onClick={() => getProducts()}
-          >
-            All
-          </button> */}
           {categories.map((category) => (
             <div key={category._id} className="product-category-btn">
               <li className="li-Of-btns">
                 <button
                   className={`product-category-btn ${
-                    activeCategoryId === category._id ? "active" : ""
+                    selectedCategory === category._id ? "active" : ""
                   }`}
                   onClick={() => handleCategoryClick(category._id)}
                 >

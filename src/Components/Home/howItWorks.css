@@ -1,18 +1,14 @@
-
-
 .howitworksall {
   background-image: url("../images//howitworks.jpg");
- 
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-
 }
 .howitworks-title {
   color: white;
   font-size: 80px;
- 
 }
 
 .howitworks-stepsall {
@@ -20,12 +16,11 @@
   margin-top: 50px;
   background-color: rgba(0, 0, 0, 0.306);
   color: white;
-  
+
   font-size: 20px;
   text-align: center;
   gap: 150px;
- padding: 100px;
- 
+  padding: 100px;
 
   display: flex;
   flex-wrap: wrap;
@@ -36,7 +31,6 @@
 
 .howitworksicon {
   /* border: 2px solid salmon; */
-  
 }
 
 .HowitWorks {
@@ -46,7 +40,7 @@
   align-items: center;
   background-color: rgba(4, 5, 5, 0.356);
 
- height: 120vh;
+  height: 120vh;
 }
 
 .howitworks-steps p {
@@ -54,82 +48,78 @@
   /* border: 2px solid black; */
 }
 
-
-
 @media screen and (max-width: 1450px) {
   .howitworksall {
-height: auto;
-padding-bottom: 50px;
-}
+    height: auto;
+    padding-bottom: 50px;
+  }
 
-.howitworks-title {
-font-size: 60px;
-margin-top: 30px;
-}
+  .howitworks-title {
+    font-size: 60px;
+    margin-top: 30px;
+  }
 
-.howitworks-stepsall {
-flex-direction: column;
-padding: 20px;
-font-size: 18px;
-gap: 30px;
-}
+  .howitworks-stepsall {
+    flex-direction: column;
+    padding: 20px;
+    font-size: 18px;
+    gap: 30px;
+  }
 
-.howitworks-steps {
-text-align: center;
-}
+  .howitworks-steps {
+    text-align: center;
+  }
 
-.howitworksicon {
-width: 80px;
-height: 80px;
-margin-bottom: 10px;
-}
+  .howitworksicon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+  }
 
-.howitworks-steps h2 {
-font-size: 24px;
-}
+  .howitworks-steps h2 {
+    font-size: 24px;
+  }
 
-.howitworks-steps p {
-width: 100%;
-max-width: 500px;
+  .howitworks-steps p {
+    width: 100%;
+    max-width: 500px;
+  }
 }
-}
-
-
 
 @media screen and (max-width: 850px) {
-.howitworksall {
-height: auto;
-padding-bottom: 50px;
-}
+  .howitworksall {
+    height: auto;
+    padding-bottom: 50px;
+  }
 
-.howitworks-title {
-font-size: 60px;
-margin-top: 30px;
-}
+  .howitworks-title {
+    font-size: 60px;
+    margin-top: 30px;
+  }
 
-.howitworks-stepsall {
-flex-direction: column;
-padding: 20px;
-font-size: 18px;
-gap: 30px;
-}
+  .howitworks-stepsall {
+    flex-direction: column;
+    padding: 20px;
+    font-size: 18px;
+    gap: 30px;
+  }
 
-.howitworks-steps {
-text-align: center;
-}
+  .howitworks-steps {
+    text-align: center;
+  }
 
-.howitworksicon {
-width: 80px;
-height: 80px;
-margin-bottom: 10px;
-}
+  .howitworksicon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+  }
 
-.howitworks-steps h2 {
-font-size: 24px;
-}
+  .howitworks-steps h2 {
+    font-size: 24px;
+  }
 
-.howitworks-steps p {
-width: 100%;
-max-width: 500px;
-}
+  .howitworks-steps p {
+    width: 100%;
+    max-width: 500px;
+  }
 }

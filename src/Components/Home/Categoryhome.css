@@ -110,3 +110,33 @@ a {
 }
 }
 
+
+@media screen and (max-width: 370px) {
+
+.categoryhome-Closed {
+  height: 650px;
+  width: 350px;
+  background-color:rgb(233, 237, 233);
+  
+}
+
+.categoryhome-Closedimg {
+width: 100%;
+ height: 550px;
+}
+
+.howitworks-title{
+  font-size: 55px !important;
+}
+
+.shopbyCategory{
+ 
+  font-size: 45px;
+  padding:100px 0 50px;
+  
+}
+
+
+
+}
+

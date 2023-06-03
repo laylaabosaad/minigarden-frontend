@@ -1,6 +1,7 @@
 .aboutus-home {
-   background: linear-gradient(rgba(7, 7, 7, 0.665), rgba(33, 29, 29, 0.712)),url("../images/green.jpg");
-   
+  background: linear-gradient(rgba(7, 7, 7, 0.665), rgba(33, 29, 29, 0.712)),
+    url("../images/green.jpg");
+
   height: 80vh;
   padding: 250px;
   color: white;
@@ -12,14 +13,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-background-attachment: fixed;
- 
- 
-
+  background-attachment: fixed;
 }
 
 .aboutus-home h1 {
- 
   font-size: 60px;
 }
 
@@ -29,13 +26,10 @@ background-attachment: fixed;
   width: 600px;
 }
 
-.aboutus-homeimgback{
+.aboutus-homeimgback {
   /* border: 2px solid red; */
   width: fit-content;
 }
-
-
-
 
 button {
   position: relative;
@@ -58,7 +52,7 @@ button.learn-more {
   height: auto;
 
   margin-top: 10px;
-  margin-bottom: 10.px !important;
+  margin-bottom: 10px !important;
 }
 
 button.learn-more .circle {
@@ -143,36 +137,28 @@ button:hover .button-text {
   color: #fff;
 }
 
-  .aboutus-homeimg {
- 
+.aboutus-homeimg {
   width: 400px;
-
-
 }
 
-@media (max-width:1550px) {
+@media (max-width: 1550px) {
   .aboutus-homeimg {
-  height: 400px;
-  width: 300px;
+    height: 400px;
+    width: 300px;
+  }
 
-
-}
-
-.aboutus-home{
-  /* border: 2px solid red; */
-  height: 100vh;
-  padding: 50px;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-}
-
-  
+  .aboutus-home {
+    /* border: 2px solid red; */
+    height: 100vh;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
 }
 
 @media (max-width: 750px) {
   .aboutus-home h1 {
-   
     font-size: 50px;
   }
 
@@ -183,22 +169,45 @@ button:hover .button-text {
   .aboutus-home-descandbtn {
     display: flex;
     justify-content: left;
-    align-items:flex-start;
+    align-items: flex-start;
     flex-direction: column;
   }
 
   .aboutus-home {
-    height: 100vh ;
-  
-   
+    height: 100vh;
   }
-    .aboutus-homeimg {
-      height: 300px;
-      width: 200px;
-  
-  margin-top: 0;
+  .aboutus-homeimg {
+    height: 300px;
+    width: 200px;
 
-
+    margin-top: 0;
+  }
 }
 
+
+@media (max-width: 390px) {
+  .aboutus-home h1 {
+    font-size: 45px;
+  }
+
+  .aboutus-home p {
+    font-size: 17px;
+    width: 100%;
+  }
+  .aboutus-home-descandbtn {
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .aboutus-home {
+    height: 100vh;
+  }
+  .aboutus-homeimg {
+    height: 250px;
+    width: 200px;
+
+    margin-top: 0;
+  }
 }

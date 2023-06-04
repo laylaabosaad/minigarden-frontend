@@ -44,64 +44,21 @@ function SignupComponent() {
       } else {
         swal({
           title: "signup failed",
-          text: "User email already exists",
+          text: data.error,
 
           icon: "error",
         });
       }
     } catch (error) {
+      swal({
+        title: "signup failed",
+        text: error.response.data.error,
+
+        icon: "error",
+      });
       console.error(error);
     }
   };
-
-  // const handleSignup = async (event) => {
-  //   event.preventDefault();
-  //   try {
-  //     const response = await fetch("https://mini-garden.onrender.com/users/signup", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         email,
-  //         password,
-  //         fullname
-  //       }),
-  //     });
-
-  //     const data = await response.json();
-  //     if (response.ok) {
-  //        window.location.href = "/";
-  //       swal({
-  //         title: "signup was successful",
-  //         icon: "success",
-  //       }).then(() => {
-  //         window.localStorage.setItem("token", data.token);
-  //         if (data.role === "admin") {
-  //           window.location.href = "/Products";
-  //         } else if (data.role === "user") {
-  //           window.location.href = "/";
-
-  //         } else {
-  //         }
-  //       });
-  //     } else {
-  //       swal({
-  //         title: "Signup Failed",
-  //         text: data.error,
-  //         icon: "error",
-  //       });
-  //       {console.log(data.error)}
-  //     }
-  //   } catch (error) {
-  //     console.error(error);
-  //      swal({
-  //        title: error.data.error,
-  //        text: error.data.error,
-  //        icon: "error",
-  //      });
-  //   }
-  // };
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -125,6 +82,7 @@ function SignupComponent() {
               <div className="loginandregister-inputs signup">
                 <label>Full Name</label>
                 <input
+                  autoComplete="off"
                   type="text"
                   required
                   value={fullname}
@@ -135,6 +93,7 @@ function SignupComponent() {
               <div className="loginandregister-inputs">
                 <label>Email</label>
                 <input
+                  autoComplete="off"
                   type="text"
                   required
                   value={email}
@@ -145,6 +104,7 @@ function SignupComponent() {
               <div className="loginandregister-inputs">
                 <label>Password</label>
                 <input
+                  autoComplete="off"
                   value={password}
                   type="password"
                   required

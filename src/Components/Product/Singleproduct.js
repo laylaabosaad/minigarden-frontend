@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import "./singleprod.css";
 import Footer from "../Footer/Footer.js";
 import axios from "axios";
+import swal from "sweetalert";
 
 function Singleproduct() {
+  let userId = localStorage.getItem("userId");
   const { productId } = useParams();
   const [singleProd, setSingleProd] = useState([]);
 
@@ -17,6 +19,40 @@ function Singleproduct() {
     setSingleProd(res.data);
     // console.log(find.data);
   };
+
+   const addtoCart = async (productId, quantity, price, title) => {
+     try {
+       const data = {
+         productId: productId,
+         quantity: quantity,
+         price: price,
+         title: title,
+       };
+       if (!userId) {
+         swal({
+           title: "Login to add to cart",
+           text: "You need to login!",
+           icon: "warning",
+           button: "Login",
+         }).then(() => {
+           window.location.href = "/login";
+         });
+       } else {
+         await axios.put(
+           `https://mini-garden.onrender.com/cart/${userId}`,
+           data
+         );
+         swal({
+           title: "Item added to cart",
+           text: "Item Added Successfully",
+           icon: "success",
+           button: "Continue Shopping",
+         });
+       }
+     } catch (error) {
+       console.error(error);
+     }
+   };
 
   useEffect(() => {
     singleproduct();
@@ -54,7 +90,14 @@ function Singleproduct() {
                   </Link>
                 </div>
                 <div className="product-buttons">
-                  <button className="submit-btn">Add to cart</button>
+                  <button
+                    className="productbtnaddanddesc"
+                    onClick={() =>
+                      addtoCart(singleProd._id, 1, singleProd.price, singleProd.title)
+                    }
+                  >
+                    Add to cart
+                  </button>
                 </div>
               </div>
             </div>

@@ -74,6 +74,7 @@ function LoginComponent() {
               <div className="loginandregister-inputs">
                 <label>Email</label>
                 <input
+                  autoComplete="off"
                   placeholder="Email"
                   type="text"
                   required
@@ -84,6 +85,7 @@ function LoginComponent() {
               <div className="loginandregister-inputs">
                 <label>Password</label>
                 <input
+                  autoComplete="off"
                   value={password}
                   placeholder="Password"
                   type="password"

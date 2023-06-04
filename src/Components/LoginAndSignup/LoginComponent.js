@@ -75,7 +75,6 @@ function LoginComponent() {
                 <label>Email</label>
                 <input
                   autoComplete="off"
-                  placeholder="Email"
                   type="text"
                   required
                   value={email}
@@ -87,7 +86,6 @@ function LoginComponent() {
                 <input
                   autoComplete="off"
                   value={password}
-                  placeholder="Password"
                   type="password"
                   required
                   onChange={handlePasswordChange}

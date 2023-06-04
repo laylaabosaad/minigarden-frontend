@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import "../Dashboard/Productadmin.css";
 import swal from "sweetalert";
 
+import Swal from "sweetalert2";
+import "sweetalert2/dist/sweetalert2.css";
+
 function ProductAdmin() {
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
@@ -13,7 +16,6 @@ function ProductAdmin() {
   const [images, setImages] = useState([]);
 
   const [product, setProduct] = useState([]);
-
 
   const getProduct = async () => {
     const res = await axios.get("https://mini-garden.onrender.com/product");
@@ -89,15 +91,30 @@ function ProductAdmin() {
     setImages(imagesArray);
   };
 
-  const deleteprod = async (_id) => {
-    const removeprod = await axios.delete(
-      `https://mini-garden.onrender.com/product/${_id}`
-    );
-    getProduct();
-    console.log("check", _id);
-  };
+  const handleDelete = (_id) => {
+    Swal.fire({
+      title: "Confirm Deletion",
+      text: "Are you sure you want to delete this item?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Delete",
+      cancelButtonText: "Cancel",
+      reverseButtons: true,
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        const removeprod = await axios.delete(
+          `https://mini-garden.onrender.com/product/${_id}`
+        );
+        getProduct();
+        console.log("check", _id);
 
- 
+        console.log("Delete action triggered");
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        // Handle cancel logic here
+        console.log("Cancel action triggered");
+      }
+    });
+  };
 
   return (
     <div>
@@ -181,31 +198,28 @@ function ProductAdmin() {
           </div>
         </form>
         <div>
-           
-            <div className="product-admin-view">
-              {product.map((prod, index) => (
-                <div className="editanddeletewithinputs" key={index}>
-                  <div className="admin-product">
-                    <img src={prod.image.url}></img>
-                    <p> {prod.title}</p>
-                    <p> {prod.price} $</p>
-                    <p> {prod.category.title}</p>
-                    <p>{prod.subcategory.title}</p>
-                    {/* {console.log(prod.category.title)} */}
-                  </div>
-                  <div className="btn-admin">
-                    <button
-                      className="submit-btn"
-                      onClick={() => deleteprod(prod._id)}
-                    >
-                      Delete
-                    </button>
-                  
-                  </div>
+          <div className="product-admin-view">
+            {product.map((prod, index) => (
+              <div className="editanddeletewithinputs" key={index}>
+                <div className="admin-product">
+                  <img src={prod.image.url}></img>
+                  <p> {prod.title}</p>
+                  <p> {prod.price} $</p>
+                  <p> {prod.category.title}</p>
+                  <p>{prod.subcategory.title}</p>
+                  {/* {console.log(prod.category.title)} */}
                 </div>
-              ))}
-            </div>
-          
+                <div className="btn-admin">
+                  <button
+                    className="submit-btn"
+                    onClick={() => handleDelete(prod._id)}
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

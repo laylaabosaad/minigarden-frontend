@@ -82,8 +82,7 @@
     margin-top: 200px;
 
     font-size: 40px;
-    /* color: red;
-        border: 2px solid blue; */
+
     padding-left: 50px;
   }
 
@@ -94,23 +93,22 @@
   .audio p {
     font-size: 30px;
     width: fit-content;
-
-    /* color: yellowgreen; */
   }
 }
 
 @media screen and (max-width: 1280px) {
   .audio {
-    margin-top: 20px;
+    margin-top: 150px;
   }
+  .headset{
+  margin-top: -100px !important;
+  
+}
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
   .audio {
-    width: 80%;
     padding-top: 50px;
-    
-    /* color: rgb(32, 27, 72); */
 
     margin-left: 10px;
   }
@@ -121,29 +119,45 @@
   }
 
   .audio p {
-    font-size: 20px;
+    font-size: 25px;
     width: fit-content;
-
-    /* color: rgb(50, 205, 135); */
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 430px) {
   .audio {
     width: 90%;
-    margin-top: 70px;
+    margin-top: 120px;
     font-size: 25px;
     padding-left: 25px;
-    
   }
-
-
-
 
   .audio p {
     font-size: 18px;
     width: 90%;
     margin-top: 10px;
-    /* border: 2px solid black; */
   }
+}
+
+@media screen and (max-width: 325px) {
+    .audio {
+    padding-top: 20px;
+
+    margin-left: 10px;
+  }
+
+  .audio h1 {
+    width: 100%;
+    font-size: 34px;
+  }
+
+  .audio p {
+    font-size: 15px;
+    width: fit-content;
+  }
+.headset{
+  margin-top: -100px !important;
+  
+}
+
 }

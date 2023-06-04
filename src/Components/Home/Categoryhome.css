@@ -4,23 +4,25 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
+
   padding-bottom: 100px;
 }
 
 .categoryhome-home-all {
   background-color: rgb(236, 243, 243);
   text-align: center;
+  color: white;
 }
 
 .shopbyCategory {
   font-size: 60px;
   padding: 50px;
+  color: black;
 }
 
 a {
   text-decoration: none;
   color: black;
-  
 }
 
 .categoryhome-home h1 {
@@ -29,64 +31,61 @@ a {
 
 .categoryhome-Closed {
   height: 650px;
-  width: 400px;
-  background-color:rgb(233, 237, 233);
-  
-}
 
-.categoryhome-Closedimg {
-  /* margin-top: 80px; */
- /* border: 2px solid red; */
- height: 620px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+  background-color: rgb(61, 112, 61);
 }
 
 .categoryhome-Openimg {
-  /* border: 2px solid purple; */
-  margin-left: 100px;
+  margin-top: 20px;
+
   width: 250px;
 }
 
-.categoryhome-Soloimg{
+.categoryhome-Soloimg {
   width: 200px;
-  /* border: 2px solid rebeccapurple; */
-   margin-left: 100px;
-  height: 300px;
+  margin-top: 20px;
+
+  height: 250px;
 }
 
 .categoryhome-Open:hover {
-  background-color:rgb(61, 112, 61);
+  background-color: rgb(175, 201, 159);
   cursor: pointer;
 }
 .categoryhome-Closed:hover {
-  background-color:rgb(61, 112, 61);
+  background-color: rgb(175, 201, 159);
   cursor: pointer;
 }
 
 .categoryhome-Open {
-  /* border: 2px solid pink; */
-  background-color: rgb(233, 237, 233);
+  background-color: rgb(61, 112, 61);
 
   height: 320px;
 }
 
 .categoryhome-Open h1 {
   font-size: 30px;
-  text-align: left;
-  /* border: 2px solid blanchedalmond; */
-  padding-left: 20px;
-  margin-right: 190px;
-  /* margin-bottom: 50px; */
+  text-align: center;
+  color: white;
+  padding-top: 20px;
+}
+
+.categoryhome-Closed img {
+  height: 600px;
 }
 
 .categoryhome-Closed h1 {
   font-size: 40px;
-  text-align: left;
-  /* border: 2px solid blanchedalmond; */
-  margin-right: 200px;
+  text-align: center;
+  color: white;
 }
 
 .categoryhome-both {
-  /* border: 2px solid red; */
   gap: 10px;
   width: 400px;
   display: flex;
@@ -95,48 +94,50 @@ a {
 }
 
 @media screen and (max-width: 800px) {
+  .categoryhome-Closed {
+    height: 650px;
+    width: 400px;
+  }
 
-.categoryhome-Closed {
-  height: 650px;
-  width: 400px;
-  background-color:rgb(233, 237, 233);
-  
+  .categoryhome-Closedimg {
+    height: 550px;
+  }
 }
 
-.categoryhome-Closedimg {
-  /* margin-top: 80px; */
- /* border: 2px solid red; */
- height: 550px;
-}
-}
+@media screen and (max-width: 430px) {
+  .categoryhome-Closedimg {
+    height: 500px !important;
 
+    width: 350px;
+  }
 
-@media screen and (max-width: 370px) {
+  .shopbyCategory {
+    font-size: 45px;
+    padding: 0;
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
 
-.categoryhome-Closed {
-  height: 650px;
-  width: 350px;
-  background-color:rgb(233, 237, 233);
-  
-}
+  .categoryhome-Closed img {
+    width: 290px;
+    margin-left: 5px;
+    height: 450px !important;
+  }
 
-.categoryhome-Closedimg {
-width: 100%;
- height: 550px;
-}
+  .categoryhome-Closed{
+    height: 500px;
 
-.howitworks-title{
-  font-size: 55px !important;
-}
+  }
 
-.shopbyCategory{
- 
-  font-size: 45px;
-  padding:100px 0 50px;
-  
+  .categoryhome-Closed h1 {
+    font-size: 35px;
+    padding-top: 50px;
+  }
 }
 
+@media screen and (max-width: 325px) {
+  .shopbyCategory{
+    font-size: 40px;
 
-
+  }
 }
-

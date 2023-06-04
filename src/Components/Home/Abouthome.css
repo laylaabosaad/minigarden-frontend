@@ -27,7 +27,6 @@
 }
 
 .aboutus-homeimgback {
-  /* border: 2px solid red; */
   width: fit-content;
 }
 
@@ -42,7 +41,7 @@ button {
   background: transparent;
   padding: 0;
   height: 20px;
-  /* margin-bottom: 30px; */
+
   font-size: inherit;
   font-family: inherit;
 }
@@ -148,7 +147,6 @@ button:hover .button-text {
   }
 
   .aboutus-home {
-    /* border: 2px solid red; */
     height: 100vh;
     padding: 50px;
     display: flex;
@@ -184,7 +182,6 @@ button:hover .button-text {
   }
 }
 
-
 @media (max-width: 390px) {
   .aboutus-home h1 {
     font-size: 45px;
@@ -209,5 +206,31 @@ button:hover .button-text {
     width: 200px;
 
     margin-top: 0;
+  }
+}
+
+@media (max-width: 325px) {
+  .aboutus-home h1 {
+    font-size: 35px;
+  }
+
+  .aboutus-home p {
+    font-size: 15px;
+    width: 300px;
+  }
+
+  .aboutus-homeimg {
+    height: 200px;
+    width: 150px;
+  }
+  button.learn-more .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: rgb(76, 104, 53);
+    border-radius: 1.625rem;
   }
 }

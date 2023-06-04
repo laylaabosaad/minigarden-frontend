@@ -30,8 +30,8 @@ const Headervideo = () => {
             euismod,
           </p>
           <div className="audio-player">
-            <MdHeadset
-              size={100}
+            <MdHeadset className="headset"
+              size={70}
               color={isPlaying ? "rgb(65, 102, 60)" : "white"}
               onClick={togglePlay}
             />

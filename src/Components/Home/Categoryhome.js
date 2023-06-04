@@ -5,7 +5,6 @@ import sol from "../images/sol.png";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 function Categoryhome() {
-  let navigate = useNavigate();
   return (
     <div className="categoryhome-home-all">
       <h1 className="shopbyCategory">Shop By Category</h1>
@@ -22,13 +21,7 @@ function Categoryhome() {
             </Link>
           </div>
           <div className="categoryhome-Open">
-            {/* <button
-                onClick={() =>
-                  navigate("/products", { state: { id: "solo id" } })
-                }
-              >
-                <h1>Solo Products</h1>
-              </button> */}
+         
             <Link
               to="/Products"
               state={{ static_category: "64634da6b6db9bd04a4e1678" }}

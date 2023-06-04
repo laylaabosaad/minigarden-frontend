@@ -14,7 +14,7 @@ function Products() {
 
       <div>
         <div className="product-slide">
-          <h1 className="ourproduct">Our Product</h1>
+          <h1 className="ourproduct">Our Products</h1>
          
         </div>
         <Productsection />

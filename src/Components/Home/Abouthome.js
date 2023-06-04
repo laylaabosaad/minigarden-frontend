@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import "../Home/Abouthome.css"
-import about from "../images/abouthome.jpg"
+import "../Home/Abouthome.css";
+import about from "../images/abouthome.jpg";
 
 function Abouthome() {
   return (
@@ -9,11 +9,11 @@ function Abouthome() {
         <div className="aboutus-home-descandbtn">
           <h1>About Us</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-            lacinia ex id est semper, in efficitur nulla convallis. Duis
-            euismod, mauris ac pharetra eleifend, mauris nunc pellentesque
-            lorem, sit amet tristique libero nunc eu nibh. Vivamus elementum
-            libero vel massa efficitur, id posuere dolor ultrices.
+          
+            <br></br>We believe in the power of nature to transform spaces and
+            uplift the human spirit. We are dedicated to creating captivating
+            terrariums that bring the beauty and tranquility of the outdoors
+            into your working environment.
           </p>
 
           <button className="learn-more">
@@ -21,12 +21,13 @@ function Abouthome() {
               <span className="icon arrow"></span>
             </span>
             <span className="button-text">
-              <Link className="aboutlink" to="/Aboutus">Read More</Link>
+              <Link className="aboutlink" to="/Aboutus">
+                Read More
+              </Link>
             </span>
           </button>
         </div>
         <div className="aboutus-homeimgback">
-         
           <img className="aboutus-homeimg" src={about} alt=""></img>
         </div>
       </div>
@@ -34,4 +35,4 @@ function Abouthome() {
   );
 }
 
-export default Abouthome
+export default Abouthome;

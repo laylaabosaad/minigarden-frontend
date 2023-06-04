@@ -41,7 +41,12 @@
 
 .howitworks-steps p {
   width: 300px;
+}
 
+.searchicon {
+  width: 270px;
+
+  font-size: 70px;
 }
 
 @media screen and (max-width: 1450px) {
@@ -61,9 +66,13 @@
 
   .howitworks-steps {
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 
-  .howitworksicon {
+  .searchicon {
     width: 80px;
     height: 80px;
     margin-bottom: 10px;
@@ -77,7 +86,6 @@
     width: 100%;
     max-width: 500px;
   }
-  
 }
 
 @media screen and (max-width: 450px) {
@@ -97,13 +105,9 @@
   .howitworksall {
     height: 100vh;
   }
-   .HowitWorks {
- 
- 
-
-  height: 100vh;
-}
-
+  .HowitWorks {
+    height: 100vh;
+  }
 }
 
 @media screen and (max-width: 325px) {
@@ -124,7 +128,4 @@
   .HowitWorks {
     height: 150vh;
   }
-
- 
-
 }

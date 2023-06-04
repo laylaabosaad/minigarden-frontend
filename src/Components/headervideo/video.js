@@ -25,12 +25,13 @@ const Headervideo = () => {
         <div className="audio">
           <h1>Bringing a Piece of Nature indoors</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-            lacinia ex id est semper, in efficitur nulla convallis. Duis
-            euismod,
+            Discover the enchanting world of miniature ecosystems and experience
+            the mesmerizing beauty of nature. Click on the headset icon for an
+            immersive experience.
           </p>
           <div className="audio-player">
-            <MdHeadset className="headset"
+            <MdHeadset
+              className="headset"
               size={70}
               color={isPlaying ? "rgb(65, 102, 60)" : "white"}
               onClick={togglePlay}

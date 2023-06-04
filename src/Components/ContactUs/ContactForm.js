@@ -9,7 +9,7 @@ function ContactForm() {
   const [phonenumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [message, setmessage] = useState("");
-  // const [refresh, setRefresh] = useReducer((x) => x + 1, 0);
+ 
 
   const handleSubmit = async () => {
     const data = {
@@ -51,11 +51,13 @@ function ContactForm() {
       <div className="contact-header-all">
         <div className="contact-header">
           <h1>Contact Us</h1>
-          <h5>Feel free to contact us and Send us a message</h5>
+          <h5>
+            Contact us with any questions, and our team will be
+            delighted to assist you.
+          </h5>
         </div>
       </div>
 
-      {/* <div className="contactus-form-background"> */}
       <div className="contact-imgwithform">
         <div className="image-contactus">
           <img className="contactimg" src={contactimg}></img>
@@ -63,7 +65,7 @@ function ContactForm() {
         <div className="contact-us-withinbox">
           <div className="contact-">
             <h5>Send us a message</h5>
-            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor</p>
+            <p>Feel free to contact us</p>
           </div>
           <div className="contact-us-form">
             <div className="contact-contantfit">
@@ -109,7 +111,6 @@ function ContactForm() {
           </div>
         </div>
       </div>
-      {/* </div> */}
     </div>
   );
 }

@@ -1,8 +1,7 @@
 import "../Home/howItWorks.css";
-
-import take from "../images/take.png"
-import care from "../images/care.png"
-import choose from "../images/choose.png"
+import { BsSearch } from "react-icons/bs";
+import { GiCactusPot } from "react-icons/gi";
+import { TbTruckDelivery } from "react-icons/tb";
 
 function HowItWorks() {
   return (
@@ -13,30 +12,34 @@ function HowItWorks() {
         </div>
         <div className="howitworks-stepsall">
           <div className="howitworks-steps">
-            <img className="howitworksicon" src={choose} alt=""></img>
-            <h2>desc</h2>
+            <div className="searchicon">
+              <BsSearch />
+            </div>
+
+            <h2>Explore our Collection </h2>
             <p>
-              ipsum dolor sit amet, consectetur adipiscing elit. Fusce lacinia
-              ex id est semper, in efficitur nulla convallis. Duis euismod,
-              mauris ac pharetra eleifend,
+              Discover the perfect terrarium that resonates with your style and
+              preferences.
             </p>
           </div>
           <div className="howitworks-steps">
-            <img className="howitworksicon" src={take} alt=""></img>
-            <h2>desc</h2>
+            <div className="searchicon">
+              <GiCactusPot />
+            </div>
+            <h2>Select Your Terrarium</h2>
             <p>
-              ipsum dolor sit amet, consectetur adipiscing elit. Fusce lacinia
-              ex id est semper, in efficitur nulla convallis. Duis euismod,
-              mauris ac pharetra eleifend,
+              Once you've found the terrarium that speaks to you, simply add it
+              to your cart and proceed to the checkout.
             </p>
           </div>
           <div className="howitworks-steps">
-            <img className="howitworksicon" src={care} alt=""></img>
-            <h2>desc</h2>
+            <div className="searchicon">
+              <TbTruckDelivery />
+            </div>
+            <h2>Packaged and Delivered</h2>
             <p>
-              ipsum dolor sit amet, consectetur adipiscing elit. Fusce lacinia
-              ex id est semper, in efficitur nulla convallis. Duis euismod,
-              mauris ac pharetra eleifend,
+              Once your order is confirmed, we carefully package your terrarium
+              to ensure its safe journey to you.
             </p>
           </div>
         </div>

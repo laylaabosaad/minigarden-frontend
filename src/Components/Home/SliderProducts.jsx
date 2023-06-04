@@ -73,9 +73,8 @@ const SliderProducts = () => {
           </div>
           <div>
             <p className="prod-descr-p">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-              lacinia Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-             
+              Enhance your living or working space with our latest mesmerizing
+              terrariums and immerse yourself in the beauty of nature.
             </p>
           </div>
         </div>

@@ -1,14 +1,23 @@
-
-import Headervideo from '../Components/headervideo/video'
-import Abouthome from '../Components/Home/Abouthome'
-import Categoryhome from '../Components/Home/Categoryhome'
-import HowItWorks from '../Components/Home/HowItWorks'
+import Headervideo from "../Components/headervideo/video";
+import Abouthome from "../Components/Home/Abouthome";
+import Categoryhome from "../Components/Home/Categoryhome";
+import HowItWorks from "../Components/Home/HowItWorks";
 import SliderProducts from "../Components/Home/SliderProducts";
-import Footer from '../Components/Footer/Footer'
-
-
+import Footer from "../Components/Footer/Footer";
+import { useState, useEffect } from "react";
+import Loader from "../Components/loader/Loader";
 
 function Home() {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <div>
       <Headervideo />
@@ -28,4 +37,4 @@ function Home() {
   );
 }
 
-export default Home
+export default Home;

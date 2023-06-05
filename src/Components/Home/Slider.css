@@ -5,6 +5,7 @@
   padding: 0 50px;
 }
 
+
 .whole-product {
   background-color: rgb(232, 242, 241);
   padding: 100px 300px;
@@ -218,6 +219,10 @@ ul {
     font-size: 40px;
     text-align: center;
   }
+  .featuredcard-title p {
+  padding: 10px;
+ 
+}
  
 
   .whole-product {

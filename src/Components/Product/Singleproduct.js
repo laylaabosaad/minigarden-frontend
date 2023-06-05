@@ -1,12 +1,21 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./singleprod.css";
 import Footer from "../Footer/Footer.js";
 import axios from "axios";
 import swal from "sweetalert";
 
 function Singleproduct() {
+
+    const location = useLocation();
+
+    const scrollToTop = () => {
+      window.scrollTo(0, 0);
+    };
+
+
+
   let userId = localStorage.getItem("userId");
   const { productId } = useParams();
   const [singleProd, setSingleProd] = useState([]);
@@ -85,15 +94,20 @@ function Singleproduct() {
               </p>
               <div className="btns-single">
                 <div className="product-buttons">
-                  <Link to="/Products">
+                  <Link onClick={scrollToTop} to="/Products">
                     <button className="submit-btn">Go Back</button>
                   </Link>
                 </div>
                 <div className="product-buttons">
                   <button
-                    className="productbtnaddanddesc"
+                    className="submit-btn"
                     onClick={() =>
-                      addtoCart(singleProd._id, 1, singleProd.price, singleProd.title)
+                      addtoCart(
+                        singleProd._id,
+                        1,
+                        singleProd.price,
+                        singleProd.title
+                      )
                     }
                   >
                     Add to cart

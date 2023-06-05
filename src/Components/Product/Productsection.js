@@ -8,6 +8,14 @@ import { Link, useLocation } from "react-router-dom";
 
 const Productsection = () => {
   let location = useLocation();
+
+    const scrollToTop = () => {
+      window.scrollTo(0, 0);
+    };
+
+
+
+
  
   let static_category;
   if (location.state) {
@@ -131,7 +139,10 @@ const Productsection = () => {
               <div className="card">
                 <div className="card-image-prod">
                   <div className="image-fit">
-                    <Link to={`/singleproduct/${item._id}`}>
+                    <Link
+                      onClick={scrollToTop}
+                      to={`/singleproduct/${item._id}`}
+                    >
                       <img
                         src={item.image.url}
                         className="product-img"
@@ -151,7 +162,7 @@ const Productsection = () => {
 
                 <div className="product-buttons">
                   <button
-                    className="productbtnaddanddesc"
+                    className="submit-btn"
                     onClick={() =>
                       addtoCart(item._id, 1, item.price, item.title)
                     }

@@ -1,7 +1,7 @@
 .loginandregister {
   /* border: 2px solid green; */
   width: 100%;
-  height: 100vh;
+  height: fit-content;
   background-image: url("../images//loginimage.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -29,9 +29,7 @@
   height: 50px;
 }
 
-
 .loginandregisterbackgrnd {
- 
   background: rgba(113, 110, 110, 0.55);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -110,17 +108,13 @@
   height: 50px;
 }
 
-.loginandregister-inputs label{
+.loginandregister-inputs label {
   color: white;
-
 }
-
-
-
 
 .loginandregister-all {
   display: flex;
-  padding: 200px;
+  padding-top: 200px;
   color: white;
 
   flex-wrap: wrap;
@@ -179,8 +173,6 @@
   color: green;
 }
 
-
-
 @media only screen and (max-width: 950px) {
   .loginandregister-all {
     padding: 150px 10px;
@@ -188,7 +180,6 @@
 
   .loginandregisterbackgrnd {
     padding: 20px;
-    
   }
 
   .loginandregisterbackgrnd h1 {
@@ -206,9 +197,105 @@
     width: 300px;
   }
 
-  .glassy{
+  .glassy {
     padding: 20px 30px;
   }
-
-
 }
+
+@media only screen and (max-width: 550px) {
+  .loginandregisterbackgrnd {
+    padding: 10px 20px;
+  }
+
+  .loginandregister-inputs input {
+    width: 300px;
+    height: 50px;
+  }
+    .loginandregister {
+  
+  height: 120vh;
+  
+}
+}
+
+@media only screen and (max-width: 450px) {
+  .loginandregister-all {
+    padding-top: 100px;
+  }
+
+  .loginandregisterbackgrnd {
+    padding: 10px;
+  }
+
+  .loginandregisterbackgrnd h1 {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+
+  .login-register-btn {
+    width: 60px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .loginandregister-inputs input {
+    width: 200px;
+    height: 30px;
+  }
+
+  .glassy {
+    padding: 20px 60px;
+    /* border: 2px solid yellow; */
+  }
+
+  .loginandregister-inputs {
+    gap: 0px;
+  }
+  .loginandregister {
+  
+  height: 120vh;
+  
+}
+}
+
+@media only screen and (max-width: 350px) {
+   .loginandregister-all {
+    padding-top: 100px;
+  }
+
+  .loginandregisterbackgrnd {
+    padding: 10px;
+  }
+
+  .loginandregisterbackgrnd h1 {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+
+  .login-register-btn {
+    width: 60px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .loginandregister-inputs input {
+    width: 200px;
+    height: 30px;
+  }
+
+  .glassy {
+    padding: 30px;
+    /* border: 2px solid yellow; */
+    margin-top: 0px;
+  }
+
+  .loginandregister-inputs {
+    gap: 0px;
+  }
+  .loginandregister {
+  
+  height: 300vh;
+  
+}
+}
+

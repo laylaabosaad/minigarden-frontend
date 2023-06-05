@@ -1,8 +1,15 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,700&display=swap');
+
+
 .aboutus-home {
   background: linear-gradient(rgba(7, 7, 7, 0.665), rgba(33, 29, 29, 0.712)),
     url("../images/green.jpg");
 
   height: 80vh;
+ 
+ 
   padding: 250px;
   color: white;
   background-position: center;

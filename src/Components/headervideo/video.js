@@ -23,7 +23,7 @@ const Headervideo = () => {
       <video src={video} autoPlay muted loop className="video-bg" />
       <div className="bg-overlay">
         <div className="audio">
-          <h1>Bringing a Piece of Nature indoors</h1>
+          <h1>Bringing a Piece of Nature Indoors</h1>
           <p>
             Discover the enchanting world of miniature ecosystems and experience
             the mesmerizing beauty of nature. Click on the headset icon for an

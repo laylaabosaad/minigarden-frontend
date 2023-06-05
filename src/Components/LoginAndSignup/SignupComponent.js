@@ -94,7 +94,7 @@ function SignupComponent() {
                 <label>Email</label>
                 <input
                   autoComplete="off"
-                  type="text"
+                  type="email"
                   required
                   value={email}
                   onChange={handleEmailChange}

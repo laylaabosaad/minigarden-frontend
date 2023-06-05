@@ -64,8 +64,8 @@ function ContactForm() {
         </div>
         <div className="contact-us-withinbox">
           <div className="contact-">
-            <h5>Send us a message</h5>
-            <p>Feel free to contact us</p>
+            <h5>Send us a Message</h5>
+            <p>Feel Free to Contact us.</p>
           </div>
           <div className="contact-us-form">
             <div className="contact-contantfit">

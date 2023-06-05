@@ -9,7 +9,6 @@ function Abouthome() {
         <div className="aboutus-home-descandbtn">
           <h1>About Us</h1>
           <p>
-          
             <br></br>We believe in the power of nature to transform spaces and
             uplift the human spirit. We are dedicated to creating captivating
             terrariums that bring the beauty and tranquility of the outdoors

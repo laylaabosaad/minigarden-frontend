@@ -68,14 +68,14 @@ function LoginComponent() {
       <div className="loginandregister">
         <div className="loginandregister-all">
           <form onSubmit={handleLogin}>
-            <div className="loginandregisterbackgrnd">
+            <div className="loginandregisterbackgrnd  glassy">
               <h1>Login</h1>
 
               <div className="loginandregister-inputs">
                 <label>Email</label>
                 <input
                   autoComplete="off"
-                  type="text"
+                  type="email"
                   required
                   value={email}
                   onChange={handleEmailChange}

@@ -104,7 +104,7 @@ function Cart() {
 
       if (!userId) {
         swal({
-          title: "Login to make an order",
+          title: "Login to place an order.",
           text: "You need to login!",
           icon: "warning",
           button: "Login",
@@ -113,8 +113,8 @@ function Cart() {
         });
       } else {
         swal({
-          title: "Your order was sent",
-          text: "You need to login!",
+          title: "Happy Shopping!",
+          text: "Your order was sent successfully!",
           icon: "success",
           button: "ok",
         }).then(() => {

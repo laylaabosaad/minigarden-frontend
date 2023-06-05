@@ -21,14 +21,14 @@ function ContactForm() {
     if (!fullname || !email || !phonenumber || !message) {
       swal({
         title: "Please Fill all the fields",
-        text: "For a better service fill the fields",
+        text: "For a better service, fill all the fields.",
         icon: "error",
         button: "ok",
       });
     } else {
       swal({
         title: "Thank you for contacting us!",
-        text: "Our team will get back to you soon",
+        text: "Our team will get back to you soon.",
         icon: "success",
         button: "ok",
       });

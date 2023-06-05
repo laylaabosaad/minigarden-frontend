@@ -41,7 +41,7 @@ const Navbar = (props) => {
             onClick={scrollToTop}
             className={`navlinks ${location.pathname === "/" ? "active" : ""}`}
           >
-            <div>Home</div>
+            <div className="nav">Home</div>
           </Link>
         )}
 
@@ -53,7 +53,7 @@ const Navbar = (props) => {
               location.pathname === "/Aboutus" ? "active" : ""
             }`}
           >
-            <div>About Us</div>
+            <div className="nav">About Us</div>
           </Link>
         )}
 
@@ -65,7 +65,7 @@ const Navbar = (props) => {
               location.pathname === "/Products" ? "active" : ""
             }`}
           >
-            <div>Products</div>
+            <div className="nav">Products</div>
           </Link>
         )}
 
@@ -77,24 +77,26 @@ const Navbar = (props) => {
               location.pathname === "/Contactus" ? "active" : ""
             }`}
           >
-            <div>Contact Us</div>
+            <div className="nav">Contact Us</div>
           </Link>
         )}
 
         <div className="logandcart-nav">
-          {!isAdmin && (
-            <Link
-              onClick={scrollToTop}
-              to="/Cart"
-              className={`navlinks ${
-                location.pathname === "/Cart" ? "active" : ""
-              }`}
-            >
-              <div>
-                <FaShoppingCart />
-              </div>
-            </Link>
-          )}
+          <div className="carta">
+            {!isAdmin && (
+              <Link
+                onClick={scrollToTop}
+                to="/Cart"
+                className={`navlinks ${
+                  location.pathname === "/Cart" ? "active" : ""
+                }`}
+              >
+                <div className="nav">
+                  <FaShoppingCart />
+                </div>
+              </Link>
+            )}
+          </div>
 
           {isAdmin && (
             <Link
@@ -104,7 +106,7 @@ const Navbar = (props) => {
                 location.pathname === "/admin/Products" ? "active" : ""
               }`}
             >
-              <div>Products</div>
+              <div className="nav">Products</div>
             </Link>
           )}
 
@@ -116,7 +118,7 @@ const Navbar = (props) => {
                 location.pathname === "/admin/Order" ? "active" : ""
               }`}
             >
-              <div>Orders</div>
+              <div className="nav">Orders</div>
             </Link>
           )}
 
@@ -128,7 +130,7 @@ const Navbar = (props) => {
                 location.pathname === "/admin/contactus" ? "active" : ""
               }`}
             >
-              <div>Messages</div>
+              <div className="nav">Messages</div>
             </Link>
           )}
 
@@ -140,12 +142,12 @@ const Navbar = (props) => {
                 location.pathname === "/Login" ? "active" : ""
               }`}
             >
-              <div>
+              <div className="nav">
                 <FiLogIn />
               </div>
             </Link>
           ) : (
-            <div onClick={handleLogout}>
+            <div className="nav" onClick={handleLogout}>
               <FiLogOut />
             </div>
           )}
